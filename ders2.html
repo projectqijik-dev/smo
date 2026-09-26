@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02 · E-Ticaret Türleri</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar" id="bar"></div></div>
+<button class="rail-toggle" onclick="toggleRail()">≡</button>
+
+<button class="print-btn" onclick="window.print()" title="Bu dersi yazdır / PDF olarak kaydet">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+    <rect x="6" y="14" width="12" height="8"></rect>
+  </svg>
+  <span class="print-label">Çıktı Al</span>
+</button>
+
+<div class="shell">
+
+  <aside class="rail" id="rail">
+    <a href="index.html" class="rail-brand">
+      <span class="rail-mark">B</span>
+      <span class="rail-brand-text">
+        <strong>Sosyal Medya ve E-Ticaret</strong>
+        <span>ÖBBK MTAL · 11. Sınıf · 2026</span>
+      </span>
+    </a>
+
+    <p class="rail-label">Müfredat</p>
+    <nav class="rail-nav">
+      <ol>
+        <li><a href="ders1.html"><span class="num">01</span><span>E-Ticarete İlişkin Temel Kavramlar</span></a></li>
+        <li><a href="ders2.html" class="active"><span class="num">02</span><span>E-Ticaret Türleri</span></a></li>
+        <li><a href="ders3.html"><span class="num">03</span><span>Pazarlama Aşamaları</span></a></li>
+        <li><a href="ders4.html"><span class="num">04</span><span>Teknik Altyapı ve Güvenlik</span></a></li>
+        <li><a href="ders5.html"><span class="num">05</span><span>Hukuki Düzenlemeler</span></a></li>
+      </ol>
+    </nav>
+
+    <p class="rail-label">Bu Derste</p>
+    <nav class="rail-nav rail-sub">
+      <ol>
+        <li><a href="#b1"><span class="num">01</span><span>Neden Sınıflandırılır?</span></a></li>
+        <li><a href="#b2"><span class="num">02</span><span>Anlamanın Anahtarı</span></a></li>
+        <li><a href="#b3"><span class="num">03</span><span>En Temel Türler</span></a></li>
+        <li><a href="#b4"><span class="num">04</span><span>B2C</span></a></li>
+        <li><a href="#b5"><span class="num">05</span><span>B2C'yi Hatırla</span></a></li>
+        <li><a href="#b6"><span class="num">06</span><span>B2B</span></a></li>
+        <li><a href="#b7"><span class="num">07</span><span>B2B Günlük Hayat</span></a></li>
+        <li><a href="#b8"><span class="num">08</span><span>B2B Örneği</span></a></li>
+        <li><a href="#b9"><span class="num">09</span><span>B2B–B2C Farkı</span></a></li>
+        <li><a href="#b10"><span class="num">10</span><span>C2C</span></a></li>
+        <li><a href="#b11"><span class="num">11</span><span>C2C Günlük Hayat</span></a></li>
+        <li><a href="#b12"><span class="num">12</span><span>C2C Örnekleri</span></a></li>
+        <li><a href="#b13"><span class="num">13</span><span>C2C ve Pazaryeri</span></a></li>
+        <li><a href="#b14"><span class="num">14</span><span>C2C–B2C Farkı</span></a></li>
+        <li><a href="#b15"><span class="num">15</span><span>C2B</span></a></li>
+        <li><a href="#b16"><span class="num">16</span><span>C2B'yi Anlamak</span></a></li>
+        <li><a href="#b17"><span class="num">17</span><span>C2B Örnekleri</span></a></li>
+        <li><a href="#b18"><span class="num">18</span><span>B2G</span></a></li>
+        <li><a href="#b19"><span class="num">19</span><span>B2G Örneği</span></a></li>
+        <li><a href="#b20"><span class="num">20</span><span>G2B</span></a></li>
+        <li><a href="#b21"><span class="num">21</span><span>G2C</span></a></li>
+        <li><a href="#b22"><span class="num">22</span><span>G2G</span></a></li>
+        <li><a href="#b23"><span class="num">23</span><span>Tek Tablo</span></a></li>
+        <li><a href="#b24"><span class="num">24</span><span>En Önemli Kural</span></a></li>
+        <li><a href="#b25"><span class="num">25</span><span>Oku ve Bul</span></a></li>
+        <li><a href="#b26"><span class="num">26</span><span>Örnek Sınıflandırma</span></a></li>
+        <li><a href="#b27"><span class="num">27</span><span>Aynı Platform</span></a></li>
+        <li><a href="#b28"><span class="num">28</span><span>Pazaryeri Karışıklığı</span></a></li>
+        <li><a href="#b29"><span class="num">29</span><span>Sınıflandırma Şeması</span></a></li>
+        <li><a href="#b30"><span class="num">30</span><span>Üçlü: B2C–B2B–C2C</span></a></li>
+        <li><a href="#b31"><span class="num">31</span><span>Karar Ağacı</span></a></li>
+        <li><a href="#b32"><span class="num">32</span><span>Kimden Kime?</span></a></li>
+        <li><a href="#b33"><span class="num">33</span><span>Problem Çözme</span></a></li>
+        <li><a href="#b34"><span class="num">34</span><span>Başka Bir Problem</span></a></li>
+        <li><a href="#b35"><span class="num">35</span><span>Taraflar Belirler</span></a></li>
+        <li><a href="#b36"><span class="num">36</span><span>Sınıflandırma Tablosu</span></a></li>
+        <li><a href="#b37"><span class="num">37</span><span>Kendi Hayatından</span></a></li>
+        <li><a href="#b38"><span class="num">38</span><span>Sık Yapılan Hatalar</span></a></li>
+        <li><a href="#b39"><span class="num">39</span><span>Hafıza Tekniği</span></a></li>
+        <li><a href="#b40"><span class="num">40</span><span>Kazanımın Özü</span></a></li>
+        <li><a href="#b41"><span class="num">41</span><span>Sınavlık Özet</span></a></li>
+      </ol>
+    </nav>
+
+    <div class="rail-foot">
+      <p>Ünite 1 · Ders 02 · 41 bölüm</p>
+      <p>Son güncelleme: Eylül 2026</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="page-inner">
+
+      <article class="doc">
+
+        <header class="doc-head">
+          <div class="doc-eyebrow">Ders 02 · Ünite 1 · 41 bölüm</div>
+          <h1>E-Ticaret <em>Türleri</em></h1>
+          <p class="doc-lead">
+            Kazanım: "E-ticaret türlerini açıklar." Bu derste, ticari işlemin taraflarına bakarak B2C, B2B, C2C, C2B, B2G, G2B, G2C ve G2G modellerini ayırt etmeyi öğreneceğiz.
+          </p>
+          <dl class="doc-meta">
+            <div>
+              <dt>Kazanım</dt>
+              <dd>Türleri açıklar</dd>
+            </div>
+            <div>
+              <dt>Okuma</dt>
+              <dd>~18 dk</dd>
+            </div>
+            <div>
+              <dt>Güncelleme</dt>
+              <dd>Eylül 2026</dd>
+            </div>
+          </dl>
+        </header>
+
+        <div class="doc-body">
+
+          <h2 id="b1">1. E-TİCARET TÜRLERİ NEDEN SINIFLANDIRILIR?</h2>
+          <p>E-ticaret denildiğinde bütün alışverişler aynı değildir.</p>
+          <p>Örneğin:</p>
+          <ul>
+            <li>Bir mağazanın öğrenciye telefon satması,</li>
+            <li>Bir fabrikanın başka bir firmaya hammadde satması,</li>
+            <li>Bir öğrencinin kullanılmış telefonunu başka bir kişiye satması,</li>
+            <li>Bir kişinin bir şirkete grafik tasarım hizmeti vermesi</li>
+          </ul>
+          <p>birbirinden farklı ticari ilişkilerdir.</p>
+          <p>Bu nedenle e-ticaret işlemleri, işleme katılan tarafların kim olduğuna göre sınıflandırılır.</p>
+          <div class="highlight-box">
+            <strong>Buradaki en önemli soru:</strong>
+            <p>"Ticareti kim, kime yapıyor?"<br>
+            Bu sorunun cevabı e-ticaret türünü belirlememize yardımcı olur.</p>
+          </div>
+
+          <h2 id="b2">2. E-TİCARET TÜRLERİNİ ANLAMANIN ANAHTARI</h2>
+          <p>E-ticaret türlerinde kullanılan harflerin temel anlamlarını önce öğrenelim.</p>
+          <div class="table-responsive">
+            <table>
+              <tr><th>Harf</th><th>İngilizce</th><th>Türkçe</th></tr>
+              <tr><td>B</td><td>Business</td><td>İşletme</td></tr>
+              <tr><td>C</td><td>Consumer</td><td>Tüketici</td></tr>
+              <tr><td>G</td><td>Government</td><td>Devlet/Kamu</td></tr>
+              <tr><td>2</td><td>to</td><td>-e/-a, arası</td></tr>
+            </table>
+          </div>
+          <p>Buradaki 2, İngilizcedeki "to" kelimesinin yerine kullanılır.</p>
+          <p>Örneğin:<br>B2C = Business to Consumer<br>yani:<br>İşletmeden tüketiciye</p>
+
+          <h2 id="b3">3. EN TEMEL E-TİCARET TÜRLERİ</h2>
+          <p>sınıf öğrencisinin öncelikle şu türleri ayırt edebilmesi gerekir:</p>
+          <ul>
+            <li>B2C – İşletmeden tüketiciye</li>
+            <li>B2B – İşletmeden işletmeye</li>
+            <li>C2C – Tüketiciden tüketiciye</li>
+            <li>C2B – Tüketiciden işletmeye</li>
+            <li>B2G – İşletmeden devlete/kamuya</li>
+            <li>G2B – Devletten işletmeye</li>
+            <li>G2C – Devletten vatandaşa</li>
+            <li>G2G – Devletten devlete/kamu kurumundan kamu kurumuna</li>
+          </ul>
+          <p>Bunların tamamının günlük hayatta aynı sıklıkta karşımıza çıkması gerekmez.</p>
+          <p>Özellikle:<br><strong>B2C – B2B – C2C</strong><br>üçlüsü günlük internet kullanımında oldukça kolay örneklendirilebilir.</p>
+
+          <h2 id="b4">4. B2C: İŞLETMEDEN TÜKETİCİYE</h2>
+
+          <h3 id="b4-1">4.1. B2C nedir?</h3>
+          <p>B2C (Business to Consumer), işletmelerin ürün veya hizmetlerini doğrudan tüketicilere sunmasıdır.</p>
+          <p>Türkçesi:<br>İşletmeden tüketiciye e-ticaret</p>
+          <p>Bu, günlük hayatta karşılaşılan en kolay e-ticaret modellerinden biridir.</p>
+
+          <h3 id="b4-2">4.2. B2C nasıl çalışır?</h3>
+          <p>Temel yapı:<br>İŞLETME → TÜKETİCİ</p>
+          <p>Örneğin bir giyim şirketi internet mağazasında öğrencilere kıyafet satıyor.</p>
+          <p>Burada:<br>Satıcı = İşletme<br>Alıcı = Tüketici<br>Ürün = Kıyafet<br>Ortam = İnternet<br>İşlem = E-ticaret</p>
+          <p>Dolayısıyla:<br><strong>B2C</strong></p>
+
+          <h3 id="b4-3">4.3. Günlük hayattan B2C örnekleri</h3>
+          <p><strong>Örnek 1</strong><br>Bir bilgisayar firması internet sitesinden öğrenciye laptop satıyor.<br>İşletme → Tüketici = B2C</p>
+          <p><strong>Örnek 2</strong><br>Bir ayakkabı markası kendi internet mağazasından müşteriye ayakkabı satıyor.<br>İşletme → Tüketici = B2C</p>
+          <p><strong>Örnek 3</strong><br>Bir yayınevi internet sitesinden öğrenciye kitap satıyor.<br>İşletme → Tüketici = B2C</p>
+
+          <h2 id="b5">5. B2C'Yİ NASIL HATIRLARIM?</h2>
+          <div class="highlight-box">
+            <strong>Hatırlatıcı</strong>
+            <p>Şu cümleyi kullan:<br><strong>"Mağaza bana satıyor."</strong><br>
+            Mağaza = Business<br>Ben = Consumer<br>
+            Dolayısıyla:<br>B → C<br>B2C = İşletmeden tüketiciye</p>
+          </div>
+
+          <h2 id="b6">6. B2B: İŞLETMEDEN İŞLETMEYE</h2>
+
+          <h3 id="b6-1">6.1. B2B nedir?</h3>
+          <p>B2B (Business to Business), bir işletmenin başka bir işletmeye mal veya hizmet sunmasıdır.</p>
+          <p>Türkçesi:<br>İşletmeden işletmeye e-ticaret</p>
+          <p>Burada tüketici yerine başka bir işletme vardır.</p>
+          <p>Temel yapı:<br>İŞLETME → İŞLETME</p>
+
+          <h2 id="b7">7. B2B'Yİ GÜNLÜK HAYATTA ANLAMAK</h2>
+          <p>Bir restoran düşünelim.</p>
+          <p>Restoranın: masa, sandalye, bilgisayar, ambalaj, gıda malzemesi gibi çeşitli ihtiyaçları vardır.</p>
+          <p>Restoran bunların bazılarını başka işletmelerden internet üzerinden satın alabilir.</p>
+          <p>Örneğin:<br>Gıda tedarikçisi → Restoran</p>
+          <p>Her iki taraf da işletme olduğu için:<br><strong>B2B</strong></p>
+
+          <h2 id="b8">8. B2B ÖRNEĞİ</h2>
+          <p>Bir tekstil fabrikası internet üzerinden başka bir firmadan kumaş satın alıyor.</p>
+          <p>Burada:<br>Kumaş satan firma = Business<br>Tekstil fabrikası = Business</p>
+          <p>Dolayısıyla:<br><strong>B2B</strong></p>
+
+          <h2 id="b9">9. B2B İLE B2C ARASINDAKİ FARK</h2>
+          <p>Bu iki kavram öğrenciler tarafından çok kolay karıştırılabilir.</p>
+          <div class="table-responsive">
+            <table>
+              <tr><th>Özellik</th><th>B2C</th><th>B2B</th></tr>
+              <tr><td>Satıcı</td><td>İşletme</td><td>İşletme</td></tr>
+              <tr><td>Alıcı</td><td>Tüketici</td><td>İşletme</td></tr>
+              <tr><td>Örnek</td><td>Mağaza → Öğrenci</td><td>Tedarikçi → Fabrika</td></tr>
+              <tr><td>Temel ilişki</td><td>İşletme → Tüketici</td><td>İşletme → İşletme</td></tr>
+            </table>
+          </div>
+          <p>Akılda tut:<br>C'nin karşısında tüketici varsa → B2C<br>B'nin karşısında işletme varsa → B2B</p>
+
+          <h2 id="b10">10. C2C: TÜKETİCİDEN TÜKETİCİYE</h2>
+
+          <h3 id="b10-1">10.1. C2C nedir?</h3>
+          <p>C2C (Consumer to Consumer), tüketicilerin birbirleriyle elektronik ortamda mal veya hizmet alışverişi yapmasıdır.</p>
+          <p>Türkçesi:<br>Tüketiciden tüketiciye e-ticaret</p>
+          <p>Temel yapı:<br>TÜKETİCİ → TÜKETİCİ</p>
+
+          <h2 id="b11">11. C2C GÜNLÜK HAYATTA NEREDE KARŞIMIZA ÇIKAR?</h2>
+          <p>Örneğin bir öğrencinin artık kullanmadığı tabletini internet üzerindeki bir platform aracılığıyla başka bir kişiye satması.</p>
+          <p>Burada:<br>Satıcı = Tüketici<br>Alıcı = Tüketici</p>
+          <p>Dolayısıyla:<br><strong>C2C</strong></p>
+
+          <h2 id="b12">12. C2C ÖRNEKLERİ</h2>
+          <p><strong>Örnek 1</strong><br>Bir kişi kullanmadığı bisikletini internet üzerinden başka bir kişiye satıyor.<br>C → C = C2C</p>
+          <p><strong>Örnek 2</strong><br>Bir öğrenci eski ders kitaplarını başka bir öğrenciye internet üzerinden satıyor.<br>C → C = C2C</p>
+          <p><strong>Örnek 3</strong><br>Bir kişi ikinci el telefonunu başka bir kişiye çevrim içi platform aracılığıyla satıyor.<br>C → C = C2C</p>
+
+          <h2 id="b13">13. C2C'DE PAZARYERİNİN ROLÜ</h2>
+          <p>C2C işlemlerinde çoğu zaman alıcı ile satıcının buluşmasını sağlayan bir dijital platform bulunabilir.</p>
+          <p>Basitleştirirsek:<br>Tüketici A → Platform → Tüketici B</p>
+          <p>Burada platform: ürünü listeleme, kullanıcıları buluşturma, iletişim, ödeme, değerlendirme gibi çeşitli işlevler sağlayabilir.</p>
+          <p>Ancak temel ticari ilişki:<br>Tüketici → Tüketici<br>olduğu için model C2C olarak adlandırılır.</p>
+
+          <h2 id="b14">14. C2C İLE B2C ARASINDAKİ FARK</h2>
+          <p>Burada öğrencinin özellikle satıcıya bakması gerekir.</p>
+          <p><strong>Durum 1</strong><br>Bir şirket internet üzerinden yeni telefon satıyor.<br>Şirket → Öğrenci = B2C</p>
+          <p><strong>Durum 2</strong><br>Bir öğrenci kullanmadığı telefonunu başka bir öğrenciye satıyor.<br>Öğrenci → Öğrenci = C2C</p>
+          <div class="highlight-box">
+            <strong>Kritik soru:</strong>
+            <p>"Satıcı kim?"<br>
+            Satıcı işletmeyse B ile başlayan modeller; satıcı tüketiciyse C ile başlayan modeller düşünülmelidir.</p>
+          </div>
+
+          <h2 id="b15">15. C2B: TÜKETİCİDEN İŞLETMEYE</h2>
+          <p>Şimdi yönü tersine çevirelim.<br>C2B (Consumer to Business): Tüketiciden işletmeye</p>
+          <p>Temel yapı:<br>TÜKETİCİ → İŞLETME</p>
+          <p>Bu modelde bireyler işletmelere mal veya hizmet sunabilir.</p>
+
+          <h2 id="b16">16. C2B'Yİ ANLAMAK</h2>
+          <p>Örneğin bir grafik tasarımcı düşünelim.<br>Kendisini bir şirket olarak değil, bireysel çalışan olarak düşünelim.</p>
+          <p>Bir işletmeye:<br>"İşletmeniz için logo tasarlayabilirim."<br>diyerek hizmet sunuyor.</p>
+          <p>Burada:<br>Tüketici/bireysel sağlayıcı → İşletme<br>şeklinde bir ilişki vardır.</p>
+          <p>Bu nedenle:<br><strong>C2B</strong><br>olarak sınıflandırılabilir.</p>
+
+          <h2 id="b17">17. C2B ÖRNEKLERİ</h2>
+          <p><strong>Örnek 1</strong><br>Bir fotoğrafçı, çektiği fotoğrafları bir işletmeye lisanslıyor.<br>C → B</p>
+          <p><strong>Örnek 2</strong><br>Bir bireysel tasarımcı bir şirket için logo hazırlıyor.<br>C → B</p>
+          <p><strong>Örnek 3</strong><br>Bir internet kullanıcısı bir işletmeye dijital içerik üretme hizmeti sunuyor.<br>C → B</p>
+          <p>Buradaki temel mantık:<br>Birey → İşletme</p>
+
+          <h2 id="b18">18. B2G: İŞLETMEDEN DEVLETE/KAMUYA</h2>
+          <p>B2G (Business to Government), işletmelerin kamu kurumlarına elektronik ortamda mal veya hizmet sunmasıdır.</p>
+          <p>Türkçesi:<br>İşletmeden devlete/kamuya</p>
+          <p>Temel yapı:<br>İŞLETME → KAMU</p>
+          <p>Örneğin bir yazılım şirketinin bir kamu kurumuna yazılım hizmeti sunması.</p>
+          <p>Burada:<br>İşletme → Kamu kurumu<br>olduğu için:<br><strong>B2G</strong></p>
+
+          <h2 id="b19">19. B2G ÖRNEĞİ</h2>
+          <p>Bir teknoloji şirketinin bir kamu kurumunun ihtiyacı için bilgisayar sistemi veya yazılım hizmeti sağlaması.</p>
+          <p>Temel ilişki:<br>Şirket → Kamu kurumu = <strong>B2G</strong></p>
+          <p>Bu tür işlemler kamu alımları ve elektronik kamu hizmetleriyle bağlantılı olabilir.</p>
+
+          <h2 id="b20">20. G2B: DEVLETTEN/KAMUDAN İŞLETMEYE</h2>
+          <p>Şimdi yön tersine dönüyor.<br>G2B (Government to Business): Devlet/Kamu → İşletme</p>
+          <p>Kamu kurumlarının işletmelere elektronik ortam üzerinden hizmet, bilgi veya işlem imkânı sunması bu başlık altında değerlendirilebilir.</p>
+          <p>Örneğin işletmelerin kamu kurumlarının dijital sistemleri üzerinden bazı resmi işlemlerini gerçekleştirmesi.</p>
+          <p>Temel mantık:<br>Kamu → İşletme = <strong>G2B</strong></p>
+
+          <h2 id="b21">21. G2C: DEVLETTEN/KAMUDAN VATANDAŞA</h2>
+          <p>G2C (Government to Citizen): Devlet/Kamu → Vatandaş</p>
+          <p>Kamu kurumlarının vatandaşlara elektronik ortamda hizmet sunmasıdır.<br>Bu tür işlemler e-Devlet uygulamaları gibi dijital kamu hizmetleriyle ilişkilendirilebilir.</p>
+          <p>Temel yapı:<br>KAMU → VATANDAŞ = <strong>G2C</strong></p>
+          <p>Örnek<br>Vatandaşın internet üzerinden bir kamu hizmetine erişmesi.<br>Buradaki temel ilişki:<br>Devlet/Kamu → Vatandaş olduğu için:<br><strong>G2C</strong></p>
+
+          <h2 id="b22">22. G2G: KAMUDAN KAMUYA</h2>
+          <p>G2G (Government to Government), kamu kurumları veya devlet kurumları arasındaki elektronik bilgi ve işlem alışverişini ifade eder.</p>
+          <p>Temel yapı:<br>KAMU → KAMU</p>
+          <p>Örneğin iki kamu kurumunun elektronik sistemler aracılığıyla bilgi paylaşması.<br>Bu tür işlemler doğrudan son tüketiciye yönelik bir alışverişten farklıdır.</p>
+
+          <h2 id="b23">23. TÜRLERİ TEK TABLODA GÖRELİM</h2>
+          <div class="table-responsive">
+            <table>
+              <tr><th>Tür</th><th>Açılım</th><th>Türkçe karşılığı</th><th>Temel ilişki</th></tr>
+              <tr><td>B2C</td><td>Business to Consumer</td><td>İşletmeden tüketiciye</td><td>B → C</td></tr>
+              <tr><td>B2B</td><td>Business to Business</td><td>İşletmeden işletmeye</td><td>B → B</td></tr>
+              <tr><td>C2C</td><td>Consumer to Consumer</td><td>Tüketiciden tüketiciye</td><td>C → C</td></tr>
+              <tr><td>C2B</td><td>Consumer to Business</td><td>Tüketiciden işletmeye</td><td>C → B</td></tr>
+              <tr><td>B2G</td><td>Business to Government</td><td>İşletmeden kamuya</td><td>B → G</td></tr>
+              <tr><td>G2B</td><td>Government to Business</td><td>Kamudan işletmeye</td><td>G → B</td></tr>
+              <tr><td>G2C</td><td>Government to Citizen</td><td>Kamudan vatandaşa</td><td>G → C</td></tr>
+              <tr><td>G2G</td><td>Government to Government</td><td>Kamudan kamuya</td><td>G → G</td></tr>
+            </table>
+          </div>
+
+          <h2 id="b24">24. EN ÖNEMLİ SINIFLANDIRMA</h2>
+          <p>Aslında öğrencinin sekiz farklı kısaltmayı ayrı ayrı ezberlemesine gerek yoktur.<br>Önce tarafları öğren:</p>
+          <p>B: Business = İşletme<br>C: Consumer = Tüketici<br>G: Government = Kamu/Devlet</p>
+          <p>Sonra ok yönünü takip et.<br>Örneğin:<br>B → C<br>İşletme → Tüketici = <strong>B2C</strong></p>
+
+          <h2 id="b25">25. "OKU VE BUL" YÖNTEMİ</h2>
+          <p>Bir e-ticaret örneği gördüğünüzde şu dört adımı uygulayın:</p>
+          <ol>
+            <li><strong>Satıcı kim?</strong> İşletme mi? Tüketici mi? Kamu mu?</li>
+            <li><strong>Alıcı kim?</strong> İşletme mi? Tüketici mi? Kamu mu?</li>
+            <li><strong>Oku:</strong> Örneğin: İşletme → Tüketici</li>
+            <li><strong>Kısalt:</strong> B → C = B2C</li>
+          </ol>
+          <p>Bu yöntem ezberden daha kullanışlıdır.</p>
+
+          <h2 id="b26">26. ÖRNEKLER ÜZERİNDEN SINIFLANDIRALIM</h2>
+          <p><strong>Örnek 1:</strong> Bir giyim firması öğrenciye internet üzerinden mont satıyor.<br>İşletme → Tüketici (B2C)</p>
+          <p><strong>Örnek 2:</strong> Bir fabrika başka bir firmadan internet üzerinden hammadde satın alıyor.<br>İşletme → İşletme (B2B)</p>
+          <p><strong>Örnek 3:</strong> Bir öğrenci eski kitabını başka bir öğrenciye internet üzerinden satıyor.<br>Tüketici → Tüketici (C2C)</p>
+          <p><strong>Örnek 4:</strong> Bir bireysel tasarımcı bir şirkete logo tasarlıyor.<br>Tüketici/birey → İşletme (C2B)</p>
+          <p><strong>Örnek 5:</strong> Bir teknoloji şirketi kamu kurumuna yazılım hizmeti sunuyor.<br>İşletme → Kamu (B2G)</p>
+          <p><strong>Örnek 6:</strong> Bir kamu kurumu işletmeye elektronik ortamda hizmet sunuyor.<br>Kamu → İşletme (G2B)</p>
+          <p><strong>Örnek 7:</strong> Bir vatandaş internet üzerinden kamu hizmetine erişiyor.<br>Kamu → Vatandaş (G2C)</p>
+          <p><strong>Örnek 8:</strong> İki kamu kurumu elektronik sistem üzerinden bilgi paylaşıyor.<br>Kamu → Kamu (G2G)</p>
+
+          <h2 id="b27">27. AYNI PLATFORMDA FARKLI E-TİCARET TÜRLERİ OLABİLİR Mİ?</h2>
+          <p>Evet. Bu önemli bir noktadır.</p>
+          <p>Bir internet platformunda farklı satıcılar ve farklı alıcı grupları bulunabilir.</p>
+          <p>Örneğin aynı dijital platformda:<br>Şirket → tüketici şeklinde bir işlem B2C olabilir.</p>
+          <p>Başka bir işlemde:<br>Tüketici → tüketici ilişkisi bulunabilir ve bu C2C olabilir.</p>
+          <p>Bu nedenle:<br>E-ticaret türünü platformun adına bakarak değil, ticari işlemin taraflarına bakarak belirlemek gerekir.</p>
+
+          <h2 id="b28">28. PAZARYERİ İLE E-TİCARET TÜRÜNÜ KARIŞTIRMAYALIM</h2>
+          <p>Bu da öğrencilerin sık yapabileceği bir hatadır.</p>
+          <p>Pazaryeri, ticari tarafları bir araya getiren dijital platform olabilir.<br>Ancak e-ticaret türünü belirleyen temel unsur:<br><strong>Satıcı kim? Alıcı kim?</strong> sorusudur.</p>
+          <p>Örneğin bir pazaryerinde:<br>Firma → Öğrenci varsa işlem: B2C<br>Bir başka işlemde:<br>Birey → Birey varsa: C2C olabilir.</p>
+
+          <h2 id="b29">29. E-TİCARET TÜRLERİNİ SINIFLANDIRMA ŞEMASI</h2>
+          <pre>
+                  E-TİCARET
+                      │
+      ┌───────────────┼────────────────┐
+      │               │                │
+      B               C                G
+  İşletme          Tüketici          Kamu
+      │               │                │
+      └───────┬───────┼────────┬───────┘
+              │       │        │
+            B2C     C2C      G2C
+            B2B     C2B      G2B
+            B2G              G2G
+          </pre>
+          <p>Daha kolay hatırlamak için:<br>
+          B = İşletme | C = Tüketici | G = Kamu<br>
+          B → C = B2C | B → B = B2B<br>
+          C → C = C2C | C → B = C2B<br>
+          B → G = B2G | G → B = G2B<br>
+          G → C = G2C | G → G = G2G</p>
+
+          <h2 id="b30">30. B2C – B2B – C2C ÜÇLÜSÜ</h2>
+          <p>Günlük yaşamda karşılaşılabilecek üç temel örneği yan yana koyalım.</p>
+          <p><strong>B2C: Mağaza → Öğrenci</strong><br>Bir mağaza öğrenciye telefon satıyor.</p>
+          <p><strong>B2B: Firma → Firma</strong><br>Bir bilgisayar firması başka bir firmaya bilgisayar satıyor.</p>
+          <p><strong>C2C: Öğrenci → Öğrenci</strong><br>Bir öğrenci kullanmadığı telefonu başka bir öğrenciye satıyor.</p>
+          <div class="highlight-box">
+            <strong>Çok kısa formül</strong>
+            <p>Mağaza → Ben = B2C<br>
+            Firma → Firma = B2B<br>
+            Ben → Başka bir kişi = C2C</p>
+          </div>
+
+          <h2 id="b31">31. GÜNLÜK HAYATTAN KARAR AĞACI</h2>
+          <p>Bir işlem gördüğünüzde aşağıdaki yöntemi uygulayın:</p>
+          <p><strong>Soru 1: Satıcı işletme mi?</strong><br>Evet → B<br>Sonra alıcıya bak.<br>Tüketici → B2C | İşletme → B2B | Kamu → B2G</p>
+          <p><strong>Soru 2: Satıcı tüketici/birey mi?</strong><br>Evet → C<br>Sonra alıcıya bak.<br>Tüketici → C2C | İşletme → C2B</p>
+          <p><strong>Soru 3: Satıcı kamu kurumu mu?</strong><br>Evet → G<br>Sonra alıcıya bak.<br>Tüketici/vatandaş → G2C | İşletme → G2B | Kamu → G2G</p>
+
+          <h2 id="b32">32. SINIF İÇİ ETKİNLİK: "KİMDEN KİME?"</h2>
+          <p>Öğretmen tahtaya aşağıdaki işlemleri yazar:</p>
+          <p>A) Bir firma, öğrenciye internet üzerinden bilgisayar satıyor.<br>B) Bir fabrika, başka bir fabrikadan hammadde satın alıyor.<br>C) Bir öğrenci eski kitabını başka bir öğrenciye satıyor.<br>D) Bir grafik tasarımcı bir şirkete tasarım hizmeti veriyor.<br>E) Bir yazılım şirketi kamu kurumuna yazılım sağlıyor.</p>
+          <p>Öğrencilerden yalnızca B ve C harflerini kullanarak değil, tam kavramla cevap vermeleri istenir.</p>
+          <p>Cevaplar:<br>A → B2C | B → B2B | C → C2C | D → C2B | E → B2G</p>
+
+          <h2 id="b33">33. PROBLEM ÇÖZME ETKİNLİĞİ</h2>
+          <p>Problem: Ali, kullanmadığı oyun konsolunu internet üzerindeki bir platformda satışa koymuştur. Mehmet ürünü görmüş ve Ali'den satın almıştır.</p>
+          <p>Sorular:</p>
+          <ol>
+            <li><strong>Ali işletme midir?</strong> Verilen bilgiye göre hayır; bireysel kullanıcı/tüketici olarak hareket etmektedir.</li>
+            <li><strong>Mehmet kimdir?</strong> Bireysel alıcı/tüketicidir.</li>
+            <li><strong>İşlem hangi türdür?</strong> Tüketici → Tüketici. Dolayısıyla: C2C</li>
+          </ol>
+          <p>Kritik düşünme: Platformun arada bulunması sonucu değiştirmez. Temel ticari ilişki: Ali → Mehmet şeklindedir.</p>
+
+          <h2 id="b34">34. BAŞKA BİR PROBLEM</h2>
+          <p>Bir mobilya üreticisi, internet üzerinden bir ofis şirketine 50 adet masa satıyor.</p>
+          <p>Satıcı kim? İşletme.<br>Alıcı kim? İşletme.<br>İşlem: İşletme → İşletme<br>Sonuç: <strong>B2B</strong></p>
+          <p>Burada 50 adet ürün alınması işlemi B2C yapmaz. Belirleyici olan ürünün miktarı değil, tarafların niteliğidir.</p>
+
+          <h2 id="b35">35. ÇOK ÖNEMLİ: ÜRÜNÜN TÜRÜ DEĞİL, TARAFLAR BELİRLER</h2>
+          <p>Örneğin aynı bilgisayar:</p>
+          <ul>
+            <li>Durum 1: Firma → Öğrenci (B2C)</li>
+            <li>Durum 2: Firma → Firma (B2B)</li>
+            <li>Durum 3: Öğrenci → Öğrenci (C2C)</li>
+          </ul>
+          <p>Üçünde de ürün: Bilgisayar. Ama e-ticaret türleri farklıdır.</p>
+          <p>Demek ki:<br>E-ticaret türünü belirleyen temel unsur ürün değil, işlemin taraflarıdır.<br>Bu, bu kazanımın en önemli noktalarından biridir.</p>
+
+          <h2 id="b36">36. KAVRAMLARI SINIFLANDIRMA TABLOSU</h2>
+          <div class="table-responsive">
+            <table>
+              <tr><th>İşlem</th><th>Satıcı</th><th>Alıcı</th><th>Tür</th></tr>
+              <tr><td>Mağaza → Öğrenci</td><td>İşletme</td><td>Tüketici</td><td>B2C</td></tr>
+              <tr><td>Firma → Firma</td><td>İşletme</td><td>İşletme</td><td>B2B</td></tr>
+              <tr><td>Öğrenci → Öğrenci</td><td>Tüketici</td><td>Tüketici</td><td>C2C</td></tr>
+              <tr><td>Birey → Firma</td><td>Tüketici</td><td>İşletme</td><td>C2B</td></tr>
+              <tr><td>Firma → Kamu</td><td>İşletme</td><td>Kamu</td><td>B2G</td></tr>
+              <tr><td>Kamu → Firma</td><td>Kamu</td><td>İşletme</td><td>G2B</td></tr>
+              <tr><td>Kamu → Vatandaş</td><td>Kamu</td><td>Vatandaş</td><td>G2C</td></tr>
+              <tr><td>Kamu → Kamu</td><td>Kamu</td><td>Kamu</td><td>G2G</td></tr>
+            </table>
+          </div>
+
+          <h2 id="b37">37. ÖĞRENCİNİN KENDİ HAYATINDAN ÖRNEK ÜRETMESİ</h2>
+          <p>Öğrenciye şu görev verilebilir:<br>"Son bir ay içerisinde gördüğün veya gerçekleştirdiğin üç internet ticareti örneği bul ve türlerini belirle."</p>
+          <p>Örneğin:</p>
+          <ol>
+            <li>İnternetten ayakkabı satın aldım. Firma → Ben (B2C)</li>
+            <li>Kullanmadığım kitabı internet üzerinden sattım. Ben → Başka bir kişi (C2C)</li>
+            <li>Bir firma başka bir firmadan bilgisayar satın aldı. Firma → Firma (B2B)</li>
+          </ol>
+          <p>Bu çalışma öğrencinin kavramı ezberlemek yerine gerçek hayattaki olayları sınıflandırmasını sağlar.</p>
+
+          <h2 id="b38">38. SIK YAPILAN HATALAR</h2>
+          <ul>
+            <li><strong>Hata 1:</strong> "İnternette yapılan her alışveriş B2C'dir."<br>Yanlış. İşlemin taraflarına bakmak gerekir.</li>
+            <li><strong>Hata 2:</strong> "İkinci el ürün satışı B2B'dir."<br>Yanlış olabilir. Eğer: Birey → birey ise C2C olur.</li>
+            <li><strong>Hata 3:</strong> "Bir pazaryerinde yapılan her işlem aynı türdür."<br>Yanlış. Platform aynı olsa bile işlemin tarafları farklı olabilir.</li>
+            <li><strong>Hata 4:</strong> "B2B'de alıcı tüketicidir."<br>Yanlış. B2B: Business → Business yani: İşletme → İşletme</li>
+            <li><strong>Hata 5:</strong> "B2C'deki C, company demektir."<br>Yanlış. C: Consumer = Tüketici demektir.</li>
+          </ul>
+
+          <h2 id="b39">39. HAFIZA TEKNİĞİ</h2>
+          <p>Önce üç harfi öğren:<br>B = Business = İşletme<br>C = Consumer = Tüketici<br>G = Government = Kamu</p>
+          <p>Sonra yalnızca oku:<br>B → C : İşletme → Tüketici (B2C)<br>B → B : İşletme → İşletme (B2B)<br>C → C : Tüketici → Tüketici (C2C)<br>C → B : Tüketici → İşletme (C2B)</p>
+          <p>Bu mantıkla diğer türler de kolayca çıkarılabilir.</p>
+
+          <h2 id="b40">40. KAZANIMIN ÖZÜ</h2>
+          <p>Bu kazanım sonunda öğrencinin şu soruya cevap verebilmesi gerekir:<br>"Bu e-ticaret işleminde kim kime mal veya hizmet sunuyor?"</p>
+          <p>Cevap:<br>İşletme → Tüketici : B2C<br>İşletme → İşletme : B2B<br>Tüketici → Tüketici : C2C<br>Tüketici → İşletme : C2B<br>İşletme → Kamu : B2G<br>Kamu → İşletme : G2B<br>Kamu → Vatandaş : G2C<br>Kamu → Kamu : G2G</p>
+
+          <h2 id="b41">41. SINAVLIK KISA ÖZET</h2>
+          <p>B = Business = İşletme | C = Consumer = Tüketici | G = Government = Kamu</p>
+          <div class="table-responsive">
+            <table>
+              <tr><th>Kod</th><th>Hatırlanacak ifade</th></tr>
+              <tr><td>B2C</td><td>İşletme → Tüketici</td></tr>
+              <tr><td>B2B</td><td>İşletme → İşletme</td></tr>
+              <tr><td>C2C</td><td>Tüketici → Tüketici</td></tr>
+              <tr><td>C2B</td><td>Tüketici → İşletme</td></tr>
+              <tr><td>B2G</td><td>İşletme → Kamu</td></tr>
+              <tr><td>G2B</td><td>Kamu → İşletme</td></tr>
+              <tr><td>G2C</td><td>Kamu → Vatandaş</td></tr>
+              <tr><td>G2G</td><td>Kamu → Kamu</td></tr>
+            </table>
+          </div>
+          <p><strong>En önemli kural:</strong><br>E-ticaret türünü bulmak için önce satıcıya, sonra alıcıya bak.<br>Aklında kalması gereken temel formülümüz:<br><strong>KİMDEN → KİME?</strong><br>Bu sorunun cevabı bulunduğunda e-ticaret türü büyük ölçüde kendiliğinden ortaya çıkar.</p>
+
+          <div class="asterism">* * *</div>
+
+          <nav class="doc-nav">
+            <a href="ders1.html">
+              <span class="doc-nav-label">← Önceki</span>
+              <span class="doc-nav-title">01 · E-Ticarete İlişkin Temel Kavramlar</span>
+            </a>
+            <a href="ders3.html">
+              <span class="doc-nav-label">Sonraki →</span>
+              <span class="doc-nav-title">03 · Pazarlama Aşamaları</span>
+            </a>
+          </nav>
+
+          <footer class="page-foot">
+            <span>Ders 02 · E-Ticaret Türleri</span>
+            <span>Ünite 1 · 2026</span>
+          </footer>
+
+        </div>
+      </article>
+
+      <aside class="margin">
+        <div class="margin-note">
+          <span class="margin-label">Kazanım</span>
+          <strong>Ne öğreneceksin?</strong>
+          <p>Bir e-ticaret işleminin türünü, taraflara bakarak sınıflandırabileceksin.</p>
+        </div>
+        <div class="margin-note">
+          <span class="margin-label">Kilit soru</span>
+          <strong>Kimden → Kime?</strong>
+          <p>Satıcı kim? Alıcı kim? Bu iki soruya cevap verdiğinde tür kendiliğinden ortaya çıkar.</p>
+        </div>
+        <div class="margin-note">
+          <span class="margin-label">Not</span>
+          <strong>Platform değiştirmez</strong>
+          <p>Aynı pazaryerinde B2C de C2C de olabilir. Belirleyici olan platformun adı değil, işlemin taraflarıdır.</p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById('bar').style.width = (h > 0 ? (scrollY / h) * 100 : 0) + '%';
+  }, { passive: true });
+
+  function toggleRail() { document.getElementById('rail').classList.toggle('open'); }
+
+  // Rail sub-nav aktif bölüm takibi
+  const subLinks = document.querySelectorAll('.rail-sub a');
+  const targets = [...subLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        subLinks.forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.rail-sub a[href="#${entry.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-10% 0px -75% 0px' });
+  targets.forEach(t => io.observe(t));
+</script>
+
+</body>
+</html>

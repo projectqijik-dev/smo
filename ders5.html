@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05 · Hukuki Düzenlemeler</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar" id="bar"></div></div>
+<button class="rail-toggle" onclick="toggleRail()">≡</button>
+
+<button class="print-btn" onclick="window.print()" title="Bu dersi yazdır / PDF olarak kaydet">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+    <rect x="6" y="14" width="12" height="8"></rect>
+  </svg>
+  <span class="print-label">Çıktı Al</span>
+</button>
+
+<div class="shell">
+
+  <aside class="rail" id="rail">
+    <a href="index.html" class="rail-brand">
+      <span class="rail-mark">B</span>
+      <span class="rail-brand-text">
+        <strong>Sosyal Medya ve E-Ticaret</strong>
+        <span>ÖBBK MTAL · 11. Sınıf · 2026</span>
+      </span>
+    </a>
+
+    <p class="rail-label">Müfredat</p>
+    <nav class="rail-nav">
+      <ol>
+        <li><a href="ders1.html"><span class="num">01</span><span>E-Ticarete İlişkin Temel Kavramlar</span></a></li>
+        <li><a href="ders2.html"><span class="num">02</span><span>E-Ticaret Türleri</span></a></li>
+        <li><a href="ders3.html"><span class="num">03</span><span>Pazarlama Aşamaları</span></a></li>
+        <li><a href="ders4.html"><span class="num">04</span><span>Teknik Altyapı ve Güvenlik</span></a></li>
+        <li><a href="ders5.html" class="active"><span class="num">05</span><span>Hukuki Düzenlemeler</span></a></li>
+      </ol>
+    </nav>
+
+    <p class="rail-label">Bu Derste</p>
+    <nav class="rail-nav rail-sub">
+      <ol>
+        <li><a href="#b1"><span class="num">01</span><span>Hukuka İhtiyaç</span></a></li>
+        <li><a href="#b2"><span class="num">02</span><span>E-Ticaret Hukuku</span></a></li>
+        <li><a href="#b3"><span class="num">03</span><span>Temel Çerçeve</span></a></li>
+        <li><a href="#b4"><span class="num">04</span><span>6563 Sayılı Kanun</span></a></li>
+        <li><a href="#b5"><span class="num">05</span><span>Hizmet/Aracı Sağlayıcı</span></a></li>
+        <li><a href="#b6"><span class="num">06</span><span>Kendi Site vs Pazaryeri</span></a></li>
+        <li><a href="#b7"><span class="num">07</span><span>Tüketici Kimdir?</span></a></li>
+        <li><a href="#b8"><span class="num">08</span><span>6502 Sayılı Kanun</span></a></li>
+        <li><a href="#b9"><span class="num">09</span><span>Mesafeli Sözleşme</span></a></li>
+        <li><a href="#b10"><span class="num">10</span><span>Temel Özellik</span></a></li>
+        <li><a href="#b11"><span class="num">11</span><span>Önceden Bilgilendirme</span></a></li>
+        <li><a href="#b12"><span class="num">12</span><span>Toplam Fiyat</span></a></li>
+        <li><a href="#b13"><span class="num">13</span><span>Cayma Hakkı</span></a></li>
+        <li><a href="#b14"><span class="num">14</span><span>14 Günlük Cayma</span></a></li>
+        <li><a href="#b15"><span class="num">15</span><span>Her Üründe Geçerli mi?</span></a></li>
+        <li><a href="#b16"><span class="num">16</span><span>Cayma ≠ Garanti</span></a></li>
+        <li><a href="#b17"><span class="num">17</span><span>Ne Zaman Gönderilmeli?</span></a></li>
+        <li><a href="#b18"><span class="num">18</span><span>Stokta Yoksa?</span></a></li>
+        <li><a href="#b19"><span class="num">19</span><span>Para Ne Zaman İade?</span></a></li>
+        <li><a href="#b20"><span class="num">20</span><span>Bilgilendirme Neden?</span></a></li>
+        <li><a href="#b21"><span class="num">21</span><span>Elektronik Sözleşme</span></a></li>
+        <li><a href="#b22"><span class="num">22</span><span>Sipariş Hukuki mi?</span></a></li>
+        <li><a href="#b23"><span class="num">23</span><span>ETBİS Nedir?</span></a></li>
+        <li><a href="#b24"><span class="num">24</span><span>ETBİS Ne İşe Yarar?</span></a></li>
+        <li><a href="#b25"><span class="num">25</span><span>ETBİS = Güvenli mi?</span></a></li>
+        <li><a href="#b26"><span class="num">26</span><span>ETBİS Karekodu</span></a></li>
+        <li><a href="#b27"><span class="num">27</span><span>Ticari Elektronik İleti</span></a></li>
+        <li><a href="#b28"><span class="num">28</span><span>Reklam SMS'i Herkese?</span></a></li>
+        <li><a href="#b29"><span class="num">29</span><span>Ret Hakkı</span></a></li>
+        <li><a href="#b30"><span class="num">30</span><span>İYS Nedir?</span></a></li>
+        <li><a href="#b31"><span class="num">31</span><span>Örnek: Reklam SMS'i</span></a></li>
+        <li><a href="#b32"><span class="num">32</span><span>Bilgi vs Reklam</span></a></li>
+        <li><a href="#b33"><span class="num">33</span><span>Kişisel Veri Nedir?</span></a></li>
+        <li><a href="#b34"><span class="num">34</span><span>KVKK Nedir?</span></a></li>
+        <li><a href="#b35"><span class="num">35</span><span>Hangi Veriler?</span></a></li>
+        <li><a href="#b36"><span class="num">36</span><span>Aydınlatma Yükümlülüğü</span></a></li>
+        <li><a href="#b37"><span class="num">37</span><span>Aydınlatma ≠ Açık Rıza</span></a></li>
+        <li><a href="#b38"><span class="num">38</span><span>Kart Bilgisi Saklama</span></a></li>
+        <li><a href="#b39"><span class="num">39</span><span>Çerezler</span></a></li>
+        <li><a href="#b40"><span class="num">40</span><span>Fikrî ve Sınaî Haklar</span></a></li>
+        <li><a href="#b41"><span class="num">41</span><span>Sahte Marka/Taklit</span></a></li>
+        <li><a href="#b42"><span class="num">42</span><span>Ticari Reklamlar</span></a></li>
+        <li><a href="#b43"><span class="num">43</span><span>"Sadece Bugün"</span></a></li>
+        <li><a href="#b44"><span class="num">44</span><span>Fiyat Bilgisi</span></a></li>
+        <li><a href="#b45"><span class="num">45</span><span>Nereye Başvuru?</span></a></li>
+        <li><a href="#b46"><span class="num">46</span><span>Hukuki Sorumluluk</span></a></li>
+        <li><a href="#b47"><span class="num">47</span><span>Sınıflandırma</span></a></li>
+        <li><a href="#b48"><span class="num">48</span><span>Bütün Kanunlar</span></a></li>
+        <li><a href="#b49"><span class="num">49</span><span>Hangi Durum?</span></a></li>
+        <li><a href="#b50"><span class="num">50</span><span>Telefon Satın Alma</span></a></li>
+        <li><a href="#b51"><span class="num">51</span><span>İade Edilmiyor</span></a></li>
+        <li><a href="#b52"><span class="num">52</span><span>Reklam SMS'i</span></a></li>
+        <li><a href="#b53"><span class="num">53</span><span>Adres Paylaşımı</span></a></li>
+        <li><a href="#b54"><span class="num">54</span><span>Site Sahte mi?</span></a></li>
+        <li><a href="#b55"><span class="num">55</span><span>ETBİS Yeterli mi?</span></a></li>
+        <li><a href="#b56"><span class="num">56</span><span>Takip Etmek</span></a></li>
+        <li><a href="#b57"><span class="num">57</span><span>Nereden Takip?</span></a></li>
+        <li><a href="#b58"><span class="num">58</span><span>Resmî vs Yorum</span></a></li>
+        <li><a href="#b59"><span class="num">59</span><span>Takip Yöntemi</span></a></li>
+        <li><a href="#b60"><span class="num">60</span><span>Hafıza Haritası</span></a></li>
+        <li><a href="#b61"><span class="num">61</span><span>Baştan Sona Süreç</span></a></li>
+        <li><a href="#b62"><span class="num">62</span><span>10 Kavram</span></a></li>
+        <li><a href="#b63"><span class="num">63</span><span>Sık Karıştırılanlar</span></a></li>
+        <li><a href="#b64"><span class="num">64</span><span>Hangi Mevzuat?</span></a></li>
+        <li><a href="#b65"><span class="num">65</span><span>Hukuki Dedektif</span></a></li>
+        <li><a href="#b66"><span class="num">66</span><span>Soru-Cevap</span></a></li>
+        <li><a href="#b67"><span class="num">67</span><span>Çoktan Seçmeli</span></a></li>
+        <li><a href="#b68"><span class="num">68</span><span>Kontrol Listesi</span></a></li>
+        <li><a href="#b69"><span class="num">69</span><span>5 Altın Kural</span></a></li>
+        <li><a href="#b70"><span class="num">70</span><span>Ezber Yeterli mi?</span></a></li>
+        <li><a href="#b71"><span class="num">71</span><span>Güncelleme Örneği</span></a></li>
+        <li><a href="#b72"><span class="num">72</span><span>Tarih Neden Önemli?</span></a></li>
+        <li><a href="#b73"><span class="num">73</span><span>Kaynak Sıralaması</span></a></li>
+        <li><a href="#b74"><span class="num">74</span><span>Hukuk Sözlüğü</span></a></li>
+        <li><a href="#b75"><span class="num">75</span><span>Büyük Resim</span></a></li>
+        <li><a href="#b76"><span class="num">76</span><span>Kazanımın Özü</span></a></li>
+      </ol>
+    </nav>
+
+    <div class="rail-foot">
+      <p>Ünite 1 · Ders 05 · 76 bölüm</p>
+      <p>Son güncelleme: Eylül 2026</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="page-inner">
+
+      <article class="doc">
+
+        <header class="doc-head">
+          <div class="doc-eyebrow">Ders 05 · Ünite 1 · 76 bölüm</div>
+          <h1>Hukuki <em>Düzenlemeler</em></h1>
+          <p class="doc-lead">
+            Kazanım: "E-ticaret ile ilgili hukuki düzenlemeleri takip eder." Bu derste e-ticaretin hukuki çerçevesini, tüketici haklarını, kişisel veri korumasını ve güncel mevzuatı nasıl takip edebileceğimizi inceleyeceğiz.
+          </p>
+          <dl class="doc-meta">
+            <div>
+              <dt>Kazanım</dt>
+              <dd>Hukuki düzenlemeleri takip eder</dd>
+            </div>
+            <div>
+              <dt>Okuma</dt>
+              <dd>~30 dk</dd>
+            </div>
+            <div>
+              <dt>Güncelleme</dt>
+              <dd>Eylül 2026</dd>
+            </div>
+          </dl>
+        </header>
+
+        <div class="doc-body">
+
+          <h2 id="b1">1. E-TİCARET NEDEN HUKUKA İHTİYAÇ DUYAR?</h2>
+          <p>Bir internet sitesinden ayakkabı aldığımızı düşünelim.</p>
+          <p>Müşteri: ürünü seçiyor, fiyatını görüyor, sipariş veriyor, ödeme yapıyor, adresini paylaşıyor, ürünün teslim edilmesini bekliyor.</p>
+          <p>Bu süreçte yalnızca müşteri ve satıcı yoktur.<br>Aynı zamanda: ödeme kuruluşları, bankalar, kargo şirketleri, e-ticaret platformları, internet sitesi, veri işleme sistemleri de sürecin parçası olabilir.</p>
+          <p>Bu kadar çok kişinin ve kurumun bulunduğu bir ortamda şu sorular ortaya çıkar:</p>
+          <ul>
+            <li>Satıcı hangi bilgileri vermek zorundadır?</li>
+            <li>Müşteri satın aldığı ürünü iade edebilir mi?</li>
+            <li>İnternette verilen sipariş ne zaman sözleşmeye dönüşür?</li>
+            <li>Satıcı müşteriye reklam SMS'i gönderebilir mi?</li>
+            <li>Müşterinin adresi ve telefonu nasıl korunmalıdır?</li>
+            <li>İnternette satılan ürünün fiyatı nasıl gösterilmelidir?</li>
+            <li>Müşteri nereye şikâyet edebilir?</li>
+            <li>E-ticaret yapan işletmelerin kayıt ve bildirim yükümlülükleri nelerdir?</li>
+          </ul>
+          <p>İşte bu soruların cevaplarını belirleyen: e-ticaret hukuku oluşur.</p>
+
+          <h2 id="b2">2. E-TİCARET HUKUKU NE DEMEKTİR?</h2>
+          <p>E-ticaret hukuku, internet ve diğer elektronik ortamlar üzerinden gerçekleştirilen ticari faaliyetlerde uygulanması gereken hukuki kuralların bütününü ifade etmek için kullanılabilir.</p>
+          <p>Ancak Türkiye'de "E-Ticaret Kanunu" adıyla tek bir kanun bulunmaz.<br>Bunun yerine farklı konuları düzenleyen: kanunlar, yönetmelikler, tebliğler, ikincil düzenlemeler bulunur.</p>
+          <p>Bu nedenle öğrencinin ilk öğrenmesi gereken nokta şudur:<br><strong>E-ticaret birçok farklı hukuk kuralının kesiştiği bir alandır.</strong></p>
+
+          <h2 id="b3">3. TÜRKİYE'DE E-TİCARETİN TEMEL HUKUKİ ÇERÇEVESİ</h2>
+          <p>E-ticaretle doğrudan veya dolaylı olarak ilişkili başlıca düzenlemeleri şöyle sınıflandırabiliriz:</p>
+          <ol>
+            <li><strong>6563 sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun:</strong> E-ticaretin temel hukuki düzenlemelerinden biridir.</li>
+            <li><strong>6502 sayılı Tüketicinin Korunması Hakkında Kanun:</strong> Tüketicinin korunmasına ilişkin temel kanundur.</li>
+            <li><strong>Mesafeli Sözleşmeler Yönetmeliği:</strong> İnternet ve benzeri uzaktan satışlarda tüketicinin haklarını ve satıcının yükümlülüklerini düzenler.</li>
+            <li><strong>Ticari İletişim ve Ticari Elektronik İletiler Hakkında Yönetmelik:</strong> SMS, e-posta ve benzeri ticari iletişimlerin kurallarını düzenler.</li>
+            <li><strong>Elektronik Ticaret Bilgi Sistemi ve Bildirim Yükümlülükleri Hakkında Tebliğ:</strong> ETBİS ile ilgili kayıt ve bildirim süreçlerini düzenler.</li>
+            <li><strong>6698 sayılı Kişisel Verilerin Korunması Kanunu:</strong> E-ticaret sırasında işlenen kişisel verilerin korunması açısından önemlidir.</li>
+            <li><strong>Elektronik Ticarette Hizmet Sağlayıcı ve Aracı Hizmet Sağlayıcılar Hakkında Yönetmelik:</strong> E-ticaret işletmelerinin ve e-ticaret platformlarının çeşitli yükümlülüklerini düzenler.</li>
+          </ol>
+          <p>Ticaret Bakanlığının güncel mevzuat listesinde 6563 sayılı Kanun, ilgili yönetmelikler, ETBİS Tebliği, Güven Damgası Tebliği ve Ticari Elektronik İleti Yönetmeliği gibi düzenlemeler yer almaktadır. (https://ticaret.gov.tr)</p>
+
+          <h2 id="b4">4. 6563 SAYILI KANUN NEDİR?</h2>
+          <p>6563 sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun, Türkiye'de elektronik ticaretin temel hukuki düzenlemelerinden biridir.</p>
+          <p>Kanun: ticari iletişimi, ticari elektronik iletileri, e-ticaret hizmet sağlayıcılarını, aracı hizmet sağlayıcılarını, elektronik ortamda yapılan sözleşmeleri, bilgi verme yükümlülüklerini düzenleyen temel kurallardan bazılarını belirler.</p>
+          <p>Ticaret Bakanlığı, 6563 sayılı Kanunun e-ticaretin hukuki altyapısını oluşturduğunu belirtmektedir. (https://ticaret.gov.tr)</p>
+
+          <h2 id="b5">5. "HİZMET SAĞLAYICI" VE "ARACI HİZMET SAĞLAYICI" NEDİR?</h2>
+          <p>Bu iki kavram öğrenciler tarafından sıkça karıştırılabilir.</p>
+          <p><strong>Hizmet sağlayıcı:</strong> Kendi ürününü veya hizmetini elektronik ortamda sunan işletmeyi düşünelim.<br>Örneğin: Bir ayakkabı firmasının kendi internet sitesinde ayakkabı satması.<br>Burada firma: hizmet sağlayıcı olarak düşünülebilir.</p>
+          <p><strong>Aracı hizmet sağlayıcı:</strong> Farklı satıcıların ürünlerini müşterilere ulaştıran elektronik ticaret platformlarını düşünelim.<br>Örneğin bir pazaryerinde: A firması ürün satıyor, B firması ürün satıyor, C firması ürün satıyor.<br>Platform ise bu satıcılarla müşteriler arasında elektronik ortamda aracılık ediyor.<br>Bu durumda platform: aracı hizmet sağlayıcı olarak karşımıza çıkar.</p>
+
+          <h2 id="b6">6. KENDİ SİTESİNDEN SATIŞ İLE PAZARYERİ ARASINDAKİ FARK</h2>
+          <p><strong>Kendi internet sitesinden satış:</strong> Satıcı ↓ Kendi web sitesi ↓ Müşteri</p>
+          <p><strong>Pazaryeri üzerinden satış:</strong> Satıcı ↓ E-ticaret platformu ↓ Müşteri</p>
+          <p>İkinci modelde platformun da çeşitli hukuki sorumlulukları ve yükümlülükleri bulunabilir.</p>
+
+          <h2 id="b7">7. TÜKETİCİ KİMDİR?</h2>
+          <p>Tüketici, ticari veya mesleki olmayan amaçlarla hareket eden kişidir.</p>
+          <p>Örneğin: Bir öğrencinin kendisi için internetten kulaklık satın alması tüketici işlemi olabilir.<br>Ancak: Bir elektronik mağazasının satış yapmak amacıyla toptan kulaklık satın alması aynı anlamda tüketici işlemi değildir.</p>
+          <p>Burada önemli olan: Satın alma işleminin hangi amaçla yapıldığıdır.</p>
+
+          <h2 id="b8">8. 6502 SAYILI KANUN NEDEN ÖNEMLİDİR?</h2>
+          <p>6502 sayılı Tüketicinin Korunması Hakkında Kanun, tüketicilerin korunmasına yönelik temel kanunlardan biridir.</p>
+          <p>E-ticaret açısından özellikle: tüketici sözleşmeleri, mesafeli sözleşmeler, cayma hakkı, tüketicinin bilgilendirilmesi, haksız şartlar, tüketici uyuşmazlıkları gibi konular önem taşır.</p>
+          <p>Ticaret Bakanlığı güncel tüketici mevzuatı içerisinde 6502 sayılı Kanun ile birlikte Mesafeli Sözleşmeler Yönetmeliği ve diğer tüketici düzenlemelerini yayımlamaktadır. (Tüketici Ticaret Bakanlığı)</p>
+
+          <h2 id="b9">9. MESAFELİ SÖZLEŞME NEDİR?</h2>
+          <p>E-ticaretin en önemli hukuki kavramlarından biridir.</p>
+          <p>Basitçe: Satıcı ve tüketicinin fiziksel olarak karşı karşıya gelmeden, uzaktan iletişim araçları kullanılarak kurduğu sözleşmedir.<br>İnternet üzerinden yapılan alışverişler buna örnek olabilir.</p>
+          <p>Örneğin: Telefon → İnternet sitesi → Ürün seçimi → Ödeme → Teslimat<br>Bu tür alışverişler mesafeli sözleşme kapsamında değerlendirilebilir.</p>
+          <p>Ticaret Bakanlığının Ağustos 2026 tarihli tüketici bilgilendirmesine göre internet ve mobil uygulamalar üzerinden yapılan alışverişler mesafeli sözleşmelere örnek oluşturur. (Tüketici Ticaret Bakanlığı)</p>
+
+          <h2 id="b10">10. MESAFELİ SÖZLEŞMENİN TEMEL ÖZELLİĞİ</h2>
+          <p>Şu üçlü öğrencinin aklında kalmalıdır:<br><strong>Karşı karşıya gelmeme + Uzaktan iletişim + Ticari işlem</strong></p>
+          <p>Örneğin:<br><strong>Mağazada:</strong> Müşteri mağazaya gider. Satıcıyla yüz yüze görüşür. Ürünü satın alır.<br><strong>İnternette:</strong> Müşteri web sitesine girer. Satıcıyla fiziksel olarak karşılaşmaz. Elektronik ortamda sipariş verir.<br>Bu nedenle farklı hukuki kurallar devreye girebilir.</p>
+
+          <h2 id="b11">11. SATIN ALMADAN ÖNCE BİLGİLENDİRME</h2>
+          <p>İnternette alışveriş yapan tüketicinin satın alma kararından önce belirli bilgiler hakkında bilgilendirilmesi gerekir.</p>
+          <p>Örneğin: ürünün temel özellikleri, satıcının adı/unvanı, açık adresi, telefon bilgileri, toplam fiyat, ek masraflar, cayma hakkı, hak arama yolları gibi bilgiler önemlidir. (Tüketici Ticaret Bakanlığı)</p>
+
+          <h2 id="b12">12. NEDEN "TOPLAM FİYAT" ÖNEMLİDİR?</h2>
+          <p>Bir internet sitesinde ürün: 1.000 TL olarak gösteriliyor.<br>Ancak ödeme ekranına gelindiğinde: 100 TL kargo, 50 TL hizmet bedeli, 75 TL başka ücret ekleniyorsa tüketici açısından sorun oluşabilir.</p>
+          <p>Tüketici satın alma kararını verirken ödeyeceği bedeli mümkün olduğunca açık biçimde görebilmelidir.</p>
+          <p>Mesafeli sözleşmelerde mal veya hizmetin tüm vergiler dâhil toplam fiyatı ve varsa ek masraflar hakkında önceden bilgi verilmesi gerekir. (Tüketici Ticaret Bakanlığı)</p>
+
+          <h2 id="b13">13. CAYMA HAKKI NEDİR?</h2>
+          <p>E-ticaretin en bilinen tüketici haklarından biridir.</p>
+          <p>Mesafeli sözleşmelerde tüketici, belirli istisnalar dışında: 14 gün içinde herhangi bir gerekçe göstermeden ve cezai şart ödemeden cayma hakkını kullanabilir.</p>
+          <p>Süre, malın tesliminden itibaren veya hizmet sözleşmesinin kurulduğu andan itibaren başlar. Ayrıca mal teslim edilmeden önce de cayma hakkı kullanılabilir. (Tüketici Ticaret Bakanlığı)</p>
+
+          <h2 id="b14">14. ÖRNEK: 14 GÜNLÜK CAYMA HAKKI</h2>
+          <p>Mehmet internetten bir mont satın aldı.<br>Mont kendisine teslim edildi.<br>Mehmet ürünü kullandıktan sonra belirli şartlar çerçevesinde cayma hakkının bulunup bulunmadığını değerlendirebilir.</p>
+          <p>Burada öğrencinin bilmesi gereken temel nokta: İnternetten yapılan alışverişlerde cayma hakkı önemli bir tüketici hakkıdır; ancak her ürün ve hizmette istisnasız uygulanmaz.</p>
+
+          <h2 id="b15">15. CAYMA HAKKI HER ÜRÜNDE GEÇERLİ Mİ?</h2>
+          <p>Hayır.</p>
+          <p>Bazı durumlarda cayma hakkı kullanılamaz veya sınırlanabilir.</p>
+          <p>Örneğin mevzuatta: tüketicinin özel istekleri doğrultusunda hazırlanan ürünler, çabuk bozulan mallar, belirli şartlarda hijyen nedeniyle iadesi uygun olmayan ürünler, belirli dijital içerikler, belirli tarihte sunulması gereken konaklama ve benzeri hizmetler gibi çeşitli istisnalar bulunmaktadır. (Tüketici Ticaret Bakanlığı)</p>
+          <p>Bu nedenle: "İnternetten aldığım her şeyi 14 gün içinde kesinlikle iade ederim." şeklindeki ifade doğru değildir.</p>
+
+          <h2 id="b16">16. CAYMA HAKKI İLE GARANTİ AYNI ŞEY DEĞİLDİR</h2>
+          <p>Bu ayrım önemlidir.</p>
+          <p><strong>Cayma hakkı:</strong> Tüketicinin belirli şartlarda satın alma işleminden vazgeçebilmesiyle ilgilidir.<br><strong>Garanti:</strong> Ürünün belirli süre içinde belirli koşullar kapsamında garanti edilen özellikleri ve ayıplarla ilgili sorumluluklarla ilgilidir.</p>
+          <p>Dolayısıyla: Cayma hakkı ≠ Garanti</p>
+
+          <h2 id="b17">17. SATICI ÜRÜNÜ NE ZAMAN GÖNDERMELİ?</h2>
+          <p>Mesafeli alışverişlerde teslim süresi de hukuki düzenlemelere tabidir.</p>
+          <p>Ticaret Bakanlığının güncel tüketici rehberine göre önceden taahhüt edilmiş farklı bir süre yoksa, internet veya telefon üzerinden yapılan alışverişlerde malın en geç 30 gün içinde gönderilmesi gerekir. (Tüketici Ticaret Bakanlığı)</p>
+          <p>Bu bilgi öğrencinin günlük hayatında doğrudan karşılaşabileceği bir durumdur.</p>
+
+          <h2 id="b18">18. ÜRÜN STOKTA YOKSA NE OLUR?</h2>
+          <p>Burada önemli bir ayrım vardır.</p>
+          <p>Satıcı: "Ürün stokta yok." diyerek her durumu otomatik olarak "teslim imkânsızlığı" olarak değerlendiremez.</p>
+          <p>Ticaret Bakanlığının tüketici rehberinde malın stokta bulunmamasının tek başına imkânsızlaşma olarak kabul edilmediği belirtilmektedir. (Tüketici Ticaret Bakanlığı)</p>
+          <p>Bu nedenle öğrencinin: "Stokta yokmuş, o hâlde satıcı siparişi istediği gibi iptal eder." şeklinde düşünmesi doğru değildir.</p>
+
+          <h2 id="b19">19. CAYMA HAKKI KULLANILDIĞINDA PARA NE ZAMAN İADE EDİLİR?</h2>
+          <p>Cayma hakkının geçerli şekilde kullanıldığı durumlarda satıcı/sağlayıcının tüketiciye yaptığı iade yükümlülükleri mevzuatta düzenlenmiştir.</p>
+          <p>Ticaret Bakanlığının güncel bilgilendirmesinde satıcı/sağlayıcının, cayma hakkı kullanıldığında teslimat masrafları dâhil ödemeleri 14 gün içinde iade etmesi gerektiği belirtilmektedir. (Tüketici Ticaret Bakanlığı)</p>
+
+          <h2 id="b20">20. TÜKETİCİNİN ÖNCEDEN BİLGİLENDİRİLMESİ NEDEN ÖNEMLİ?</h2>
+          <p>İnternette alışveriş yapan kişi ürünü fiziksel olarak inceleyemez.<br>Örneğin: Bir ayakkabının rengini, malzemesini veya gerçek boyutunu ekrandan değerlendirmeye çalışır.</p>
+          <p>Bu nedenle satıcının ürün hakkında doğru ve yeterli bilgi vermesi önemlidir.<br>Tüketici: Ne satın aldığını, kimden satın aldığını ve ne kadar ödeyeceğini bilmelidir.</p>
+
+          <h2 id="b21">21. ELEKTRONİK SÖZLEŞME</h2>
+          <p>E-ticarette sözleşmeler elektronik ortamda kurulabilir.</p>
+          <p>Örneğin müşteri: Ürünü seçer. Sipariş bilgilerini girer. Satın alma işlemini onaylar. Ödeme gerçekleşir. Sipariş oluşturulur.</p>
+          <p>Bu süreçte elektronik ortamda gerçekleşen işlemlerin hukuki sonuçları bulunabilir.<br>Bu nedenle e-ticaret sistemlerinde: sipariş kayıtlarının tutulması, sözleşme bilgilerinin korunması, tüketicinin bilgilendirilmesi önemlidir.</p>
+
+          <h2 id="b22">22. SİPARİŞ VERMEK NEDEN HUKUKİ AÇIDAN ÖNEMLİDİR?</h2>
+          <p>Bir öğrenci internetten: "Satın al" butonuna bastığında yalnızca ekrandaki bir düğmeye basmış olmaz.<br>İşlemin hukuki sonuçları olabilir.</p>
+          <p>Bu nedenle e-ticaret sitesinin: işlemin nasıl gerçekleştirileceğini açıklaması, veri giriş hatalarının düzeltilmesine imkân vermesi, sözleşme ve sipariş sürecini düzenlemesi önemlidir.</p>
+          <p>6563 sayılı Kanuna ilişkin Ticaret Bakanlığı kılavuzlarında elektronik ortamda sözleşme kurulmadan önce bilgi verme ve işlem adımlarına ilişkin yükümlülükler açıklanmaktadır. (https://ticaret.gov.tr)</p>
+
+          <h2 id="b23">23. ETBİS NEDİR?</h2>
+          <p>ETBİS = Elektronik Ticaret Bilgi Sistemi<br>E-ticaret faaliyetlerinin kayıt ve bildirim süreçlerinin yürütülmesi amacıyla oluşturulmuş sistemdir.</p>
+          <p>Ticaret Bakanlığına göre elektronik ticaret veya aracılık faaliyetinde bulunan ilgili hizmet sağlayıcı ve aracı hizmet sağlayıcıların belirli kapsamda faaliyete başlamadan önce ETBİS'e kayıt olmaları gerekmektedir. (https://ticaret.gov.tr)</p>
+
+          <h2 id="b24">24. ETBİS NE İŞE YARAR?</h2>
+          <p>ETBİS'in amaçlarından bazıları: e-ticaret yapan işletmelerin kayıt altında tutulması, e-ticaret verilerinin takip edilmesi, işletmelerin ulaşılabilirliğinin artırılması, e-ticaret istatistiklerinin oluşturulması, kayıt dışılığın azaltılması olarak açıklanmaktadır. (https://ticaret.gov.tr)</p>
+
+          <h2 id="b25">25. ETBİS'E KAYITLI OLMAK "GÜVENLİ SİTE" DEMEK Mİ?</h2>
+          <p>Hayır.<br>Bu çok önemli bir noktadır.</p>
+          <p>Ticaret Bakanlığının ETBİS sitesindeki açık uyarıya göre ETBİS'e kayıtlı olmak: işletmenin ilgili e-ticaret mevzuatındaki kayıt ve bildirim yükümlülükleri açısından durumunu gösterir; ancak sitenin: tamamen güvenli olduğunu, hiçbir hukuka aykırı faaliyet yürütmediğini, gelecekte de yürütmeyeceğini garanti etmez. (ETBİS)</p>
+          <p>Öğrencinin aklında: ETBİS kaydı ≠ Mutlak güvenlik garantisi şeklinde kalmalıdır.</p>
+
+          <h2 id="b26">26. ETBİS KAREKODU KONUSUNDA ÖNEMLİ NOT</h2>
+          <p>Önceki yıllarda ETBİS ile bağlantılı olarak karekod uygulaması bulunuyordu.<br>Ancak güncel ETBİS bilgilendirmesinde ETBİS karekod uygulamasının sonlandırıldığı görülmektedir. Bu nedenle eski kaynaklarda yer alan: "ETBİS karekodunu mutlaka kontrol et." şeklindeki bilgilerin güncel mevzuatla karıştırılmaması gerekir. (ETTBİS)</p>
+          <p>Bu, "hukuki düzenlemeleri takip etme" kazanımının kendisi açısından güzel bir örnektir: Daha önce doğru olan bir uygulama zaman içinde değişebilir.</p>
+
+          <h2 id="b27">27. TİCARİ ELEKTRONİK İLETİ NEDİR?</h2>
+          <p>Telefonumuza gelen: "Bugüne özel %30 indirim!" SMS'i, veya: "Size özel kampanya başladı." şeklindeki e-posta ticari elektronik ileti örneği olabilir.</p>
+          <p>Bunlar: SMS, e-posta, telefon araması gibi elektronik iletişim araçlarıyla gönderilebilir.</p>
+          <p>Ticari elektronik iletilere ilişkin kurallar 6563 sayılı Kanun ve ilgili yönetmeliklerle düzenlenmektedir. (https://ticaret.gov.tr)</p>
+
+          <h2 id="b28">28. HERKES İSTEDİĞİ KİŞİYE REKLAM SMS'İ GÖNDEREBİLİR Mİ?</h2>
+          <p>Hayır.<br>Ticari elektronik ileti gönderiminde mevzuatta belirli kurallar vardır.<br>Genel olarak tüketiciye ticari elektronik ileti gönderilmesinde önceden onay sistemi önemlidir.<br>Ayrıca alıcının: ret hakkı bulunur. (https://ticaret.gov.tr)</p>
+
+          <h2 id="b29">29. "RET" HAKKI NEDİR?</h2>
+          <p>Bir kişi bir şirketin kampanya SMS'lerini almak istemiyorsa: ileti almayı reddedebilir.</p>
+          <p>Ticaret Bakanlığına göre ret bildirimi kolay ve ücretsiz şekilde yapılabilmeli ve ticari elektronik ileti gönderilen kanalla ilişkilendirilen onayın geçersiz hâle gelmesini sağlamalıdır. (https://ticaret.gov.tr)</p>
+
+          <h2 id="b30">30. İYS NEDİR?</h2>
+          <p>İYS = İleti Yönetim Sistemi<br>Ticari elektronik ileti izinlerinin yönetilmesine yönelik merkezi sistemdir.</p>
+          <p>İYS sayesinde kişiler: verdikleri ileti izinlerini görebilir, izinleri kontrol edebilir, gerektiğinde ret hakkını kullanabilir.</p>
+          <p>Ticaret Bakanlığı, İYS'nin izin süreçlerinin yönetilmesini ve vatandaşların izin verme veya kaldırma işlemlerini tek noktadan gerçekleştirebilmesini amaçladığını belirtmektedir. (https://ticaret.gov.tr)</p>
+
+          <h2 id="b31">31. ÖRNEK: REKLAM SMS'İ</h2>
+          <p>Ahmet bir internet sitesinden alışveriş yaptı.<br>Bir süre sonra telefonuna: "Yeni kampanyamız başladı! Hemen inceleyin." şeklinde mesajlar gelmeye başladı.<br>Ahmet bu tür ticari iletileri almak istemiyor.</p>
+          <p>Bu durumda: Ticari elektronik ileti mevzuatı ve ret hakkı devreye girer.<br>Bu örnek öğrencinin günlük hayatında çok sık karşılaşabileceği bir durumdur.</p>
+
+          <h2 id="b32">32. BİLGİLENDİRME MESAJI İLE REKLAM MESAJI AYNI MI?</h2>
+          <p>Hayır.<br>Örneğin: "Siparişiniz kargoya verilmiştir." gibi siparişin gerçekleşmesine ilişkin bilgilendirme mesajları ile: "Yeni kampanyamız başladı, hemen alışveriş yapın!" gibi pazarlama amaçlı iletiler aynı kategoride değerlendirilmez.</p>
+          <p>Ticari elektronik ileti kurallarında farklı ileti türlerine ilişkin ayrımlar bulunmaktadır. (https://ticaret.gov.tr)</p>
+
+          <h2 id="b33">33. KİŞİSEL VERİ NEDİR?</h2>
+          <p>E-ticarette müşteriden birçok bilgi alınabilir:<br>Ad, Soyad, Telefon numarası, E-posta, Adres, Sipariş bilgileri.</p>
+          <p>Bir kişiyi belirli veya belirlenebilir hâle getiren bilgiler: kişisel veri kapsamına girebilir.</p>
+
+          <h2 id="b34">34. KVKK NEDİR?</h2>
+          <p>KVKK = Kişisel Verilerin Korunması Kanunu<br>Kanunun tam adı: 6698 sayılı Kişisel Verilerin Korunması Kanunu dur.</p>
+          <p>E-ticaret işletmeleri müşterilerinin kişisel verilerini işleyebildiği için KVKK e-ticaret açısından önemlidir.</p>
+
+          <h2 id="b35">35. E-TİCARETTE HANGİ VERİLER KİŞİSEL VERİ OLABİLİR?</h2>
+          <p>Örneğin: Ahmet Yılmaz, 0555 XXX XX XX, ahmet@example.com, Batman'daki teslimat adresi gibi bilgiler kişiyi belirli veya belirlenebilir hâle getirebilir.</p>
+          <p>Bu nedenle işletmenin: Bu veriyi neden topladığını, nasıl işlediğini ve kimlerle hangi amaçlarla paylaşabileceğini hukuka uygun şekilde yönetmesi gerekir.</p>
+
+          <h2 id="b36">36. AYDINLATMA YÜKÜMLÜLÜĞÜ</h2>
+          <p>KVKK bakımından önemli kavramlardan biri: Aydınlatma yükümlülüğüdür.<br>Veri sorumlusu, kişisel verilerin elde edilmesi sırasında ilgili kişiyi belirli konularda bilgilendirmek zorundadır.</p>
+          <p>KVKK'nın açıklamasına göre bu bilgiler arasında: veri sorumlusunun kimliği, verilerin hangi amaçla işleneceği, kimlere ve hangi amaçla aktarılabileceği, veri toplamanın yöntemi ve hukuki sebebi, ilgili kişinin hakları bulunmaktadır. (KVKK)</p>
+
+          <h2 id="b37">37. AYDINLATMA İLE AÇIK RIZA AYNI ŞEY Mİ?</h2>
+          <p>Hayır.<br>Bu ayrım çok önemlidir.</p>
+          <p><strong>Aydınlatma:</strong> "Verileriniz şu amaçlarla işlenecek." şeklinde bilgilendirme yapılmasıdır.<br><strong>Açık rıza:</strong> Belirli bir veri işleme faaliyetine ilişkin, bilgilendirmeye dayanan ve özgür iradeyle verilen rızadır.</p>
+          <p>KVKK, aydınlatma yükümlülüğünün her durumda yerine getirilmesi gerektiğini ve açık rıza ile aydınlatmanın birbirinden ayrı işlemler olduğunu belirtmektedir. (KVKK)</p>
+
+          <h2 id="b38">38. ÖRNEK: E-TİCARET SİTESİ KART BİLGİLERİNİ SAKLAMAK İSTİYOR</h2>
+          <p>Bir müşteri alışveriş sırasında kart bilgilerini giriyor.<br>Alışveriş tamamlandıktan sonra site: "Bir sonraki alışverişiniz daha hızlı olsun diye kart bilgilerinizi hesabınızda saklayacağız." diyor.</p>
+          <p>Burada: Kart bilgilerinin daha sonraki amaçlarla işlenmesi ayrı bir hukuki değerlendirme gerektirir.</p>
+          <p>KVKK Kurulunun 2023 tarihli bir kararında, alışveriş tamamlandıktan sonra kart bilgilerinin sonraki alışverişleri kolaylaştırmak amacıyla saklanmasının ayrıca hukuki dayanak gerektirdiği ve belirli koşullarda açık rıza kapsamında değerlendirilebileceği belirtilmiştir. (KVKK)</p>
+          <p>Bu örnek öğrenciye şu mesajı verir: Bir veriyi bir işlem için vermek, işletmenin o veriyi her amaçla sınırsız biçimde kullanabileceği anlamına gelmez.</p>
+
+          <h2 id="b39">39. ÇEREZLER VE E-TİCARET</h2>
+          <p>E-ticaret sitelerinde: çerez (cookie) kullanımı da söz konusu olabilir.<br>Çerezler farklı amaçlarla kullanılabilir.</p>
+          <p>Örneğin: sitenin çalışmasını sağlamak, tercihleri hatırlamak, analiz yapmak, reklam/pazarlama faaliyetlerine yardımcı olmak.</p>
+          <p>Özellikle gerekli olmayan çerezlerin kullanımında KVKK açısından ayrıca değerlendirme yapılması gerekebilir. KVKK Kurulunun 2024 tarihli bir kararında, gerekli olmayan çerezlerle kişisel veri işlenmesi bakımından uygun işleme şartlarının bulunup bulunmadığı değerlendirilmiştir. (KVKK)</p>
+
+          <h2 id="b40">40. FİKRÎ VE SINAÎ MÜLKİYET HAKLARI</h2>
+          <p>E-ticarette yalnızca tüketici ve kişisel veri konusu yoktur.<br>Ürünlerin: fotoğrafları, logoları, markaları, tasarımları, yazılımları, metinleri de hukuken korunabilir.</p>
+          <p>Bu nedenle bir e-ticaret sitesinin: "İnternette bulduğum her fotoğrafı kullanabilirim." şeklinde düşünmesi doğru değildir.</p>
+          <p>Ticaret Bakanlığı, e-ticaret mevzuatı kapsamında fikrî ve sınai mülkiyet hakkı ihlallerinin önlenmesine yönelik düzenlemelere de yer vermektedir. (https://ticaret.gov.tr)</p>
+
+          <h2 id="b41">41. SAHTE MARKA VE TAKLİT ÜRÜN</h2>
+          <p>Bir internet sitesinde: Tanınmış bir markanın logosu kullanılarak sahte ürün satılması çeşitli hukuki sorunlar doğurabilir.</p>
+          <p>Burada: tüketici hukuku, marka hukuku, fikrî ve sınai mülkiyet hukuku gibi farklı alanlar devreye girebilir.</p>
+          <p>Öğrenci açısından temel mesaj: E-ticarette ürünün kendisi kadar ürünün markası ve kullanılan içerikler de hukuki korumaya tabi olabilir.</p>
+
+          <h2 id="b42">42. TİCARİ REKLAMLAR</h2>
+          <p>E-ticarette reklamlar da hukuki kurallara tabidir.<br>Bir işletme: "Dünyanın en ucuz telefonu!" gibi bir ifade kullanıyorsa bu iddianın hukuki açıdan değerlendirilmesi gerekebilir.</p>
+          <p>Reklamların: yanıltıcı olmaması, tüketiciyi yanlış yönlendirmemesi, hukuka uygun olması önemlidir.</p>
+          <p>Ticaret Bakanlığının tüketici mevzuatı içinde Ticari Reklam ve Haksız Ticari Uygulamalar Yönetmeliği de yer almaktadır. (Tüketici Ticaret Bakanlığı)</p>
+
+          <h2 id="b43">43. "SADECE BUGÜN" İFADESİ</h2>
+          <p>Bir internet sitesi: "Sadece bugün %70 indirim!" diyor.<br>Ancak aynı indirim: 3 haftadır devam ediyor.<br>Burada reklamın tüketiciyi yanıltıp yanıltmadığı gündeme gelebilir.</p>
+          <p>Bu nedenle öğrenciler: Reklam = Sadece pazarlama değildir; hukuki kurallara da tabidir. sonucuna ulaşmalıdır.</p>
+
+          <h2 id="b44">44. FİYAT BİLGİSİ</h2>
+          <p>E-ticarette fiyatın tüketiciye açık ve anlaşılır biçimde sunulması önemlidir.<br>Örneğin: Ürün sayfası: 799 TL, Ödeme ekranı: 1.249 TL şeklinde açıklaması yapılmadan farklı bir toplamla karşılaşılması tüketici açısından sorun oluşturabilir.</p>
+          <p>Bu nedenle: Fiyat şeffaflığı e-ticaretin önemli hukuki konularından biridir.</p>
+
+          <h2 id="b45">45. TÜKETİCİ NEREYE BAŞVURABİLİR?</h2>
+          <p>E-ticarette bir uyuşmazlık çıktığında tüketicinin çeşitli hukuki başvuru yolları bulunabilir.<br>Bunlar uyuşmazlığın niteliğine ve güncel parasal sınırlara göre değişebilir.</p>
+          <p>Örneğin: Tüketici Hakem Heyeti tüketici uyuşmazlıklarının çözümünde önemli mekanizmalardan biridir.<br>Ayrıca şartlarına göre: Tüketici Mahkemeleri de gündeme gelebilir.</p>
+          <p>Bu nedenle öğrenci: "İnternetten alışveriş yaptım, sorun çıkarsa yapabileceğim hiçbir şey yok." şeklinde düşünmemelidir.</p>
+
+          <h2 id="b46">46. E-TİCARETTE HUKUKİ SORUMLULUK KİMDEDİR?</h2>
+          <p>Tek bir cevap yoktur.<br>İşleme göre: satıcı, sağlayıcı, aracı hizmet sağlayıcı, ödeme kuruluşu, lojistik şirketi gibi farklı aktörlerin farklı sorumlulukları olabilir.</p>
+          <p>Bu nedenle bir problem yaşandığında: "Kim sorumlu?" sorusunun cevabı olayın ayrıntılarına göre belirlenir.</p>
+
+          <h2 id="b47">47. E-TİCARETTE HUKUKİ DÜZENLEMELERİ SINIFLANDIRALIM</h2>
+          <p>Öğrencilerin kolay öğrenmesi için bütün mevzuatı 6 ana başlıkta toplayabiliriz:</p>
+          <ol>
+            <li><strong>TİCARET:</strong> 6563 sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun</li>
+            <li><strong>TÜKETİCİ:</strong> 6502 sayılı Tüketicinin Korunması Hakkında Kanun</li>
+            <li><strong>MESAFELİ SATIŞ:</strong> Mesafeli Sözleşmeler Yönetmeliği</li>
+            <li><strong>TİCARİ İLETİŞİM:</strong> Ticari İletişim ve Ticari Elektronik İletiler Hakkında Yönetmelik + İYS</li>
+            <li><strong>KİŞİSEL VERİ:</strong> 6698 sayılı KVKK</li>
+            <li><strong>KAYIT VE BİLDİRİM:</strong> ETBİS ve ilgili düzenlemeler</li>
+          </ol>
+          <p>Bu sınıflandırma öğrencinin bütün mevzuatı tek tek ezberlemek yerine konu–hukuk ilişkisini kurmasını sağlar.</p>
+
+          <h2 id="b48">48. BÜTÜN KANUNLARI TEK TABLODA GÖRELİM</h2>
+          <div class="table-responsive">
+            <table>
+              <tr><th>Düzenleme</th><th>Temel konusu</th><th>Öğrencinin hatırlayacağı kelime</th></tr>
+              <tr><td>6563 sayılı Kanun</td><td>E-ticaretin temel kuralları</td><td>E-ticaret</td></tr>
+              <tr><td>6502 sayılı Kanun</td><td>Tüketicinin korunması</td><td>Tüketici</td></tr>
+              <tr><td>Mesafeli Sözleşmeler Yönetmeliği</td><td>İnternet/uzaktan alışveriş</td><td>Cayma</td></tr>
+              <tr><td>Ticari Elektronik İleti Yönetmeliği</td><td>SMS, e-posta, ticari ileti</td><td>İzin/Ret</td></tr>
+              <tr><td>KVKK</td><td>Kişisel veriler</td><td>Veri</td></tr>
+              <tr><td>ETBİS düzenlemeleri</td><td>Kayıt ve bildirim</td><td>Kayıt</td></tr>
+              <tr><td>Ticari Reklam ve Haksız Ticari Uygulamalar Yönetmeliği</td><td>Reklamlar</td><td>Yanıltmama</td></tr>
+              <tr><td>Elektronik Ticarette Hizmet Sağlayıcı ve Aracı Hizmet Sağlayıcılar Hakkında Yönetmelik</td><td>Platform ve satıcı yükümlülükleri</td><td>Sorumluluk</td></tr>
+            </table>
+          </div>
+          <p>Ticaret Bakanlığının güncel elektronik ticaret mevzuatı listesinde bu düzenlemelerin temel bölümü yer almaktadır. (https://ticaret.gov.tr)</p>
+
+          <h2 id="b49">49. "HANGİ DURUMDA HANGİ HUKUK KURALI?"</h2>
+          <p>Bu bölüm öğrencinin sınıflandırma becerisi için özellikle önemlidir.</p>
+          <ul>
+            <li>İnternetten ürün aldım. → <strong>6502 + Mesafeli Sözleşmeler</strong></li>
+            <li>Ürünü 14 gün içinde iade etmek istiyorum. → <strong>Mesafeli Sözleşmeler</strong></li>
+            <li>Bana sürekli reklam SMS'i geliyor. → <strong>Ticari elektronik ileti mevzuatı + İYS</strong></li>
+            <li>Site adresimi ve telefonumu topluyor. → <strong>KVKK</strong></li>
+            <li>İnternetten satış yapan işletmenin kayıt durumunu merak ediyorum. → <strong>ETBİS</strong></li>
+            <li>Site yanıltıcı reklam yapıyor. → <strong>Ticari reklam mevzuatı</strong></li>
+            <li>Bir pazaryerinde satıcı ile platform arasındaki yükümlülükleri inceliyorum. → <strong>6563 ve ilgili ikincil düzenlemeler</strong></li>
+          </ul>
+
+          <h2 id="b50">50. GÜNLÜK HAYAT ÖRNEĞİ: TELEFON SATIN ALMA</h2>
+          <p>Ayşe internetten: 20.000 TL'lik telefon satın alıyor.<br>Bu işlemde hangi hukuk alanları devreye girebilir?</p>
+          <ul>
+            <li>Ürün ve fiyat bilgisi → Tüketici hukuku</li>
+            <li>İnternet üzerinden satış → Mesafeli sözleşme</li>
+            <li>Ayşe'nin adresi ve telefonu → KVKK</li>
+            <li>Reklam SMS'i → Ticari elektronik ileti mevzuatı</li>
+            <li>Satıcının e-ticaret faaliyeti → 6563 / ETBİS düzenlemeleri</li>
+          </ul>
+          <p>Yani tek bir alışveriş: Birden fazla hukuki düzenlemeyle ilişkili olabilir.</p>
+
+          <h2 id="b51">51. PROBLEM ÇÖZME: "İADE EDİLMİYOR"</h2>
+          <p>Bir öğrenci internetten mont satın alıyor.<br>Ürün teslim ediliyor.<br>Öğrenci cayma hakkını kullanmak istiyor.<br>Satıcı: "İnternetten aldınız ama iade hakkınız yok." diyor.</p>
+          <p>Öğrencinin düşünmesi gerekenler:</p>
+          <ul>
+            <li>Bu işlem mesafeli sözleşme mi?</li>
+            <li>Cayma hakkı süresi geçmiş mi?</li>
+            <li>Ürün cayma hakkı istisnalarından birine giriyor mu?</li>
+            <li>Tüketici gerekli bildirimi yaptı mı?</li>
+          </ul>
+          <p>Burada öğrenci doğrudan: "Satıcı haksız." demek yerine önce hukuki şartları incelemelidir.</p>
+
+          <h2 id="b52">52. PROBLEM ÇÖZME: "REKLAM SMS'İ"</h2>
+          <p>Bir öğrenci bir mağazadan alışveriş yaptı.<br>Daha sonra her gün: "%50 indirim!" şeklinde SMS almaya başladı.<br>Öğrenci bu mesajları istemiyor.</p>
+          <p>Hangi konu? Ticari elektronik ileti<br>Hangi hak? Ret hakkı<br>Hangi sistem? İYS</p>
+          <p>Bu örnek öğrencinin günlük hayatında doğrudan karşılaşabileceği hukuki bir durumdur. (https://ticaret.gov.tr)</p>
+
+          <h2 id="b53">53. PROBLEM ÇÖZME: "ADRESİMİ BAŞKA FİRMA KULLANIYOR"</h2>
+          <p>Bir müşteri alışveriş sırasında adresini bir şirkete verdi.<br>Daha sonra başka amaçlarla kullanıldığını fark etti.</p>
+          <p>Burada: kişisel verilerin işlenmesi gündeme gelir.<br>Öğrencinin aklına gelmesi gereken temel düzenleme: 6698 sayılı KVKK</p>
+
+          <h2 id="b54">54. PROBLEM ÇÖZME: "SİTE SAHTE Mİ?"</h2>
+          <p>Bir öğrenci internetten çok ucuz bir ürün görüyor.<br>Site: "%90 indirim!" diyor.<br>Ancak: şirket bilgileri belirsiz, iletişim bilgileri eksik, satıcının kim olduğu anlaşılmıyor, ürün bilgileri yetersiz.</p>
+          <p>Öğrenci yalnızca: "Fiyat ucuz." diye karar vermemelidir.</p>
+          <p>Şunları kontrol etmelidir: Satıcı kim? İletişim bilgileri var mı? Şirket bilgileri açık mı? Fiyat ve ek masraflar açık mı? Site gerçekten hangi işletmeye ait? Ödeme yöntemi güvenilir mi?</p>
+
+          <h2 id="b55">55. ETBİS'İ KONTROL ETMEK YETERLİ Mİ?</h2>
+          <p>Hayır.<br>Öğrenci: "ETBİS'te kayıtlı, o hâlde kesinlikle güvenlidir." dememelidir.</p>
+          <p>Ticaret Bakanlığı açık biçimde ETBİS kaydının bir işletmenin veya alışveriş sitesinin mutlak güvenlik garantisi olmadığını belirtmektedir. (ETBİS)</p>
+          <p>Dolayısıyla: ETBİS = kayıt ve şeffaflık mekanizması olarak düşünülmelidir.<br>ETBİS ≠ güvenlik sertifikası</p>
+
+          <h2 id="b56">56. "HUKUKİ DÜZENLEMELERİ TAKİP ETMEK" NE DEMEKTİR?</h2>
+          <p>Kazanımın en önemli kelimesi: TAKİP ETMEK tir.<br>Öğrencinin yalnızca mevcut kanunları ezberlemesi yeterli değildir.</p>
+          <p>Çünkü: kanunlar değişebilir, yönetmelikler değişebilir, yeni uygulamalar ortaya çıkabilir, parasal sınırlar güncellenebilir, elektronik ticaret teknolojileri değişebilir.</p>
+          <p>Örneğin Ticaret Bakanlığı 2026 yılında 6563 sayılı Kanundaki bazı parasal eşiklerin güncellendiğini duyurmuştur. (İcti Ticaret)<br>Bu nedenle: Hukukta güncel kaynak kullanmak önemlidir.</p>
+
+          <h2 id="b57">57. HUKUKİ BİLGİ NEREDEN TAKİP EDİLİR?</h2>
+          <p>Öğrencinin güvenilir kaynakları tercih etmesi gerekir.</p>
+          <ol>
+            <li><strong>Resmî Gazete:</strong> Kanun ve yönetmeliklerin yayımlandığı temel resmî kaynaktır.</li>
+            <li><strong>Ticaret Bakanlığı:</strong> E-ticaret ve tüketici mevzuatına ilişkin güncel bilgilendirmeler yayımlar.</li>
+            <li><strong>KVKK:</strong> Kişisel verilerin korunmasıyla ilgili güncel açıklama ve kararları yayımlar.</li>
+            <li><strong>ETBİS:</strong> E-ticaret kayıt ve bildirimleriyle ilgili bilgi sağlar.</li>
+            <li><strong>İYS:</strong> Ticari elektronik ileti izinleriyle ilgili işlemlerde kullanılır.</li>
+          </ol>
+
+          <h2 id="b58">58. GÜVENİLİR KAYNAK İLE İNTERNET YORUMU ARASINDAKİ FARK</h2>
+          <p>Örneğin bir sosyal medya kullanıcısı: "İnternetten alınan bütün ürünler 14 gün içinde koşulsuz iade edilir." diyor.<br>Bu bilgi kulağa doğru gelebilir.<br>Fakat hukuki bilgi öğrenirken: Resmî mevzuata ve yetkili kurumların açıklamalarına bakılmalıdır.<br>Çünkü istisnalar bulunabilir ve mevzuat değişebilir.</p>
+
+          <h2 id="b59">59. ÖĞRENCİNİN HUKUKİ BİLGİYİ TAKİP ETME YÖNTEMİ</h2>
+          <p>Bir öğrenci herhangi bir e-ticaret problemiyle karşılaştığında şu 5 adımı kullanabilir:</p>
+          <ol>
+            <li><strong>Olayı tanımla:</strong> Ne oldu?</li>
+            <li><strong>Tarafları belirle:</strong> Tüketici kim? Satıcı kim? Platform var mı?</li>
+            <li><strong>Konuyu sınıflandır:</strong> Tüketici mi? Veri mi? Reklam mı? Mesafeli satış mı?</li>
+            <li><strong>İlgili mevzuatı bul:</strong> Hangi kanun/yönetmelik uygulanabilir?</li>
+            <li><strong>Güncel hâlini kontrol et:</strong> Bu düzenleme hâlâ aynı mı?</li>
+          </ol>
+          <p>Bu yöntem kazanımın: "takip eder" ifadesini gerçek bir beceriye dönüştürür.</p>
+
+          <h2 id="b60">60. HUKUKİ DÜZENLEMELERİ "HAFIZA HARİTASI" İLE ÖĞRENELİM</h2>
+          <pre>
+                  E-TİCARET HUKUKU 
+                         │
+      ┌──────────────────┼──────────────────┐
+      │                  │                  │
+   TİCARET            TÜKETİCİ           VERİ 
+      │                  │                  │
+    6563                6502               KVKK 
+      │                  │
+      │             Mesafeli Sözleşme 
+      │                  │
+      ├──────────────┐   │
+      │              │   │
+    ETBİS            İYS  Cayma 
+      │              │
+    Kayıt        Ticari ileti 
+          </pre>
+          <p>Bu şema öğrencinin mevzuatı tek tek ezberlemek yerine: Konu → Hukuk kuralı ilişkisini kurmasını sağlar.</p>
+
+          <h2 id="b61">61. E-TİCARETTE HUKUKİ SÜRECİ BAŞTAN SONA İNCELEYELİM</h2>
+          <p>Bir müşteri internetten ürün satın alıyor.</p>
+          <ul>
+            <li><strong>Aşama 1 — Reklam:</strong> Müşteri ürünü reklamdan görüyor. → Ticari reklam kuralları</li>
+            <li><strong>Aşama 2 — Site:</strong> Satıcının bilgilerini inceliyor. → E-ticaret bilgi verme yükümlülükleri</li>
+            <li><strong>Aşama 3 — Ürün:</strong> Ürün ve fiyat bilgilerini görüyor. → Tüketici mevzuatı</li>
+            <li><strong>Aşama 4 — Sipariş:</strong> Sipariş veriyor. → Elektronik sözleşme kuralları</li>
+            <li><strong>Aşama 5 — Ödeme:</strong> Ödeme yapıyor. → Tüketici + ödeme + veri güvenliği</li>
+            <li><strong>Aşama 6 — Adres:</strong> Adresini veriyor. → KVKK</li>
+            <li><strong>Aşama 7 — Teslimat:</strong> Ürün gönderiliyor. → Mesafeli sözleşme hükümleri</li>
+            <li><strong>Aşama 8 — İade:</strong> Tüketici caymak istiyor. → Cayma hakkı</li>
+            <li><strong>Aşama 9 — Reklam mesajları:</strong> Firma daha sonra kampanya SMS'i gönderiyor. → Ticari elektronik ileti + İYS</li>
+          </ul>
+          <p>Görüldüğü gibi: Tek bir e-ticaret işlemi boyunca birçok hukuki düzenleme devreye girebilir.</p>
+
+          <h2 id="b62">62. ÖĞRENCİNİN ÖZELLİKLE BİLMESİ GEREKEN 10 KAVRAM</h2>
+          <p>Bu kazanım sonunda öğrencinin şu kavramları tanıyabilmesi beklenmelidir:</p>
+          <ul>
+            <li>6563 sayılı Kanun</li>
+            <li>6502 sayılı Kanun</li>
+            <li>Mesafeli sözleşme</li>
+            <li>Cayma hakkı</li>
+            <li>ETBİS</li>
+            <li>Ticari elektronik ileti</li>
+            <li>İYS</li>
+            <li>KVKK</li>
+            <li>Kişisel veri</li>
+            <li>Aydınlatma yükümlülüğü</li>
+          </ul>
+
+          <h2 id="b63">63. SIK KARIŞTIRILAN KAVRAMLAR</h2>
+          <p><strong>ETBİS – İYS</strong><br>ETBİS: E-ticaret işletmelerinin kayıt/bildirim sistemi.<br>İYS: Ticari elektronik ileti izinlerinin yönetilmesine yönelik sistem.</p>
+          <p><strong>KVKK – İYS</strong><br>KVKK: Kişisel verilerin korunması.<br>İYS: Ticari elektronik ileti izinlerinin yönetimi.</p>
+          <p><strong>Cayma hakkı – İade</strong><br>Cayma: Tüketicinin belirli koşullarda sözleşmeden vazgeçmesi.<br>İade: Ürünün satıcıya geri gönderilmesi/bedelin geri alınması gibi sonuçları ifade eden süreç.<br>Bunlar günlük konuşmada birbirinin yerine kullanılabilse de hukuki açıdan aynı kavram değildir.</p>
+
+          <h2 id="b64">64. SINIF İÇİ ETKİNLİK: "HANGİ MEVZUAT?"</h2>
+          <p>Öğretmen aşağıdaki olayları öğrencilere verir.</p>
+          <ul>
+            <li><strong>Olay 1:</strong> "İnternetten aldığım ürünün 14 günlük cayma hakkını kullanmak istiyorum." Cevap: Mesafeli Sözleşmeler Yönetmeliği / tüketici mevzuatı</li>
+            <li><strong>Olay 2:</strong> "Şirket bana sürekli kampanya SMS'i gönderiyor." Cevap: Ticari elektronik ileti mevzuatı / İYS</li>
+            <li><strong>Olay 3:</strong> "İşletme adresimi ve telefonumu hangi amaçla kullanıyor?" Cevap: KVKK</li>
+            <li><strong>Olay 4:</strong> "İnternetten satış yapan işletmenin kayıt bilgilerini öğrenmek istiyorum." Cevap: ETBİS</li>
+            <li><strong>Olay 5:</strong> "İnternet sitesindeki reklam tüketiciyi yanıltıyor." Cevap: Ticari reklam ve tüketicinin korunmasına ilişkin mevzuat</li>
+          </ul>
+
+          <h2 id="b65">65. SINIF İÇİ ETKİNLİK: "HUKUKİ DEDEKTİF"</h2>
+          <p>Öğrencilere şu olay verilir:<br>"Ali, internetten 2.000 TL'ye bir kulaklık satın alıyor. Sipariş sırasında adresini ve telefon numarasını giriyor. Ürün geldikten sonra iade etmek istiyor. Firma iade kabul etmiyor. Daha sonra Ali'ye her gün kampanya SMS'leri geliyor."</p>
+          <p>Öğrencilerden olayın içindeki hukuki konuları bulmaları istenir.</p>
+          <ol>
+            <li>İnternetten alışveriş → Mesafeli sözleşme</li>
+            <li>İade/cayma → Tüketici mevzuatı + Mesafeli Sözleşmeler</li>
+            <li>Telefon numarası → KVKK</li>
+            <li>Kampanya SMS'i → Ticari elektronik ileti + İYS</li>
+          </ol>
+          <p>Bu etkinlik, öğrencinin farklı hukuk alanlarını tek bir olay üzerinde ilişkilendirmesini sağlar.</p>
+
+          <h2 id="b66">66. SINAV İÇİN KISA SORU-CEVAP</h2>
+          <ul>
+            <li><strong>Soru:</strong> Türkiye'de e-ticaretin temel hukuki düzenlemelerinden biri hangisidir? <strong>Cevap:</strong> 6563 sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun.</li>
+            <li><strong>Soru:</strong> Tüketicinin korunmasına ilişkin temel kanun hangisidir? <strong>Cevap:</strong> 6502 sayılı Tüketicinin Korunması Hakkında Kanun.</li>
+            <li><strong>Soru:</strong> İnternet üzerinden yapılan alışverişlerde tüketicinin cayma hakkıyla ilgili temel düzenleme nedir? <strong>Cevap:</strong> Mesafeli Sözleşmeler Yönetmeliği ve ilgili tüketici mevzuatı.</li>
+            <li><strong>Soru:</strong> Kişisel verilerin korunmasını düzenleyen temel kanun hangisidir? <strong>Cevap:</strong> 6698 sayılı Kişisel Verilerin Korunması Kanunu.</li>
+            <li><strong>Soru:</strong> Ticari SMS ve e-postaların izin süreçleriyle ilişkili sistemin adı nedir? <strong>Cevap:</strong> İleti Yönetim Sistemi (İYS).</li>
+            <li><strong>Soru:</strong> E-ticaret işletmelerinin kayıt ve bildirim süreçleriyle ilişkili sistem nedir? <strong>Cevap:</strong> Elektronik Ticaret Bilgi Sistemi (ETBİS).</li>
+          </ul>
+
+          <h2 id="b67">67. ÇOKTAN SEÇMELİ ÖRNEK SORU</h2>
+          <p><strong>1. Aşağıdakilerden hangisi e-ticaret işletmelerinin kayıt ve bildirim süreçleriyle doğrudan ilişkilidir?</strong><br>
+          A) İYS<br>B) ETBİS<br>C) 2FA<br>D) SSL<br>E) DNS<br>
+          Doğru cevap: B</p>
+
+          <p><strong>2. Bir müşterinin internet üzerinden yaptığı alışverişte belirli şartlar altında sözleşmeden vazgeçebilmesini sağlayan hak aşağıdakilerden hangisidir?</strong><br>
+          A) Marka hakkı<br>B) Patent hakkı<br>C) Cayma hakkı<br>D) Telif hakkı<br>E) Reklam hakkı<br>
+          Doğru cevap: C</p>
+
+          <p><strong>3. Bir işletmenin müşterisinin adres ve telefon bilgilerini işlemesi öncelikle hangi hukuk alanıyla ilişkilidir?</strong><br>
+          A) KVKK<br>B) Patent hukuku<br>C) Trafik hukuku<br>D) Ceza muhakemesi<br>E) İmar hukuku<br>
+          Doğru cevap: A</p>
+
+          <p><strong>4. "Yeni kampanyamız başladı!" şeklindeki reklam SMS'leri öncelikle hangi konu kapsamında değerlendirilir?</strong><br>
+          A) ETBİS<br>B) Ticari elektronik ileti<br>C) Alan adı<br>D) Kargo<br>E) Garanti<br>
+          Doğru cevap: B</p>
+
+          <h2 id="b68">68. GÜNLÜK HAYATTA KULLANILACAK "E-TİCARET HUKUKU KONTROL LİSTESİ"</h2>
+          <p>Bir öğrenci internetten alışveriş yapmadan önce şu soruları sorabilir:</p>
+          <ul>
+            <li><strong>Satıcı:</strong> Satıcı kim? Şirket bilgileri açık mı? İletişim bilgileri var mı?</li>
+            <li><strong>Ürün:</strong> Ürün özellikleri açık mı? Fiyat açık mı? Ek ücretler belirtilmiş mi?</li>
+            <li><strong>Sözleşme:</strong> Satın alma koşullarını okuyabiliyor muyum? Cayma hakkı hakkında bilgi verilmiş mi?</li>
+            <li><strong>Veri:</strong> Hangi kişisel verilerimi istiyor? Bu veriler hangi amaçla işleniyor?</li>
+            <li><strong>Reklam:</strong> Bana ticari ileti gönderilmesine ilişkin izin durumu nedir? İstemediğim iletileri nasıl durdurabilirim?</li>
+            <li><strong>İşletme:</strong> Gerekli işletme bilgileri açık mı? ETBİS gibi resmî kaynaklardan bilgi kontrol edilebilir mi?</li>
+          </ul>
+
+          <h2 id="b69">69. "HUKUKİ DÜZENLEMELERİ TAKİP ETME" İÇİN 5 ALTIN KURAL</h2>
+          <p>Öğrencinin bu kazanımdan çıkaracağı en önemli beş kural:</p>
+          <ol>
+            <li>İnternetten alışveriş de hukuki bir işlemdir.</li>
+            <li>Tüketicinin hakları vardır.</li>
+            <li>Satıcının da hukuki yükümlülükleri vardır.</li>
+            <li>Kişisel veriler korunmalıdır.</li>
+            <li>Mevzuat değişebileceği için güncel resmî kaynaklar takip edilmelidir.</li>
+          </ol>
+
+          <h2 id="b70">70. "KANUNLARI EZBERLEMEK" NEDEN YETERLİ DEĞİL?</h2>
+          <p>Bu kazanımın fiili: "takip eder" şeklindedir.<br>Bu nedenle öğrenciden yalnızca: "6563 sayılı Kanun budur." demesi beklenmemelidir.</p>
+          <p>Öğrencinin: "Bir e-ticaret sorunu yaşadığımda hangi konunun hangi hukuki düzenlemeyle ilişkili olduğunu bulabilirim." diyebilmesi daha önemlidir.</p>
+
+          <h2 id="b71">71. GÜNCELLEME ÖRNEĞİ</h2>
+          <p>E-ticaret mevzuatının neden takip edilmesi gerektiğini gerçek bir örnekle açıklayabiliriz.</p>
+          <p>2026 yılında Ticaret Bakanlığı, 6563 sayılı Kanun kapsamındaki bazı parasal eşiklerin 2025 yılı elektronik ticaret hacmindeki değişime göre güncellendiğini duyurmuştur. (İcti Ticaret)</p>
+          <p>Bu bize şunu gösterir: Kanunun adı değişmese bile uygulamadaki bazı rakamsal değerler değişebilir.<br>Dolayısıyla eski bir internet yazısındaki rakamı güncel mevzuat sanmak doğru değildir.</p>
+
+          <h2 id="b72">72. HUKUKİ BİLGİDE TARİH NEDEN ÖNEMLİ?</h2>
+          <p>Bir internet sitesinde: "2022 yılında e-ticarette şu kural vardı." yazabilir.<br>Ancak 2026 yılında: aynı kural değişmiş olabilir.</p>
+          <p>Bu nedenle öğrencinin bir hukuki bilgiyle karşılaştığında: Kaynağa, Yayın tarihine, Mevzuatın güncel hâline bakması gerekir.</p>
+
+          <h2 id="b73">73. GÜVENİLİR BİLGİ İÇİN KAYNAK SIRALAMASI</h2>
+          <p>Öğrenci hukuki bir konuda araştırma yaparken mümkün olduğunca: Resmî Gazete → Bakanlık → Yetkili kurum → Mevzuat metni gibi bir yol izlemelidir.</p>
+          <p>Sosyal medya paylaşımı: araştırmanın başlangıç noktası olabilir; ama: tek başına hukuki kaynak olarak kabul edilmemelidir.</p>
+
+          <h2 id="b74">74. ÖĞRENCİ İÇİN "E-TİCARET HUKUKU SÖZLÜĞÜ"</h2>
+          <div class="table-responsive">
+            <table>
+              <tr><th>Kavram</th><th>Açıklama</th></tr>
+              <tr><td>E-ticaret</td><td>Elektronik ortamda gerçekleştirilen ticari faaliyet.</td></tr>
+              <tr><td>Tüketici</td><td>Ticari veya mesleki olmayan amaçlarla hareket eden kişi.</td></tr>
+              <tr><td>Mesafeli sözleşme</td><td>Tarafların fiziksel olarak karşılaşmadan uzaktan iletişim araçlarıyla kurduğu sözleşme.</td></tr>
+              <tr><td>Cayma hakkı</td><td>Tüketicinin belirli şartlar altında sözleşmeden vazgeçebilmesi.</td></tr>
+              <tr><td>ETBİS</td><td>Elektronik Ticaret Bilgi Sistemi.</td></tr>
+              <tr><td>İYS</td><td>İleti Yönetim Sistemi.</td></tr>
+              <tr><td>Ticari elektronik ileti</td><td>Ticari amaçla elektronik iletişim araçları üzerinden gönderilen iletiler.</td></tr>
+              <tr><td>Kişisel veri</td><td>Belirli veya belirlenebilir gerçek kişiye ilişkin bilgi.</td></tr>
+              <tr><td>Aydınlatma</td><td>Kişiye kişisel verilerinin işlenmesine ilişkin gerekli bilgilerin verilmesi.</td></tr>
+              <tr><td>Hizmet sağlayıcı</td><td>Elektronik ortamda mal veya hizmet sunan aktör.</td></tr>
+              <tr><td>Aracı hizmet sağlayıcı</td><td>Başkalarının elektronik ortamda ticari faaliyet yürütmesine aracılık eden aktör.</td></tr>
+            </table>
+          </div>
+
+          <h2 id="b75">75. BÜYÜK RESİM</h2>
+          <p>Şimdiye kadar öğrendiğimiz dört kazanımı bu kazanımla birleştirelim.</p>
+          <ul>
+            <li><strong>1. Kazanım:</strong> E-ticaretin temel kavramlarını öğrendik.</li>
+            <li><strong>2. Kazanım:</strong> E-ticaret türlerini öğrendik.</li>
+            <li><strong>3. Kazanım:</strong> E-ticarette pazarlama aşamalarını öğrendik.</li>
+            <li><strong>4. Kazanım:</strong> Teknik altyapı ve güvenliği öğrendik.</li>
+            <li><strong>5. Kazanım:</strong> Bütün bu faaliyetlerin hangi hukuki kurallara bağlı olduğunu öğrendik.</li>
+          </ul>
+          <p>Böylece ilk beş kazanım birlikte düşünüldüğünde:<br><strong>E-TİCARET = KAVRAM + TÜR + PAZARLAMA + TEKNİK ALTYAPI + HUKUK</strong> şeklinde bir bütün ortaya çıkar.</p>
+
+          <h2 id="b76">76. KAZANIMIN ÖZÜ</h2>
+          <p>Bu kazanımın en kısa ve anlaşılır özeti şudur:<br>E-ticaret yapmak veya internetten alışveriş yapmak yalnızca teknolojik bir işlem değildir; aynı zamanda hukuki sonuçları olan bir ticari faaliyettir.</p>
+          <p>Öğrenci: 6563 sayılı Kanunun e-ticaret açısından önemini, 6502 sayılı Kanunun tüketici açısından önemini, mesafeli sözleşmeyi, cayma hakkını, ETBİS'i, ticari elektronik iletileri, İYS'yi, KVKK'yı, kişisel verilerin korunmasını, reklam ve bilgilendirme kurallarını temel düzeyde tanımalı ve hangi durumun hangi hukuki düzenlemeyle ilişkili olduğunu sınıflandırabilmelidir.</p>
+          <p>En önemlisi ise: Hukuki düzenlemelerin değişebileceğini bilmeli ve güncel bilgiyi resmî kaynaklardan takip etmelidir.</p>
+          <p>Ticaret Bakanlığının güncel elektronik ticaret mevzuatı sayfası 6563 sayılı Kanun ve ilgili ikincil mevzuatı; Bakanlığın tüketici mevzuatı sayfası ise 6502 sayılı Kanun ve Mesafeli Sözleşmeler Yönetmeliği gibi düzenlemeleri güncel olarak sunmaktadır. KVKK da kişisel veri işleme ve aydınlatma yükümlülüklerine ilişkin güncel açıklama ve kararları yayımlamaktadır. (https://ticaret.gov.tr)</p>
+          <div class="highlight-box">
+            <strong>Son cümle</strong>
+            <p>Öğrencinin aklında kalması gereken son cümle:<br>
+            "E-ticarette neyin yapılabileceğini, neyin yapılamayacağını ve tüketicinin hangi haklara sahip olduğunu öğrenmek için yalnızca internet sitelerine değil, güncel ve resmî hukuki düzenlemelere bakmalıyım."</p>
+          </div>
+
+          <div class="asterism">* * *</div>
+
+          <nav class="doc-nav">
+            <a href="ders4.html">
+              <span class="doc-nav-label">← Önceki</span>
+              <span class="doc-nav-title">04 · Teknik Altyapı ve Güvenlik</span>
+            </a>
+            <a href="index.html">
+              <span class="doc-nav-label">Ana Sayfa →</span>
+              <span class="doc-nav-title">Müfredata Dön</span>
+            </a>
+          </nav>
+
+          <footer class="page-foot">
+            <span>Ders 05 · Hukuki Düzenlemeler</span>
+            <span>Ünite 1 · 2026</span>
+          </footer>
+
+        </div>
+      </article>
+
+      <aside class="margin">
+        <div class="margin-note">
+          <span class="margin-label">Kazanım</span>
+          <strong>Ne öğreneceksin?</strong>
+          <p>E-ticaretin hukuki çerçevesini tanıyacak ve hangi durumun hangi düzenlemeyle ilişkili olduğunu sınıflandırabileceksin.</p>
+        </div>
+        <div class="margin-note">
+          <span class="margin-label">En önemli</span>
+          <strong>Takip etmek</strong>
+          <p>Kazanımın fiili "takip eder". Kanunları ezberlemek değil; güncel, resmî kaynaklardan doğru bilgiye ulaşmak esastır.</p>
+        </div>
+        <div class="margin-note">
+          <span class="margin-label">Resmî Kaynak</span>
+          <strong>ticaret.gov.tr</strong>
+          <p>6563, 6502, ETBİS, İYS, KVKK ile ilgili güncel mevzuata buradan ve ilgili kurum sitelerinden ulaşılabilir.</p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById('bar').style.width = (h > 0 ? (scrollY / h) * 100 : 0) + '%';
+  }, { passive: true });
+
+  function toggleRail() { document.getElementById('rail').classList.toggle('open'); }
+
+  const subLinks = document.querySelectorAll('.rail-sub a');
+  const targets = [...subLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        subLinks.forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.rail-sub a[href="#${entry.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-10% 0px -75% 0px' });
+  targets.forEach(t => io.observe(t));
+</script>
+
+</body>
+</html>

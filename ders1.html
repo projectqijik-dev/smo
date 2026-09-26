@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01 · E-Ticarete İlişkin Temel Kavramlar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar" id="bar"></div></div>
+<button class="rail-toggle" onclick="toggleRail()">≡</button>
+
+<button class="print-btn" onclick="window.print()" title="Bu dersi yazdır / PDF olarak kaydet">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+    <rect x="6" y="14" width="12" height="8"></rect>
+  </svg>
+  <span class="print-label">Çıktı Al</span>
+</button>
+
+<div class="shell">
+
+  <aside class="rail" id="rail">
+    <a href="index.html" class="rail-brand">
+      <span class="rail-mark">B</span>
+      <span class="rail-brand-text">
+        <strong>Sosyal Medya ve E-Ticaret</strong>
+        <span>ÖBBK MTAL · 11. Sınıf · 2026</span>
+      </span>
+    </a>
+
+    <p class="rail-label">Müfredat</p>
+    <nav class="rail-nav">
+      <ol>
+        <li><a href="ders1.html" class="active"><span class="num">01</span><span>E-Ticarete İlişkin Temel Kavramlar</span></a></li>
+        <li><a href="ders2.html"><span class="num">02</span><span>E-Ticaret Türleri</span></a></li>
+        <li><a href="ders3.html"><span class="num">03</span><span>Pazarlama Aşamaları</span></a></li>
+        <li><a href="ders4.html"><span class="num">04</span><span>Teknik Altyapı ve Güvenlik</span></a></li>
+        <li><a href="ders5.html"><span class="num">05</span><span>Hukuki Düzenlemeler</span></a></li>
+      </ol>
+    </nav>
+
+    <p class="rail-label">Bu Derste</p>
+    <nav class="rail-nav rail-sub">
+      <ol>
+        <li><a href="#b1"><span class="num">01</span><span>E-Ticaret Nedir?</span></a></li>
+        <li><a href="#b2"><span class="num">02</span><span>E-Ticaret Kavramı</span></a></li>
+        <li><a href="#b3"><span class="num">03</span><span>Temel Özellikler</span></a></li>
+        <li><a href="#b4"><span class="num">04</span><span>Kimler Vardır?</span></a></li>
+        <li><a href="#b5"><span class="num">05</span><span>Mal ve Hizmet</span></a></li>
+        <li><a href="#b6"><span class="num">06</span><span>E-Ticaret Sitesi</span></a></li>
+        <li><a href="#b7"><span class="num">07</span><span>Ürün Sayfası</span></a></li>
+        <li><a href="#b8"><span class="num">08</span><span>Sepet Nedir?</span></a></li>
+        <li><a href="#b9"><span class="num">09</span><span>Sipariş Nedir?</span></a></li>
+        <li><a href="#b10"><span class="num">10</span><span>Ödeme Nedir?</span></a></li>
+        <li><a href="#b11"><span class="num">11</span><span>Dijital Ödeme</span></a></li>
+        <li><a href="#b12"><span class="num">12</span><span>Sipariş Onayı</span></a></li>
+        <li><a href="#b13"><span class="num">13</span><span>Kargo ve Teslimat</span></a></li>
+        <li><a href="#b14"><span class="num">14</span><span>Geleneksel Ticaret Farkı</span></a></li>
+        <li><a href="#b15"><span class="num">15</span><span>E-Ticaret ve E-İşletme</span></a></li>
+        <li><a href="#b16"><span class="num">16</span><span>M-Ticaret Nedir?</span></a></li>
+        <li><a href="#b17"><span class="num">17</span><span>Pazaryeri Kavramı</span></a></li>
+        <li><a href="#b18"><span class="num">18</span><span>Müşteri Hesabı</span></a></li>
+        <li><a href="#b19"><span class="num">19</span><span>Kullanıcı Adı ve Şifre</span></a></li>
+        <li><a href="#b20"><span class="num">20</span><span>Stok Nedir?</span></a></li>
+        <li><a href="#b21"><span class="num">21</span><span>Fiyat Nedir?</span></a></li>
+        <li><a href="#b22"><span class="num">22</span><span>İndirim ve Kampanya</span></a></li>
+        <li><a href="#b23"><span class="num">23</span><span>Satıcı–Ürün–Müşteri</span></a></li>
+        <li><a href="#b24"><span class="num">24</span><span>Kavram Haritası</span></a></li>
+        <li><a href="#b25"><span class="num">25</span><span>Baştan Sona Bir İşlem</span></a></li>
+        <li><a href="#b26"><span class="num">26</span><span>Günlük Hayat Örnekleri</span></a></li>
+        <li><a href="#b27"><span class="num">27</span><span>Sık Karıştırılanlar</span></a></li>
+        <li><a href="#b28"><span class="num">28</span><span>Sınıflandırma Tablosu</span></a></li>
+        <li><a href="#b29"><span class="num">29</span><span>5 Kelimeyle E-Ticaret</span></a></li>
+        <li><a href="#b30"><span class="num">30</span><span>Kavram Kartları</span></a></li>
+        <li><a href="#b31"><span class="num">31</span><span>Benim Alışverişim</span></a></li>
+        <li><a href="#b32"><span class="num">32</span><span>Problem Çözme</span></a></li>
+        <li><a href="#b33"><span class="num">33</span><span>Günlük Hayata Uygulama</span></a></li>
+        <li><a href="#b34"><span class="num">34</span><span>Kazanımın Özü</span></a></li>
+        <li><a href="#b35"><span class="num">35</span><span>Sınavlık Özet</span></a></li>
+      </ol>
+    </nav>
+
+    <div class="rail-foot">
+      <p>Ünite 1 · Ders 01 · 35 bölüm</p>
+      <p>Son güncelleme: Eylül 2026</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="page-inner">
+
+      <article class="doc">
+
+        <header class="doc-head">
+          <div class="doc-eyebrow">Ders 01 · Ünite 1 · 35 bölüm</div>
+          <h1>E-Ticarete İlişkin <em>Temel Kavramlar</em></h1>
+          <p class="doc-lead">
+            Bu derste ticaretin dijital ortama taşınma sürecini, e-ticaretin temel yapı taşlarını ve günlük hayatımızdaki karşılığını inceleyeceğiz.
+          </p>
+          <dl class="doc-meta">
+            <div>
+              <dt>Kazanım</dt>
+              <dd>Temel kavramları açıklar</dd>
+            </div>
+            <div>
+              <dt>Okuma</dt>
+              <dd>~15 dk</dd>
+            </div>
+            <div>
+              <dt>Güncelleme</dt>
+              <dd>Eylül 2026</dd>
+            </div>
+          </dl>
+        </header>
+
+        <div class="doc-body">
+
+          <h2 id="b1">1. E-TİCARET NEDİR?</h2>
+
+          <h3 id="b1-1">1.1. Ticaret nedir?</h3>
+          <p>Ticaret, insanların veya işletmelerin ihtiyaç duydukları mal ve hizmetleri satın alması ve satması faaliyetidir.<br>Geleneksel ticarette işlemler çoğunlukla fiziksel ortamlarda gerçekleşir.</p>
+          <p>Örneğin:<br>Ahmet, mahalledeki bir mağazaya gider → ürünü inceler → satıcıya ödeme yapar → ürünü teslim alır.</p>
+          <p>Burada:</p>
+          <ul>
+            <li>Satıcı vardır.</li>
+            <li>Alıcı vardır.</li>
+            <li>Mal veya hizmet vardır.</li>
+            <li>Fiyat vardır.</li>
+            <li>Ödeme vardır.</li>
+            <li>Teslimat vardır.</li>
+          </ul>
+          <p>Bunların tamamı ticari işlemin temel unsurlarıdır.</p>
+
+          <h2 id="b2">2. E-TİCARET KAVRAMI</h2>
+          <p>E-ticaret (elektronik ticaret), mal ve hizmetlerin alım-satımına ilişkin ticari faaliyetlerin elektronik ortamlar ve dijital teknolojiler kullanılarak gerçekleştirilmesidir.</p>
+          <p>En basit ifadeyle:<br>Ticaretin elektronik/dijital ortamda gerçekleştirilmesine e-ticaret denir.</p>
+          <p>Örneğin bir öğrencinin:</p>
+          <ul>
+            <li>internet üzerinden ayakkabı sipariş etmesi,</li>
+            <li>bir bilgisayar mağazasından çevrim içi bilgisayar satın alması,</li>
+            <li>bir internet sitesinden kitap sipariş etmesi,</li>
+            <li>bir dijital hizmeti internet üzerinden satın alması</li>
+          </ul>
+          <p>e-ticaret kapsamında değerlendirilebilir.</p>
+
+          <div class="highlight-box">
+            <strong>Günlük hayat örneği</strong>
+            <p>Bir öğrenci internet üzerinden bir kulaklık satın alıyor.<br>
+            İşlem şu şekilde gerçekleşiyor:<br>
+            Ürün seçimi → sepete ekleme → sipariş → ödeme → siparişin hazırlanması → kargolama → teslimat<br>
+            Bu sürecin elektronik ortamda gerçekleştirilmesi e-ticaretin günlük hayattaki en kolay örneklerinden biridir.</p>
+          </div>
+
+          <h2 id="b3">3. E-TİCARETİN TEMEL ÖZELLİKLERİ</h2>
+          <p>E-ticareti anlayabilmek için bazı temel özelliklerini bilmek gerekir.</p>
+
+          <h3 id="b3-1">3.1. Elektronik ortam kullanılır</h3>
+          <p>E-ticaret işlemlerinde internet, web siteleri, mobil uygulamalar veya başka dijital teknolojiler kullanılabilir.</p>
+          <p>Örneğin:<br>Mağaza → fiziksel ortam<br>Online mağaza → dijital ortam</p>
+
+          <h3 id="b3-2">3.2. Alıcı ve satıcı fiziksel olarak aynı yerde olmak zorunda değildir</h3>
+          <p>Geleneksel alışverişte müşteri çoğu zaman mağazaya gider.<br>E-ticarette ise: Satıcı başka bir şehirde, hatta başka bir ülkede olabilir.</p>
+          <p>Örneğin Batman'daki bir tüketici İstanbul'daki bir işletmenin internet mağazasından ürün satın alabilir.</p>
+
+          <h3 id="b3-3">3.3. Ürün ve hizmetler dijital ortamda sunulabilir</h3>
+          <p>E-ticarette yalnızca fiziksel ürünler satılmaz.</p>
+          <p>Örneğin:</p>
+          <ul>
+            <li><strong>Fiziksel ürünler:</strong> Kitap, Telefon, Kıyafet, Bilgisayar, Mobilya</li>
+            <li><strong>Hizmetler:</strong> Online eğitim, Dijital danışmanlık, Yazılım hizmetleri, İnternet üzerinden çeşitli abonelikler</li>
+            <li><strong>Dijital ürünler:</strong> Elektronik kitap, Dijital tasarım, Yazılım, Bazı dijital içerikler</li>
+          </ul>
+          <p>satışa konu olabilir.</p>
+
+          <h2 id="b4">4. E-TİCARETTE KİMLER VARDIR?</h2>
+          <p>Bir e-ticaret işlemini anlayabilmek için işlemde bulunan temel tarafları tanımamız gerekir.</p>
+
+          <h3 id="b4-1">4.1. Satıcı</h3>
+          <p>Satıcı, mal veya hizmeti müşteriye sunan kişi ya da işletmedir.<br>
+          Örneğin: Bir işletmenin internet sitesinde telefon satan firma → satıcı</p>
+
+          <h3 id="b4-2">4.2. Alıcı</h3>
+          <p>Alıcı, mal veya hizmeti satın alan kişi ya da kuruluştur.<br>
+          Örneğin: İnternet sitesinden telefonu satın alan öğrenci → alıcı</p>
+
+          <h3 id="b4-3">4.3. Tüketici</h3>
+          <p>Tüketici, kendisi veya başkalarının ihtiyaçlarını karşılamak amacıyla mal veya hizmet satın alan kişidir.<br>
+          Örneğin: Bir öğrencinin kendisi için internetten ayakkabı satın alması → tüketici</p>
+          <p><em>Not: "Alıcı" ve "tüketici" günlük kullanımda birbirine yakın görünse de aynı kavram değildir. E-ticarette kullanılan kavramların hukuki ve ticari bağlamlarına göre anlamları değişebilir.</em></p>
+
+          <h3 id="b4-4">4.4. İşletme</h3>
+          <p>İşletme, mal veya hizmet üretip sunan veya bunların ticaretini yapan ticari yapıdır.<br>
+          Örneğin: Bir giyim firmasının kendi internet mağazasında kıyafet satması.<br>
+          Burada:<br>
+          Firma = işletme<br>
+          Kıyafeti satan taraf = satıcı<br>
+          Kıyafeti satın alan kişi = müşteri/tüketici</p>
+
+          <h2 id="b5">5. E-TİCARETTE MAL VE HİZMET KAVRAMI</h2>
+          <p>E-ticarette yalnızca "ürün" kelimesini kullanmak yeterli değildir.</p>
+          <ul>
+            <li><strong>Mal:</strong> Fiziksel olarak satın alınabilen ürünlerdir. Örneğin: Telefon, Kitap, Ayakkabı, Bilgisayar, Çanta</li>
+            <li><strong>Hizmet:</strong> Bir ihtiyacı karşılamak amacıyla sunulan faaliyet veya hizmettir. Örneğin: Online eğitim, Danışmanlık, Dijital abonelik, Teknik destek</li>
+            <li><strong>Dijital ürün:</strong> Elektronik ortamda sunulabilen ürünlerdir. Örneğin: E-kitap, Yazılım, Dijital tasarım, Bazı dijital içerikler</li>
+          </ul>
+
+          <div class="table-responsive">
+            <table>
+              <tr><th>Kavram</th><th>Örnek</th></tr>
+              <tr><td>Mal</td><td>Ayakkabı</td></tr>
+              <tr><td>Hizmet</td><td>Online danışmanlık</td></tr>
+              <tr><td>Dijital ürün</td><td>E-kitap</td></tr>
+              <tr><td>Fiziksel ürün</td><td>Bilgisayar</td></tr>
+            </table>
+          </div>
+
+          <h2 id="b6">6. E-TİCARET SİTESİ NEDİR?</h2>
+          <p>E-ticaret sitesi, işletmelerin ürün veya hizmetlerini internet üzerinden tanıttığı ve müşterilerin elektronik ortamda alışveriş yapabildiği dijital ortamdır.</p>
+          <p>Bir e-ticaret sitesinde genellikle: Ürünler listelenir. Ürün bilgileri verilir. Fiyat gösterilir. Müşteri ürünü seçer. Ürün sepete eklenir. Sipariş oluşturulur. Ödeme gerçekleştirilir. Sipariş hazırlanır. Ürün teslim edilir.</p>
+
+          <div class="highlight-box">
+            <strong>Örnek</strong>
+            <p>Bir öğrenci internetten bir kitap almak istiyor.<br>
+            Kitap sitesi → kitabı bulma → ürün sayfası → sepete ekleme → adres bilgisi → ödeme → sipariş → kargo → teslimat<br>
+            Bu sürecin tamamında çeşitli e-ticaret kavramları kullanılır.</p>
+          </div>
+
+          <h2 id="b7">7. ÜRÜN SAYFASI</h2>
+          <p>Ürün sayfası, bir ürünün internet ortamında tanıtıldığı bölümdür.</p>
+          <p>Bir ürün sayfasında genellikle: ürün adı, ürün fotoğrafları, ürün açıklaması, fiyat, ürün özellikleri, stok durumu, teslimat bilgileri gibi bilgiler bulunabilir.</p>
+
+          <div class="highlight-box">
+            <strong>Örnek</strong>
+            <p>Bir bilgisayarın ürün sayfasında:<br>
+            Marka: X<br>İşlemci: ...<br>RAM: ...<br>Depolama: ...<br>Fiyat: ...<br>Stok: Var<br>
+            şeklinde bilgiler bulunabilir.</p>
+            <p><strong>Öğrencinin dikkat etmesi gereken nokta:</strong><br>
+            İnternetten alışveriş yaparken yalnızca fotoğrafa ve fiyata bakmak yerine ürün hakkındaki bilgilerin tamamı incelenmelidir.</p>
+          </div>
+
+          <h2 id="b8">8. SEPET NEDİR?</h2>
+          <p>Sepet, internet üzerinden satın alınmak istenen ürünlerin geçici olarak toplandığı bölümdür.</p>
+          <p>Fiziksel mağazada: Ürünü alışveriş sepetine koyarız.<br>
+          E-ticarette: Ürünü dijital sepete ekleriz.</p>
+          <p>Örnek<br>Bir öğrenci: 1 kitap, 1 kulaklık, 1 defter seçtiğinde bunları dijital sepete ekleyebilir.<br>
+          Ancak: <strong>Sepete eklemek = satın almak değildir.</strong><br>
+          Bu ayrım önemlidir.</p>
+
+          <h2 id="b9">9. SİPARİŞ NEDİR?</h2>
+          <p>Sipariş, müşterinin belirli bir mal veya hizmeti satın alma talebini işletmeye elektronik ortamda iletmesidir.</p>
+          <p>Örneğin:<br>Bir öğrenci ürünleri seçti, adresini girdi ve sipariş işlemini tamamladı.<br>
+          Bu durumda işletmeye: "Bu ürünleri satın almak istiyorum." anlamında bir sipariş iletilmiş olur.</p>
+
+          <div class="highlight-box">
+            <strong>Önemli ayrım</strong>
+            <p>Sepet: "Bu ürünleri düşünüyorum/seçtim."<br>
+            Sipariş: "Satın alma işlemini başlattım/tamamladım."</p>
+          </div>
+
+          <h2 id="b10">10. ÖDEME NEDİR?</h2>
+          <p>Ödeme, satın alınan mal veya hizmet karşılığında belirlenen bedelin satıcıya aktarılmasıdır.</p>
+          <p>E-ticarette farklı elektronik ödeme yöntemleri kullanılabilir.<br>
+          Örneğin: Banka/kredi kartı, Dijital ödeme yöntemleri, Banka transferi gibi yöntemler kullanılabilir.</p>
+          <p>Burada öğrencinin bilmesi gereken temel ilişki:<br>
+          <strong>Ürün/hizmet → fiyat → ödeme</strong> şeklindedir.</p>
+
+          <h2 id="b11">11. DİJİTAL ÖDEME KAVRAMI</h2>
+          <p>Dijital ödeme, ödeme işleminin elektronik sistemler aracılığıyla gerçekleştirilmesidir.<br>
+          Örneğin internet üzerinden bir ürün satın alırken kart bilgilerinin veya başka elektronik ödeme yöntemlerinin kullanılması.</p>
+
+          <div class="highlight-box">
+            <strong>Güvenlik açısından</strong>
+            <p>Öğrenciler özellikle şu konulara dikkat etmelidir:<br>
+            Şüpheli bağlantılara tıklamamak<br>
+            Güvenilir olmayan sitelere ödeme bilgisi girmemek<br>
+            Adres çubuğundaki internet sitesi adresini kontrol etmek<br>
+            Ortak cihazlarda ödeme bilgilerinin kaydedilmesine dikkat etmek<br>
+            Hesap güvenliğini korumak</p>
+            <p><em>Not: E-ticaretin teknik altyapısı ve güvenlik unsurları yıllık planda ayrıca bir kazanım olarak yer almaktadır. Bu nedenle güvenlik konusu ilerleyen derste daha ayrıntılı ele alınacaktır.</em></p>
+          </div>
+
+          <h2 id="b12">12. SİPARİŞ ONAYI</h2>
+          <p>Müşterinin oluşturduğu siparişe ilişkin sistem tarafından verilen onay veya bilgilendirme mesajları sipariş sürecinin bir parçasıdır.</p>
+          <p>Örneğin:<br>"Siparişiniz alınmıştır." şeklinde bir bildirim görülebilir.<br>
+          Bu aşamadan sonra sipariş:<br>
+          Alındı → Hazırlanıyor → Kargoya verildi → Teslim edildi gibi aşamalardan geçebilir.</p>
+
+          <h2 id="b13">13. KARGO VE TESLİMAT</h2>
+          <p>Fiziksel ürünlerde satış işleminin önemli aşamalarından biri teslimattır.<br>
+          E-ticarette satıcı ile müşteri farklı yerlerde bulunduğundan ürünün müşteriye ulaştırılması gerekir.</p>
+          <p>Genel süreç:<br>Satış → Sipariş → Hazırlama → Kargolama → Taşıma → Teslimat şeklinde düşünülebilir.</p>
+          <p>Günlük hayat örneği:<br>Bir öğrenci internetten kitap satın alıyor.<br>Kitap: İnternet mağazası → depo → kargo → öğrencinin adresi şeklinde ulaşabilir.</p>
+
+          <h2 id="b14">14. ELEKTRONİK TİCARET İLE GELENEKSEL TİCARET ARASINDAKİ FARK</h2>
+
+          <div class="table-responsive">
+            <table>
+              <tr><th>Özellik</th><th>Geleneksel ticaret</th><th>E-ticaret</th></tr>
+              <tr><td>Ortam</td><td>Fiziksel mağaza vb.</td><td>Elektronik/dijital ortam</td></tr>
+              <tr><td>Ürün inceleme</td><td>Fiziksel olarak yapılabilir</td><td>Dijital bilgiler üzerinden yapılır</td></tr>
+              <tr><td>Sipariş</td><td>Yüz yüze/verbal vb.</td><td>Elektronik ortamda</td></tr>
+              <tr><td>Ödeme</td><td>Nakit/kart vb.</td><td>Elektronik ödeme yöntemleri vb.</td></tr>
+              <tr><td>Teslimat</td><td>Çoğu zaman mağazadan</td><td>Çoğunlukla adrese/kargo ile</td></tr>
+              <tr><td>Satıcıya ulaşım</td><td>Fiziksel konum önemlidir</td><td>İnternet bağlantısı üzerinden</td></tr>
+              <tr><td>Çalışma alanı</td><td>Fiziksel mağazanın konumu önemlidir</td><td>Dijital ortam üzerinden daha geniş erişim mümkün olabilir</td></tr>
+            </table>
+          </div>
+
+          <p><strong>En önemli fark</strong><br>
+          E-ticarette ticari işlemin önemli bölümü elektronik ortamda gerçekleştirilir.<br>
+          Ancak bu, e-ticarette fiziksel hiçbir unsur bulunmadığı anlamına gelmez.<br>
+          Örneğin:<br>Sipariş elektronik ortamda verilir → ürün fiziksel olarak kargolanır → müşteriye fiziksel olarak teslim edilir.</p>
+
+          <h2 id="b15">15. E-TİCARET VE E-İŞLETME AYNI ŞEY Mİ?</h2>
+          <p>Bu ayrım öğrencilerin sıklıkla karıştırabileceği konulardan biridir.</p>
+          <p><strong>E-ticaret</strong><br>Mal veya hizmetlerin elektronik ortamda alım-satımı ve ticari işlemleri üzerinde yoğunlaşır.</p>
+          <p><strong>E-işletme / e-business</strong><br>İşletmenin faaliyetlerinin dijital teknolojilerle yürütülmesini daha geniş bir çerçevede ifade eder.<br>
+          Örneğin bir işletmenin: müşteri ilişkilerini, stok yönetimini, çalışan süreçlerini, tedarik süreçlerini, satış işlemlerini dijital sistemlerle yürütmesi e-işletme yaklaşımının daha geniş kapsamına girebilir.</p>
+          <p>Akılda tutma yöntemi:<br>
+          E-ticaret = elektronik ortamda ticaret<br>
+          E-işletme = işletmenin dijitalleşmiş daha geniş faaliyetleri<br>
+          Bu iki kavram birbirine yakın olsa da aynı anlamda değildir.</p>
+
+          <h2 id="b16">16. M-TİCARET NEDİR?</h2>
+          <p>M-ticaret (mobil ticaret), mobil cihazlar aracılığıyla gerçekleştirilen elektronik ticaret faaliyetlerini ifade eder.</p>
+          <p>Örneğin:<br>Bir öğrenci telefonundaki alışveriş uygulamasından ayakkabı satın alıyor.<br>
+          Bu işlem:<br>E-ticaret kapsamında olmakla birlikte aynı zamanda mobil cihaz üzerinden gerçekleştirildiği için m-ticaret olarak da ifade edilebilir.</p>
+          <p>Basit ilişki:<br>
+          E-ticaret ↓ Elektronik ortamda ticaret<br>
+          M-ticaret ↓ Mobil cihazlar üzerinden gerçekleştirilen e-ticaret</p>
+
+          <h2 id="b17">17. PAZARYERİ KAVRAMI</h2>
+          <p>İnternette bazı platformlar yalnızca kendi ürünlerini satmaz.<br>
+          Bunun yerine: Birden fazla satıcının ürünlerini müşterilerle buluşturabilir.<br>
+          Bu tür platformlara genel olarak e-ticaret pazaryeri denir.</p>
+          <p>Örneğin bir pazaryerinde: Satıcı A, Satıcı B, Satıcı C aynı platform üzerinden ürünlerini müşterilere sunabilir.<br>
+          Bu durumda platform, farklı satıcılarla müşteriler arasında elektronik bir aracılık/buluşma ortamı oluşturur.</p>
+          <p>Önemli ayrım:<br>
+          Kendi internet mağazası: İşletme → Müşteri<br>
+          Pazaryeri: Birden fazla satıcı → Platform → Müşteriler<br>
+          Bu ayrım, ileride e-ticaret türleri işlenirken daha ayrıntılı olarak ele alınabilir.</p>
+
+          <h2 id="b18">18. MÜŞTERİ HESABI</h2>
+          <p>Birçok e-ticaret platformunda kullanıcıların kendilerine ait bir müşteri hesabı bulunur.<br>
+          Bu hesap üzerinden örneğin: kişisel bilgiler, adres bilgileri, sipariş geçmişi, favoriler, bazı ödeme/teslimat tercihleri yönetilebilir.</p>
+          <p>Neden önemlidir?<br>
+          Çünkü e-ticaret yalnızca: "Ürünü seç ve satın al." işleminden oluşmaz.<br>
+          Müşterinin platformdaki dijital hesabı da alışveriş deneyiminin bir parçasıdır.</p>
+
+          <h2 id="b19">19. KULLANICI ADI VE ŞİFRE</h2>
+          <p>E-ticaret platformlarında kullanıcıların hesaplarını korumak için kimlik doğrulama yöntemleri kullanılabilir.<br>
+          Örneğin: Kullanıcı adı/e-posta + şifre</p>
+          <p>Öğrencilerin burada bilmesi gereken temel nokta:<br>
+          Hesap bilgileri kişisel güvenliğin bir parçasıdır.<br>
+          Şifrelerin başkalarıyla paylaşılmaması ve farklı hesaplarda mümkün olduğunca güvenli şifre alışkanlıklarının kullanılması gerekir.</p>
+
+          <h2 id="b20">20. STOK NEDİR?</h2>
+          <p>Stok, işletmenin satışa sunmak veya faaliyetlerinde kullanmak amacıyla elinde bulundurduğu ürün miktarını ifade eder.</p>
+          <p>E-ticaret sitesinde:<br>
+          "Stokta var" ifadesi ürünün satışa sunulabilecek miktarının bulunduğunu gösterebilir.<br>
+          "Tükendi" ifadesi ise o anda satışa sunulabilecek ürün bulunmadığını gösterebilir.</p>
+          <p>Günlük hayat örneği:<br>
+          Bir mağazanın elinde 10 adet kulaklık varsa: Stok = 10 adet<br>
+          Bir müşteri 1 adet satın aldığında stok miktarı sistemde buna göre güncellenebilir.</p>
+
+          <h2 id="b21">21. FİYAT NEDİR?</h2>
+          <p>Fiyat, bir mal veya hizmet için belirlenen parasal değerdir.</p>
+          <p>E-ticarette müşterinin karşısına: ürün fiyatı, indirimli fiyat, kampanya fiyatı, teslimat/kargo bedeli gibi farklı tutarlar çıkabilir.</p>
+          <p>Öğrencinin özellikle dikkat etmesi gereken nokta:<br>
+          Ürün fiyatı ile müşterinin ödeyeceği toplam tutar her zaman aynı olmak zorunda değildir.<br>
+          Örneğin:<br>Ürün: 500 TL<br>Teslimat: 50 TL<br>Toplam: 550 TL gibi bir durum oluşabilir.</p>
+
+          <h2 id="b22">22. İNDİRİM VE KAMPANYA KAVRAMLARI</h2>
+          <p>E-ticarette işletmeler müşterilerin ilgisini çekmek için çeşitli kampanyalar düzenleyebilir.<br>
+          Örneğin: yüzde indirim, belirli miktar üzerindeki alışverişe indirim, ücretsiz teslimat, ikinci üründe indirim gibi uygulamalar görülebilir.</p>
+          <p>Ancak öğrencinin temel olarak bilmesi gereken:<br>
+          Kampanya veya indirim ifadesi, ürünün mutlaka daha avantajlı olduğu anlamına gelmez.<br>
+          Tüketici: Eski fiyat → yeni fiyat → toplam ödeme → ürün özellikleri gibi bilgileri birlikte değerlendirmelidir.</p>
+
+          <h2 id="b23">23. SATICI – ÜRÜN – MÜŞTERİ İLİŞKİSİ</h2>
+          <p>E-ticareti anlamanın en kolay yollarından biri üç temel unsuru birlikte düşünmektir:</p>
+          <ul>
+            <li><strong>SATICI:</strong> Ürünü/hizmeti sunar.</li>
+            <li><strong>ÜRÜN / HİZMET:</strong> Satışa konu olan unsurdur.</li>
+            <li><strong>MÜŞTERİ:</strong> Ürünü/hizmeti satın alır.</li>
+          </ul>
+          <p>Bunların etrafında: Fiyat + sipariş + ödeme + teslimat süreçleri bulunur.</p>
+          <p>Şematik gösterim:<br>
+          SATICI ↓ Ürün/Hizmet ↓ MÜŞTERİ ↓ Sipariş ↓ Ödeme ↓ Teslimat</p>
+
+          <h2 id="b24">24. E-TİCARETTE TEMEL KAVRAM HARİTASI</h2>
+          <p>Öğrencinin bütün konuyu tek bakışta görebilmesi için:</p>
+          <pre>
+                       E-TİCARET
+                           │
+        ┌──────────────────┼──────────────────┐
+        │                  │                  │
+     SATICI             MÜŞTERİ          ÜRÜN/HİZMET
+        │                  │                  │
+        └──────────────────┼──────────────────┘
+                           │
+                        ÜRÜNÜ SEÇME
+                           │
+                         SEPET
+                           │
+                        SİPARİŞ
+                           │
+                         ÖDEME
+                           │
+                     HAZIRLAMA
+                           │
+                       KARGOLAMA
+                           │
+                       TESLİMAT
+          </pre>
+          <p>Bu şema öğrencinin e-ticareti tek tek tanımlardan ziyade bir süreç olarak görmesini sağlar.</p>
+
+          <h2 id="b25">25. BİR E-TİCARET İŞLEMİNİ BAŞTAN SONA İNCELEYELİM</h2>
+          <p>Bir öğrencinin internetten spor ayakkabı aldığını düşünelim.</p>
+          <ol>
+            <li><strong>Ürünü arar:</strong> Öğrenci internet üzerinden spor ayakkabı arar. (Kavram: Ürün arama)</li>
+            <li><strong>Ürün sayfasını açar:</strong> Ayakkabının: fiyatına, numarasına, özelliklerine, görsellerine bakar. (Kavram: Ürün sayfası)</li>
+            <li><strong>Ürünü sepete ekler:</strong> (Kavram: Sepet)</li>
+            <li><strong>Sipariş oluşturur:</strong> Adres ve gerekli bilgileri girerek satın alma sürecini tamamlar. (Kavram: Sipariş)</li>
+            <li><strong>Ödeme yapar:</strong> (Kavram: Ödeme)</li>
+            <li><strong>Satıcı siparişi hazırlar:</strong> (Kavram: Sipariş hazırlama)</li>
+            <li><strong>Ürün kargoya verilir:</strong> (Kavram: Kargo)</li>
+            <li><strong>Ürün müşteriye ulaşır:</strong> (Kavram: Teslimat)</li>
+          </ol>
+          <p>Sonuç:<br>Öğrenci artık yalnızca: "İnternetten ayakkabı aldım." demek yerine bu işlemin içindeki e-ticaret kavramlarını açıklayabilir.</p>
+
+          <h2 id="b26">26. GÜNLÜK HAYATTAN E-TİCARET ÖRNEKLERİ</h2>
+          <p>Aşağıdaki durumların her birinde öğrenciden hangi e-ticaret kavramlarının kullanıldığını bulması istenebilir.</p>
+
+          <p><strong>Örnek 1</strong><br>
+          Ayşe bir internet sitesinden kitap seçti ve sepete ekledi ancak satın alma işlemini tamamlamadı.<br>
+          Kavramlar: Ürün, Ürün sayfası, Sepet<br>
+          Dikkat: Henüz tamamlanmış bir satın alma işlemi olduğunu söylemek doğru değildir.</p>
+
+          <p><strong>Örnek 2</strong><br>
+          Mehmet internetten telefon sipariş etti ve banka kartıyla ödeme yaptı.<br>
+          Kavramlar: E-ticaret, Satıcı, Müşteri, Ürün, Sipariş, Ödeme</p>
+
+          <p><strong>Örnek 3</strong><br>
+          Zeynep telefonundaki alışveriş uygulamasından kıyafet satın aldı.<br>
+          Kavramlar: E-ticaret, M-ticaret, Ürün, Müşteri, Sipariş, Ödeme</p>
+
+          <p><strong>Örnek 4</strong><br>
+          Bir öğrenci internetten e-kitap satın aldı ve dosyaya elektronik ortamda erişti. Burada fiziksel kargo süreci bulunmayabilir.<br>
+          Kavramlar: E-ticaret, Dijital ürün, Müşteri, Satıcı, Ödeme</p>
+
+          <h2 id="b27">27. SIK KARIŞTIRILAN KAVRAMLAR</h2>
+          <ul>
+            <li><strong>27.1. Sepet ≠ Sipariş:</strong> Sepet: Seçilen ürünlerin toplandığı alan. Sipariş: Satın alma talebinin oluşturulması.</li>
+            <li><strong>27.2. E-ticaret ≠ E-işletme:</strong> E-ticaret: Elektronik ortamda ticari işlemler. E-işletme: İşletmenin daha geniş dijital faaliyetleri.</li>
+            <li><strong>27.3. Ürün ≠ Hizmet:</strong> Ürün: Örneğin bilgisayar. Hizmet: Örneğin online danışmanlık.</li>
+            <li><strong>27.4. Satıcı ≠ Müşteri:</strong> Satıcı: Ürünü/hizmeti sunar. Müşteri: Ürünü/hizmeti satın alır.</li>
+            <li><strong>27.5. E-ticaret ≠ Sadece internetten ürün almak:</strong> E-ticaret kavramı yalnızca fiziksel ürün satın almaktan ibaret değildir. Mal, hizmet ve dijital ürünlerin elektronik ortamda sunulması ve bunlara ilişkin ticari işlemler de kapsam içinde düşünülebilir.</li>
+          </ul>
+
+          <h2 id="b28">28. ÖĞRENCİNİN KAVRAMLARI SINIFLANDIRMA TABLOSU</h2>
+          <div class="table-responsive">
+            <table>
+              <tr><th>Grup</th><th>Temel kavramlar</th></tr>
+              <tr><td>Taraflar</td><td>Satıcı, alıcı, müşteri, tüketici, işletme</td></tr>
+              <tr><td>Satış unsurları</td><td>Mal, hizmet, dijital ürün, fiyat</td></tr>
+              <tr><td>İşlem aşamaları</td><td>Ürün seçme, sepet, sipariş, ödeme</td></tr>
+              <tr><td>Teslimat</td><td>Hazırlama, kargo, teslimat</td></tr>
+            </table>
+          </div>
+          <p>Bu sınıflandırma, ezber yerine kavramsal ilişki kurmayı kolaylaştırır.</p>
+
+          <h2 id="b29">29. "5 KELİMEYLE E-TİCARET"</h2>
+          <p>Öğrencinin sınav öncesinde konuyu hatırlamasını kolaylaştırmak için:<br>
+          SATICI → ÜRÜN → SİPARİŞ → ÖDEME → TESLİMAT şeklinde bir anahtar zincir oluşturulabilir.</p>
+          <p>Ancak daha ayrıntılı düşünürsek:<br>
+          Satıcı + Müşteri + Ürün/Hizmet + Fiyat + Sepet + Sipariş + Ödeme + Teslimat<br>
+          e-ticaret işleminin temel kavramlarını anlamamızı sağlar.</p>
+
+          <h2 id="b30">30. KAVRAM KARTLARI</h2>
+          <ul>
+            <li><strong>E-Ticaret:</strong> Elektronik ortamda gerçekleştirilen ticari faaliyetler.</li>
+            <li><strong>Satıcı:</strong> Mal veya hizmet sunan kişi/işletme.</li>
+            <li><strong>Alıcı:</strong> Mal veya hizmeti satın alan taraf.</li>
+            <li><strong>Tüketici:</strong> İhtiyacını karşılamak amacıyla mal veya hizmet satın alan kişi.</li>
+            <li><strong>Mal:</strong> Ticari işlem konusu olabilen fiziksel ürün.</li>
+            <li><strong>Hizmet:</strong> Bir ihtiyacı karşılamak amacıyla sunulan faaliyet.</li>
+            <li><strong>Dijital ürün:</strong> Elektronik ortamda sunulabilen ürün.</li>
+            <li><strong>Ürün sayfası:</strong> Bir ürünün internet ortamında tanıtıldığı sayfa.</li>
+            <li><strong>Sepet:</strong> Seçilen ürünlerin toplandığı dijital alan.</li>
+            <li><strong>Sipariş:</strong> Müşterinin satın alma talebinin oluşturulması.</li>
+            <li><strong>Ödeme:</strong> Satın alınan mal veya hizmetin bedelinin ödenmesi.</li>
+            <li><strong>Kargo:</strong> Fiziksel ürünlerin müşteriye ulaştırılması süreci/hizmeti.</li>
+            <li><strong>Teslimat:</strong> Satın alınan ürünün müşteriye ulaştırılması.</li>
+            <li><strong>M-ticaret:</strong> Mobil cihazlar aracılığıyla gerçekleştirilen e-ticaret faaliyetleri.</li>
+            <li><strong>E-ticaret pazaryeri:</strong> Birden fazla satıcının ürün veya hizmetlerini müşterilere sunabildiği elektronik platform.</li>
+          </ul>
+
+          <h2 id="b31">31. SINIF İÇİ UYGULAMA: "BENİM ALIŞVERİŞİM"</h2>
+          <p>Öğrencilere şu durum verilebilir:<br>
+          "İnternetten 800 TL'lik bir spor ayakkabı satın aldınız."</p>
+          <p>Öğrencilerden aşağıdaki soruları cevaplamaları istenir:</p>
+          <ol>
+            <li>Satıcı kimdir?</li>
+            <li>Müşteri kimdir?</li>
+            <li>Satın alınan şey nedir?</li>
+            <li>Ürünün fiyatı nedir?</li>
+            <li>Ürün hangi aşamada sepete girer?</li>
+            <li>Sipariş ne zaman oluşur?</li>
+            <li>Ödeme hangi aşamadadır?</li>
+            <li>Ürün nasıl müşteriye ulaştırılır?</li>
+            <li>Kargo hangi aşamada devreye girer?</li>
+            <li>Bu işlemin neden e-ticaret olduğunu açıklayınız.</li>
+          </ol>
+          <p>Beklenen temel cevap:<br>Çünkü mal/hizmet alım-satımına ilişkin işlemler elektronik ortam kullanılarak gerçekleştirilmektedir.</p>
+
+          <h2 id="b32">32. PROBLEM ÇÖZME ETKİNLİĞİ</h2>
+          <p>Problem<br>Ali bir internet sitesine girmiştir. Bir bilgisayar seçmiş, "Sepete Ekle" butonuna basmış fakat daha sonra alışverişten vazgeçmiştir.</p>
+          <p>Sorular</p>
+          <ol>
+            <li>Ali bilgisayarı satın almış mıdır?<br>Hayır. Sadece sepete eklemiştir.</li>
+            <li>Sepete eklemek neden satın alma anlamına gelmez?<br>Çünkü satın alma/sipariş ve ödeme süreci tamamlanmamıştır.</li>
+            <li>Ali'nin yaptığı işlem e-ticaret sitesindeki hangi aşamaya örnektir?<br>Ürün seçme/sepet aşamasına.</li>
+          </ol>
+
+          <h2 id="b33">33. ÖĞRENCİNİN GÜNLÜK HAYATINA UYGULAMA</h2>
+          <p>Öğrencilerden son bir hafta içinde internet üzerinden gerçekleştirdikleri veya aileleriyle birlikte gerçekleştirdikleri bir alışverişi düşünmeleri istenebilir.</p>
+          <p>Örneğin: "Geçen hafta internetten ayakkabı aldım."</p>
+          <p>Öğrenci bu alışverişi şu şekilde parçalar:</p>
+          <ol>
+            <li>Satıcı: Kim?</li>
+            <li>Ürün: Ne satın aldım?</li>
+            <li>Fiyat: Kaç TL?</li>
+            <li>Ürün sayfası: Nerede inceledim?</li>
+            <li>Sepet: Sepete ekledim mi?</li>
+            <li>Sipariş: Siparişi nasıl oluşturdum?</li>
+            <li>Ödeme: Nasıl ödeme yaptım?</li>
+            <li>Teslimat: Ürün nasıl ulaştı?</li>
+          </ol>
+          <p>Bu uygulama sayesinde öğrenci ders kitabındaki kavramı gerçek hayatındaki deneyimle ilişkilendirmiş olur.</p>
+
+          <h2 id="b34">34. KAZANIMIN ÖZÜ</h2>
+          <p>Bu kazanımın öğrencide oluşturması beklenen temel anlayış şudur:</p>
+          <p>E-ticaret, ticari faaliyetlerin elektronik/dijital ortamların kullanılmasıyla gerçekleştirilmesidir.</p>
+          <p>Öğrenci: e-ticaretin ne olduğunu, satıcı ve müşterinin kim olduğunu, mal, hizmet ve dijital ürün arasındaki temel farkları, ürün sayfasının ne olduğunu, sepetin ne işe yaradığını, siparişin ne olduğunu, ödemenin ne olduğunu, kargo ve teslimatın ne anlama geldiğini, e-ticaret ile e-işletme arasındaki temel farkı, m-ticaret kavramını, e-ticaret pazaryeri kavramını tanımlayabilmeli, birbirinden ayırabilmeli ve günlük hayattan örneklerle açıklayabilmelidir.</p>
+
+          <h2 id="b35">35. KISA TEKRAR — SINAVLIK ÖZET</h2>
+          <ul>
+            <li><strong>E-ticaret:</strong> Elektronik ortamda gerçekleştirilen ticari faaliyetlerdir.</li>
+            <li><strong>Satıcı:</strong> Mal veya hizmet sunan taraftır.</li>
+            <li><strong>Alıcı/Müşteri:</strong> Mal veya hizmet satın alan taraftır.</li>
+            <li><strong>Mal:</strong> Fiziksel olarak satın alınabilen ticari üründür.</li>
+            <li><strong>Hizmet:</strong> Bir ihtiyacı karşılamak amacıyla sunulan faaliyettir.</li>
+            <li><strong>Dijital ürün:</strong> Elektronik ortamda sunulabilen üründür.</li>
+            <li><strong>Ürün sayfası:</strong> Ürünün bilgilerinin bulunduğu sayfadır.</li>
+            <li><strong>Sepet:</strong> Seçilen ürünlerin toplandığı dijital alandır.</li>
+            <li><strong>Sipariş:</strong> Müşterinin satın alma talebini oluşturmasıdır.</li>
+            <li><strong>Ödeme:</strong> Mal veya hizmet bedelinin ödenmesidir.</li>
+            <li><strong>Kargo:</strong> Fiziksel ürünün taşınması sürecidir.</li>
+            <li><strong>Teslimat:</strong> Ürünün müşteriye ulaştırılmasıdır.</li>
+            <li><strong>M-ticaret:</strong> Mobil cihazlar aracılığıyla gerçekleştirilen e-ticarettir.</li>
+            <li><strong>E-ticaret pazaryeri:</strong> Birden fazla satıcının müşterilere ulaşabildiği elektronik platformdur.</li>
+          </ul>
+          <p>Ana süreç:<br>ÜRÜNÜ BUL → İNCELE → SEPETE EKLE → SİPARİŞ VER → ÖDE → HAZIRLANMASINI BEKLE → KARGOLA → TESLİM AL</p>
+
+          <div class="asterism">* * *</div>
+
+          <nav class="doc-nav">
+            <a href="index.html">
+              <span class="doc-nav-label">← Geri</span>
+              <span class="doc-nav-title">Ana Sayfa</span>
+            </a>
+            <a href="ders2.html">
+              <span class="doc-nav-label">Sonraki →</span>
+              <span class="doc-nav-title">02 · E-Ticaret Türleri</span>
+            </a>
+          </nav>
+
+          <footer class="page-foot">
+            <span>Ders 01 · E-Ticarete İlişkin Temel Kavramlar</span>
+            <span>Ünite 1 · 2026</span>
+          </footer>
+
+        </div>
+      </article>
+
+      <aside class="margin">
+        <div class="margin-note">
+          <span class="margin-label">Kazanım</span>
+          <strong>Ne öğreneceksin?</strong>
+          <p>E-ticaretin temel kavramlarını tanımlayabilecek, süreçteki aktörleri ve aşamaları ayırt edebileceksin.</p>
+        </div>
+        <div class="margin-note">
+          <span class="margin-label">Süre</span>
+          <strong>~15 dakika</strong>
+          <p>35 kısa bölümden oluşur. İstersen parça parça okuyabilirsin.</p>
+        </div>
+        <div class="margin-note">
+          <span class="margin-label">Sonraki</span>
+          <strong>02 · E-Ticaret Türleri</strong>
+          <p>B2C, B2B, C2C gibi türlerin nasıl sınıflandırıldığını öğren.</p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById('bar').style.width = (h > 0 ? (scrollY / h) * 100 : 0) + '%';
+  }, { passive: true });
+
+  function toggleRail() { document.getElementById('rail').classList.toggle('open'); }
+
+  // Rail sub-nav aktif bölüm takibi
+  const subLinks = document.querySelectorAll('.rail-sub a');
+  const targets = [...subLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        subLinks.forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.rail-sub a[href="#${entry.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-10% 0px -75% 0px' });
+  targets.forEach(t => io.observe(t));
+</script>
+
+</body>
+</html>

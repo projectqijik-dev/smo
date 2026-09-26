@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 · Teknik Altyapı ve Güvenlik</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar" id="bar"></div></div>
+<button class="rail-toggle" onclick="toggleRail()">≡</button>
+
+<button class="print-btn" onclick="window.print()" title="Bu dersi yazdır / PDF olarak kaydet">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+    <rect x="6" y="14" width="12" height="8"></rect>
+  </svg>
+  <span class="print-label">Çıktı Al</span>
+</button>
+
+<div class="shell">
+
+  <aside class="rail" id="rail">
+    <a href="index.html" class="rail-brand">
+      <span class="rail-mark">B</span>
+      <span class="rail-brand-text">
+        <strong>Sosyal Medya ve E-Ticaret</strong>
+        <span>ÖBBK MTAL · 11. Sınıf · 2026</span>
+      </span>
+    </a>
+
+    <p class="rail-label">Müfredat</p>
+    <nav class="rail-nav">
+      <ol>
+        <li><a href="ders1.html"><span class="num">01</span><span>E-Ticarete İlişkin Temel Kavramlar</span></a></li>
+        <li><a href="ders2.html"><span class="num">02</span><span>E-Ticaret Türleri</span></a></li>
+        <li><a href="ders3.html"><span class="num">03</span><span>Pazarlama Aşamaları</span></a></li>
+        <li><a href="ders4.html" class="active"><span class="num">04</span><span>Teknik Altyapı ve Güvenlik</span></a></li>
+        <li><a href="ders5.html"><span class="num">05</span><span>Hukuki Düzenlemeler</span></a></li>
+      </ol>
+    </nav>
+
+    <p class="rail-label">Bu Derste</p>
+    <nav class="rail-nav rail-sub">
+      <ol>
+        <li><a href="#b1"><span class="num">01</span><span>Arka Planda Ne Var?</span></a></li>
+        <li><a href="#b2"><span class="num">02</span><span>Teknik Altyapı Nedir?</span></a></li>
+        <li><a href="#b3"><span class="num">03</span><span>Fiziksel vs E-Ticaret</span></a></li>
+        <li><a href="#b4"><span class="num">04</span><span>Temel Unsurlar</span></a></li>
+        <li><a href="#b5"><span class="num">05</span><span>İnternet ve Ağ</span></a></li>
+        <li><a href="#b6"><span class="num">06</span><span>Alan Adı</span></a></li>
+        <li><a href="#b7"><span class="num">07</span><span>Alan Adı Neden Önemli?</span></a></li>
+        <li><a href="#b8"><span class="num">08</span><span>Sunucu</span></a></li>
+        <li><a href="#b9"><span class="num">09</span><span>Hosting</span></a></li>
+        <li><a href="#b10"><span class="num">10</span><span>Alan Adı–Hosting Farkı</span></a></li>
+        <li><a href="#b11"><span class="num">11</span><span>Web Sitesi/Yazılım</span></a></li>
+        <li><a href="#b12"><span class="num">12</span><span>Yazılım Ne İşe Yarar?</span></a></li>
+        <li><a href="#b13"><span class="num">13</span><span>Veritabanı</span></a></li>
+        <li><a href="#b14"><span class="num">14</span><span>Veritabanı Günlük</span></a></li>
+        <li><a href="#b15"><span class="num">15</span><span>Ürün Yönetimi</span></a></li>
+        <li><a href="#b16"><span class="num">16</span><span>Stok Yönetimi</span></a></li>
+        <li><a href="#b17"><span class="num">17</span><span>Stok Bilgisi Neden?</span></a></li>
+        <li><a href="#b18"><span class="num">18</span><span>Sepet Sistemi</span></a></li>
+        <li><a href="#b19"><span class="num">19</span><span>Sipariş Sistemi</span></a></li>
+        <li><a href="#b20"><span class="num">20</span><span>Ödeme Altyapısı</span></a></li>
+        <li><a href="#b21"><span class="num">21</span><span>Ödeme Nasıl Çalışır?</span></a></li>
+        <li><a href="#b22"><span class="num">22</span><span>Ödeme Sayfası Güvenliği</span></a></li>
+        <li><a href="#b23"><span class="num">23</span><span>HTTPS Nedir?</span></a></li>
+        <li><a href="#b24"><span class="num">24</span><span>HTTP vs HTTPS</span></a></li>
+        <li><a href="#b25"><span class="num">25</span><span>TLS ve Şifreleme</span></a></li>
+        <li><a href="#b26"><span class="num">26</span><span>Şifreleme Nedir?</span></a></li>
+        <li><a href="#b27"><span class="num">27</span><span>Kullanıcı Hesabı</span></a></li>
+        <li><a href="#b28"><span class="num">28</span><span>Güçlü Parola</span></a></li>
+        <li><a href="#b29"><span class="num">29</span><span>İki Aşamalı Doğrulama</span></a></li>
+        <li><a href="#b30"><span class="num">30</span><span>Kişisel Veriler</span></a></li>
+        <li><a href="#b31"><span class="num">31</span><span>Firewall</span></a></li>
+        <li><a href="#b32"><span class="num">32</span><span>Kötü Amaçlı Yazılım</span></a></li>
+        <li><a href="#b33"><span class="num">33</span><span>Güncelleme Neden?</span></a></li>
+        <li><a href="#b34"><span class="num">34</span><span>Yedekleme</span></a></li>
+        <li><a href="#b35"><span class="num">35</span><span>Yedekleme Ne İşe Yarar?</span></a></li>
+        <li><a href="#b36"><span class="num">36</span><span>Kargo Entegrasyonu</span></a></li>
+        <li><a href="#b37"><span class="num">37</span><span>Mobil Uyumluluk</span></a></li>
+        <li><a href="#b38"><span class="num">38</span><span>Mobil Neden Önemli?</span></a></li>
+        <li><a href="#b39"><span class="num">39</span><span>Güvenliğin 3 Amacı</span></a></li>
+        <li><a href="#b40"><span class="num">40</span><span>Gizlilik</span></a></li>
+        <li><a href="#b41"><span class="num">41</span><span>Bütünlük</span></a></li>
+        <li><a href="#b42"><span class="num">42</span><span>Kullanılabilirlik</span></a></li>
+        <li><a href="#b43"><span class="num">43</span><span>Güvenlik Sınıflandırma</span></a></li>
+        <li><a href="#b44"><span class="num">44</span><span>Altyapı vs Güvenlik</span></a></li>
+        <li><a href="#b45"><span class="num">45</span><span>Ev Benzetmesi</span></a></li>
+        <li><a href="#b46"><span class="num">46</span><span>Arka Plan Zinciri</span></a></li>
+        <li><a href="#b47"><span class="num">47</span><span>Güvenli İşlem</span></a></li>
+        <li><a href="#b48"><span class="num">48</span><span>Problem Çözme</span></a></li>
+        <li><a href="#b49"><span class="num">49</span><span>Kullanıcı da Güvenlik</span></a></li>
+        <li><a href="#b50"><span class="num">50</span><span>Kilit Simgesi Yeterli mi?</span></a></li>
+        <li><a href="#b51"><span class="num">51</span><span>Altyapı/Güvenlik Tabloları</span></a></li>
+        <li><a href="#b52"><span class="num">52</span><span>Altyapı + Güvenlik</span></a></li>
+        <li><a href="#b53"><span class="num">53</span><span>Günlük Hayat Örneği</span></a></li>
+        <li><a href="#b54"><span class="num">54</span><span>Bu Nerede Kullanılır?</span></a></li>
+        <li><a href="#b55"><span class="num">55</span><span>Problem Etkinlikleri</span></a></li>
+        <li><a href="#b56"><span class="num">56</span><span>Üç Katmanlı Düşünme</span></a></li>
+        <li><a href="#b57"><span class="num">57</span><span>Bina Benzetmesi</span></a></li>
+        <li><a href="#b58"><span class="num">58</span><span>Sık Yapılan Hatalar</span></a></li>
+        <li><a href="#b59"><span class="num">59</span><span>Ana Formül</span></a></li>
+        <li><a href="#b60"><span class="num">60</span><span>Sınav Özeti</span></a></li>
+        <li><a href="#b61"><span class="num">61</span><span>Kazanımın Özü</span></a></li>
+      </ol>
+    </nav>
+
+    <div class="rail-foot">
+      <p>Ünite 1 · Ders 04 · 61 bölüm</p>
+      <p>Son güncelleme: Eylül 2026</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="page-inner">
+
+      <article class="doc">
+
+        <header class="doc-head">
+          <div class="doc-eyebrow">Ders 04 · Ünite 1 · 61 bölüm</div>
+          <h1>Teknik Altyapı ve <em>Güvenlik</em></h1>
+          <p class="doc-lead">
+            Kazanım: "E-ticaret için gereken teknik altyapı ve güvenlik unsurlarını açıklar." Bu derste bir e-ticaret sitesinin arkasında çalışan sistemleri ve bu sistemleri koruyan güvenlik katmanlarını inceleyeceğiz.
+          </p>
+          <dl class="doc-meta">
+            <div>
+              <dt>Kazanım</dt>
+              <dd>Altyapı ve güvenliği açıklar</dd>
+            </div>
+            <div>
+              <dt>Okuma</dt>
+              <dd>~25 dk</dd>
+            </div>
+            <div>
+              <dt>Güncelleme</dt>
+              <dd>Eylül 2026</dd>
+            </div>
+          </dl>
+        </header>
+
+        <div class="doc-body">
+
+          <h2 id="b1">1. E-TİCARETİN ARKASINDA NE VAR?</h2>
+          <p>Bir öğrenci telefonundan bir internet sitesine giriyor.<br>Bir ürün seçiyor.<br>"Sepete Ekle" butonuna basıyor.<br>Adresini yazıyor.<br>Ödeme yapıyor.<br>Birkaç gün sonra ürün kapısına geliyor.<br>Kullanıcı açısından işlem oldukça basit görünür.</p>
+          <p>Fakat arka planda aynı anda birçok teknik sistem çalışır:</p>
+          <ul>
+            <li>İnternet bağlantısı</li>
+            <li>Web sitesi</li>
+            <li>Alan adı</li>
+            <li>Sunucu</li>
+            <li>Veritabanı</li>
+            <li>E-ticaret yazılımı</li>
+            <li>Ürün yönetim sistemi</li>
+            <li>Sepet sistemi</li>
+            <li>Ödeme sistemi</li>
+            <li>Kargo ve sipariş sistemi</li>
+            <li>Güvenlik sistemleri</li>
+            <li>Veri koruma mekanizmaları</li>
+          </ul>
+          <div class="highlight-box">
+            <strong>Önemli</strong>
+            <p>Dolayısıyla:<br>
+            E-ticaret yalnızca bir internet sitesi açmak değildir.<br>
+            Bir e-ticaret sisteminin çalışabilmesi için birbirine bağlı çok sayıda teknik bileşen gerekir.</p>
+          </div>
+
+          <h2 id="b2">2. TEKNİK ALTYAPI NEDİR?</h2>
+          <p>Teknik altyapı, bir e-ticaret sisteminin çalışmasını sağlayan donanım, yazılım, ağ ve hizmetlerin bütünüdür.</p>
+          <p>Basitçe: Teknik altyapı = E-ticaret sisteminin çalışmasını sağlayan teknolojik yapı olarak düşünülebilir.</p>
+          <p>Bir mağazanın fiziksel olarak çalışabilmesi için: bina, elektrik, raf, kasa, depo gibi unsurlara ihtiyacı vardır.</p>
+          <p>E-ticaret mağazasının da: web sitesi, sunucu, veritabanı, ödeme sistemi, güvenlik sistemi gibi dijital altyapılara ihtiyacı vardır.</p>
+
+          <h2 id="b3">3. FİZİKSEL MAĞAZA İLE E-TİCARET SİTESİNİ KARŞILAŞTIRALIM</h2>
+          <div class="table-responsive">
+            <table>
+              <tr><th>Fiziksel mağaza</th><th>E-ticaret</th></tr>
+              <tr><td>Mağaza binası</td><td>Web sitesi</td></tr>
+              <tr><td>Adres</td><td>Alan adı</td></tr>
+              <tr><td>Raflar</td><td>Ürün sayfaları</td></tr>
+              <tr><td>Kasa</td><td>Ödeme sistemi</td></tr>
+              <tr><td>Depo</td><td>Stok sistemi</td></tr>
+              <tr><td>Satış defteri/sistemi</td><td>Veritabanı</td></tr>
+              <tr><td>Güvenlik görevlisi/kamera</td><td>Siber güvenlik</td></tr>
+              <tr><td>Elektrik</td><td>Sunucu ve enerji altyapısı</td></tr>
+              <tr><td>Müşteri</td><td>İnternet kullanıcısı</td></tr>
+            </table>
+          </div>
+          <p>Bu tablo bize önemli bir şeyi gösterir: E-ticaret mağazasının da bir altyapıya ihtiyacı vardır.</p>
+
+          <h2 id="b4">4. E-TİCARET TEKNİK ALTYAPISININ TEMEL UNSURLARI</h2>
+          <p>Konuyu kolay öğrenebilmek için teknik altyapıyı şu başlıklara ayırabiliriz:</p>
+          <ul>
+            <li>İnternet ve ağ altyapısı</li>
+            <li>Alan adı</li>
+            <li>Hosting ve sunucu</li>
+            <li>Web sitesi ve e-ticaret yazılımı</li>
+            <li>Veritabanı</li>
+            <li>Ürün ve stok yönetimi</li>
+            <li>Sepet ve sipariş sistemi</li>
+            <li>Ödeme altyapısı</li>
+            <li>Kargo ve lojistik entegrasyonu</li>
+            <li>Mobil uyumluluk</li>
+            <li>Yedekleme ve süreklilik</li>
+          </ul>
+          <p>Bunların üzerine ayrıca: <strong>Güvenlik altyapısı</strong> kurulmalıdır.</p>
+
+          <h2 id="b5">5. İNTERNET VE AĞ ALTYAPISI</h2>
+          <p>E-ticaretin temelinde internet bulunur.<br>Müşterinin: Bilgisayar → İnternet → E-ticaret sitesi veya Telefon → İnternet → E-ticaret uygulaması üzerinden sisteme ulaşabilmesi gerekir.<br>İnternet bağlantısı olmadan çevrim içi mağazaya erişim mümkün olmaz.<br>Ancak yalnızca müşterinin internetinin olması yeterli değildir.<br>E-ticaret işletmesinin de sistemlerinin internete bağlı ve erişilebilir olması gerekir.</p>
+
+          <h2 id="b6">6. ALAN ADI NEDİR?</h2>
+          <p>Alan adı (domain name), bir internet sitesine ulaşmak için kullanılan web adresidir.<br>Örneğin: ornek.com bir alan adı olabilir.<br>İnsanların IP adreslerini ezberlemek yerine kolay hatırlanan alan adlarını kullanmaları sağlanır.</p>
+          <div class="highlight-box">
+            <strong>Basit benzetme</strong>
+            <p>Bir fiziksel mağazanın: adresi vardır.<br>
+            E-ticaret sitesinin ise: alan adı vardır.</p>
+          </div>
+
+          <h2 id="b7">7. ALAN ADI NEDEN ÖNEMLİDİR?</h2>
+          <p>Alan adı: müşterinin siteye ulaşmasını, markanın internette tanınmasını, web sitesinin bulunmasını kolaylaştırır.<br>Örneğin bir işletmenin adı: "Mavi Çanta" olsun.<br>İşletme buna uygun bir alan adı kullanabilir.<br>Burada öğrencinin bilmesi gereken temel kavram: <strong>Alan adı = İnternetteki web adresi</strong></p>
+
+          <h2 id="b8">8. SUNUCU NEDİR?</h2>
+          <p>E-ticaret sitesinin dosyalarının ve uygulamalarının çalıştırılması için bilgisayar sistemlerine ihtiyaç vardır.<br>Bu sistemlere genel olarak: <strong>Sunucu (server)</strong> denir.<br>Sunucu, internet üzerinden kullanıcılara çeşitli hizmetler sunan bilgisayar veya bilgisayar sistemidir.<br>Örneğin müşteri: "www.ornek.com" adresine girdiğinde, arka plandaki sistemler web sayfasının görüntülenmesini sağlar.</p>
+
+          <h2 id="b9">9. HOSTING NEDİR?</h2>
+          <p>Hosting, bir web sitesinin dosyalarının ve gerekli kaynaklarının sunucularda barındırılması hizmetidir.</p>
+          <div class="highlight-box">
+            <strong>Basit bir benzetme</strong>
+            <p>Alan adı = mağazanın adresi<br>
+            Hosting = mağazanın bulunduğu yer<br>
+            Bu benzetme teknik olarak birebir karşılık değildir ancak temel kavramı anlamaya yardımcı olur.</p>
+          </div>
+
+          <h2 id="b10">10. ALAN ADI – HOSTING FARKI</h2>
+          <p>Öğrencilerin karıştırabileceği iki kavramdır.</p>
+          <p>Alan adı: Nereye gideceğim?<br>Hosting: Site nerede barındırılıyor?</p>
+          <p>Örneğin: ornek.com alan adıdır.<br>Bu alan adına bağlı web sitesinin dosyaları ise bir sunucuda barındırılır.</p>
+
+          <h2 id="b11">11. WEB SİTESİ VE E-TİCARET YAZILIMI</h2>
+          <p>Bir e-ticaret sitesi sadece birkaç görselden oluşmaz.<br>Arka planda müşterinin: ürünleri görüntülemesini, ürün aramasını, sepete eklemesini, sipariş oluşturmasını, ödeme yapmasını, hesabını yönetmesini sağlayan yazılımlar bulunur.<br>Bunların tamamı e-ticaret yazılımının bir parçası olabilir.</p>
+
+          <h2 id="b12">12. E-TİCARET YAZILIMI NE İŞE YARAR?</h2>
+          <p>Bir e-ticaret sistemi örneğin şu işlemleri gerçekleştirebilir:</p>
+          <ul>
+            <li>Ürün ekleme, Ürün silme, Fiyat değiştirme</li>
+            <li>Stok takibi, Sipariş alma, Müşteri hesabı oluşturma</li>
+            <li>Sepet oluşturma, Ödeme işlemlerini başlatma</li>
+            <li>Kampanya uygulama, Sipariş durumunu takip etme</li>
+          </ul>
+          <p>Dolayısıyla: E-ticaret yazılımı, çevrim içi mağazanın işlemesini sağlayan temel yazılım sistemlerinden biridir.</p>
+
+          <h2 id="b13">13. VERİTABANI NEDİR?</h2>
+          <p>E-ticaret sitesinde çok miktarda bilgi bulunur.<br>Örneğin: Ürün bilgileri, Ürün fiyatları, Stok miktarları, Müşteri bilgileri, Siparişler, Adresler, Kampanyalar gibi verilerin düzenli biçimde saklanması gerekir.<br>Bu amaçla: <strong>Veritabanları</strong> kullanılır.</p>
+
+          <h2 id="b14">14. VERİTABANINI GÜNLÜK HAYATTAN ANLAYALIM</h2>
+          <p>Bir öğretmenin sınıf listesini düşünelim.</p>
+          <div class="table-responsive">
+            <table>
+              <tr><th>Öğrenci</th><th>Sınıf</th><th>Numara</th></tr>
+              <tr><td>Ahmet</td><td>11/A</td><td>101</td></tr>
+              <tr><td>Ayşe</td><td>11/A</td><td>102</td></tr>
+              <tr><td>Mehmet</td><td>11/A</td><td>103</td></tr>
+            </table>
+          </div>
+          <p>E-ticaret sisteminde de benzer biçimde çok daha büyük miktarda bilgi düzenli şekilde tutulabilir.<br>Örneğin: Ürün → fiyat → stok → sipariş → müşteri ilişkileri veritabanında yönetilebilir.</p>
+
+          <h2 id="b15">15. ÜRÜN YÖNETİMİ</h2>
+          <p>Bir e-ticaret sitesinde ürünlerin dijital olarak yönetilmesi gerekir.<br>Her ürün için: Ürün adı, Açıklama, Fotoğraf, Fiyat, Stok miktarı, Renk, Beden, Marka, Kategori gibi bilgiler bulunabilir.</p>
+          <p>Örneğin: Spor ayakkabı Ürün:<br>42 numara: 8 adet<br>43 numara: 12 adet<br>44 numara: 4 adet<br>şeklinde stoklanabilir.<br>Bu bilgilerin doğru tutulması gerekir.</p>
+
+          <h2 id="b16">16. STOK YÖNETİMİ</h2>
+          <p>Stok, işletmenin satışa hazır bulunan ürün miktarını ifade eder.<br>Örneğin depoda: 50 adet kulaklık bulunuyorsa sistemde stok: 50 olarak görünebilir.<br>Bir müşteri satın aldığında: 50 → 49 olabilir.<br>Bu işlemin otomatik yapılabilmesi e-ticaret sistemlerinin önemli özelliklerinden biridir.</p>
+
+          <h2 id="b17">17. STOK BİLGİSİ NEDEN ÖNEMLİDİR?</h2>
+          <p>Sistemde: "Stokta var" görünüp aslında ürün bulunmuyorsa müşteri mağdur olabilir.<br>Tersine: Ürün bulunduğu hâlde sistemde "stok yok" görünüyorsa satış kaçırılabilir.<br>Bu nedenle: Stok yönetimi, e-ticaret altyapısının önemli parçalarından biridir.</p>
+
+          <h2 id="b18">18. SEPET SİSTEMİ</h2>
+          <p>Müşteri ürünleri tek tek satın almak zorunda değildir.<br>Örneğin: 1 kitap, 1 kulaklık, 2 defter seçebilir.<br>Bunları: Sepete ekler.<br>Sepet sistemi: ürünleri, miktarları, fiyatları, toplam tutarı hesaplayabilir.</p>
+
+          <h2 id="b19">19. SİPARİŞ SİSTEMİ</h2>
+          <p>Müşteri satın alma işlemini tamamladığında sistemde bir: sipariş oluşur.<br>Siparişte örneğin: sipariş numarası, ürün, miktar, fiyat, müşteri, teslimat adresi, ödeme durumu gibi bilgiler bulunabilir.</p>
+
+          <h2 id="b20">20. ÖDEME ALTYAPISI</h2>
+          <p>E-ticaretin en önemli teknik bileşenlerinden biri: Elektronik ödeme altyapısıdır.<br>Müşteri satın aldığı ürünün bedelini elektronik ortamda ödeyebilmelidir.<br>Örneğin: Banka/kredi kartı, Havale/EFT, Dijital ödeme yöntemleri, Diğer elektronik ödeme çözümleri kullanılabilir.</p>
+
+          <h2 id="b21">21. ÖDEME SÜRECİ NASIL ÇALIŞIR?</h2>
+          <pre>
+Müşteri 
+   ↓
+Ürün seçimi 
+   ↓
+Sepet 
+   ↓
+Ödeme sayfası 
+   ↓
+Ödeme sistemi 
+   ↓
+Bankacılık/ödeme kuruluşu 
+   ↓
+Ödeme sonucu 
+   ↓
+Sipariş onayı 
+          </pre>
+          <p>Bu süreçte finansal bilgilerin korunması kritik önem taşır.<br>Bu nedenle: Ödeme sistemi ile güvenlik doğrudan ilişkilidir.</p>
+
+          <h2 id="b22">22. ÖDEME SAYFASINDA NEDEN GÜVENLİK GEREKLİDİR?</h2>
+          <p>Müşteri ödeme sırasında hassas bilgiler girebilir.<br>Örneğin: Kart bilgileri, Hesap bilgileri, Kişisel bilgiler gibi veriler söz konusu olabilir.<br>Bu bilgilerin yetkisiz kişiler tarafından ele geçirilmesi ciddi güvenlik sorunlarına yol açabilir.<br>Bu nedenle e-ticarette: Verilerin güvenli aktarılması ve korunması gerekir.</p>
+
+          <h2 id="b23">23. HTTPS NEDİR?</h2>
+          <p>İnternette güvenli bağlantının temel göstergelerinden biri: HTTPS kullanımıdır.<br>HTTPS, web tarayıcısı ile web sitesi arasındaki iletişimin güvenli biçimde gerçekleştirilmesine yardımcı olur.<br>Tarayıcıda genellikle: kilit simgesi ile gösterilir.<br>Örneğin: https://ornek.com adresindeki https, güvenli bağlantı protokolünün kullanıldığını gösterir.</p>
+
+          <h2 id="b24">24. HTTP VE HTTPS ARASINDAKİ TEMEL FARK</h2>
+          <p>Basitleştirirsek:<br>HTTP: Web iletişimi için kullanılan bir protokoldür.<br>HTTPS: HTTP iletişiminin TLS gibi güvenlik mekanizmaları kullanılarak korunmuş biçimidir.<br>Öğrenci düzeyinde en önemli mesaj: HTTPS, internet üzerinden gönderilen bilgilerin korunmasına yardımcı olur.</p>
+
+          <h2 id="b25">25. TLS VE ŞİFRELEME</h2>
+          <p>HTTPS'nin güvenliğinde TLS (Transport Layer Security) gibi teknolojiler kullanılır.<br>TLS, iletişimin gizliliğini ve bütünlüğünü korumaya yardımcı olur.<br>Basit bir örnek düşünelim.<br>Müşteri: "Adresim Batman'da." bilgisini siteye gönderiyor.<br>Bu iletişimin ağ üzerinde kolayca okunamaması için güvenli iletişim mekanizmaları kullanılır.<br>Buradaki temel kavram: Şifreleme</p>
+
+          <h2 id="b26">26. ŞİFRELEME NEDİR?</h2>
+          <p>Şifreleme, okunabilir verinin belirli bir algoritma kullanılarak başka bir biçime dönüştürülmesi ve yetkili taraflarca tekrar kullanılabilir hâle getirilmesini sağlayan güvenlik yöntemidir.<br>Basitçe: Veriyi yetkisiz kişilerin anlamasını zorlaştırmak olarak düşünülebilir.<br>Özellikle: ödeme, kullanıcı hesabı, kişisel bilgi gibi alanlarda güvenlik açısından önemlidir.</p>
+
+          <h2 id="b27">27. KULLANICI HESABI GÜVENLİĞİ</h2>
+          <p>E-ticaret sitelerinde kullanıcıların hesapları olabilir.<br>Örneğin: Kullanıcı adı/e-posta + parola ile giriş yapılabilir.<br>Hesabın güvenliği için: güçlü parola, benzersiz parola, iki aşamalı doğrulama gibi ek güvenlik yöntemleri kullanılabilir.</p>
+
+          <h2 id="b28">28. GÜÇLÜ PAROLA NEDİR?</h2>
+          <p>Güçlü bir parola genellikle: yeterince uzun, tahmin edilmesi zor, başka hesaplarda kullanılmayan bir parola olmalıdır.<br>Örneğin: 123456 zayıf bir parola örneğidir.<br>Bir kişinin: adı + doğum yılı gibi kolay tahmin edilebilir bilgiler kullanması da güvenlik açısından iyi bir uygulama değildir.</p>
+
+          <h2 id="b29">29. İKİ AŞAMALI DOĞRULAMA</h2>
+          <p>İki aşamalı doğrulama (2FA), hesabın yalnızca parola ile korunmasının ötesinde ek bir doğrulama adımı kullanılmasını sağlar.<br>Örneğin: Parola + telefon uygulamasındaki doğrulama kodu şeklinde çalışabilir.<br>Bu sayede parola başkasının eline geçse bile hesaba erişim için ek bir doğrulama gerekebilir.</p>
+
+          <h2 id="b30">30. KİŞİSEL VERİLERİN KORUNMASI</h2>
+          <p>E-ticaret sistemleri müşteriler hakkında çeşitli bilgiler işleyebilir.<br>Örneğin: Ad-soyad, Telefon, E-posta, Adres, Sipariş bilgileri gibi veriler.<br>Bu verilerin korunması gerekir.<br>Burada: Kişisel veri güvenliği kavramı ortaya çıkar.<br>Bu konu aynı zamanda bir sonraki haftalarda işlenecek e-ticaretle ilgili hukuki düzenlemeler kazanımıyla da ilişkilidir.<br>Ancak bu derste temel amaç: Teknik altyapı ile veri güvenliği arasındaki ilişkiyi anlamaktır.</p>
+
+          <h2 id="b31">31. GÜVENLİK DUVARI (FIREWALL)</h2>
+          <p>Firewall (güvenlik duvarı), ağ trafiğini belirli kurallara göre kontrol etmeye yardımcı olan güvenlik mekanizmalarındandır.</p>
+          <div class="highlight-box">
+            <strong>Basit benzetme</strong>
+            <p>Firewall = Dijital güvenlik kapısı<br>
+            Nasıl bir binanın girişinde kimlerin içeri girebileceği kontrol edilebiliyorsa, güvenlik duvarı da ağ trafiğinin belirli kurallara göre kontrol edilmesine yardımcı olabilir.</p>
+          </div>
+
+          <h2 id="b32">32. KÖTÜ AMAÇLI YAZILIMLAR</h2>
+          <p>E-ticaret sistemleri kötü amaçlı yazılımların hedefi olabilir.<br>Örneğin: Virüsler, Truva atları, Casus yazılımlar, Fidye yazılımları, Diğer zararlı yazılımlar sisteme zarar verebilir.<br>Bu nedenle sistemlerin güncel tutulması ve uygun güvenlik önlemlerinin kullanılması gerekir.</p>
+
+          <h2 id="b33">33. GÜNCELLEME NEDEN ÖNEMLİDİR?</h2>
+          <p>Yazılımlarda zaman zaman güvenlik açıkları ortaya çıkabilir.<br>Yazılım geliştiricileri bu açıkları gidermek için: güncellemeler yayınlayabilir.<br>Bu nedenle: E-ticaret yazılımlarının, sunucu işletim sistemlerinin ve kullanılan diğer bileşenlerin güncel tutulması güvenlik açısından önemlidir.</p>
+
+          <h2 id="b34">34. YEDEKLEME</h2>
+          <p>Bir e-ticaret sisteminde çok önemli veriler bulunabilir.<br>Örneğin: Siparişler, Ürünler, Müşteri hesapları, Stoklar, İşletme verileri.<br>Sistem arızalanırsa verilerin kaybolması ciddi sonuçlara yol açabilir.<br>Bu nedenle: <strong>Düzenli yedekleme</strong> yapılması önemlidir.</p>
+
+          <h2 id="b35">35. YEDEKLEME NE İŞE YARAR?</h2>
+          <p>Örneğin e-ticaret sitesinin veritabanında: 100.000 sipariş bulunduğunu düşünelim.<br>Bir sistem arızası nedeniyle bu veriler kaybolursa işletme büyük bir sorun yaşayabilir.<br>Uygun yedekler mevcutsa verilerin geri yüklenmesi mümkün olabilir.<br>Bu nedenle: <strong>Yedekleme = Veri kaybına karşı hazırlık</strong> olarak düşünülebilir.</p>
+
+          <h2 id="b36">36. KARGO VE LOJİSTİK ENTEGRASYONU</h2>
+          <p>E-ticaret yalnızca: "Müşteri ödeme yaptı." noktasında bitmez.<br>Ürünün müşteriye ulaştırılması gerekir.<br>Bu nedenle e-ticaret sistemleri: kargo, stok, sipariş, teslimat sistemleriyle entegre çalışabilir.<br>Örneğin sipariş oluşturulduğunda kargo bilgisi sisteme aktarılabilir.</p>
+
+          <h2 id="b37">37. MOBİL UYUMLULUK</h2>
+          <p>Günümüzde insanlar e-ticaret sitelerine: bilgisayar, tablet, telefon gibi farklı cihazlardan ulaşabilir.<br>Bu nedenle e-ticaret sitesinin mobil cihazlarda düzgün görüntülenmesi önemlidir.<br>Buna: <strong>Mobil uyumluluk</strong> denir.</p>
+
+          <h2 id="b38">38. MOBİL UYUMLULUK NEDEN ÖNEMLİDİR?</h2>
+          <p>Bir site bilgisayarda düzgün çalışıyor ancak telefonda: yazılar okunmuyor, butonlar görünmüyor, ödeme sayfası açılmıyor ise müşteri alışverişi tamamlamakta zorlanabilir.<br>Bu nedenle: <strong>Kullanıcı deneyimi de teknik altyapının önemli bir boyutudur.</strong></p>
+
+          <h2 id="b39">39. E-TİCARETTE GÜVENLİĞİN ÜÇ TEMEL AMACI</h2>
+          <p>Bilgi güvenliğini anlamak için üç temel kavram kullanılabilir:</p>
+          <ol>
+            <li><strong>Gizlilik:</strong> Bilgilerin yalnızca yetkili kişiler tarafından erişilebilir olması.</li>
+            <li><strong>Bütünlük:</strong> Bilginin yetkisiz biçimde değiştirilmemesi.</li>
+            <li><strong>Kullanılabilirlik:</strong> Sistemin ve bilgilerin ihtiyaç duyulduğunda erişilebilir olması.</li>
+          </ol>
+          <p>Bu üç kavram: Gizlilik – Bütünlük – Kullanılabilirlik şeklinde hatırlanabilir.</p>
+
+          <h2 id="b40">40. GİZLİLİK</h2>
+          <p>Örneğin müşterinin: adresi herkes tarafından görülmemelidir.<br>Bu bilgiye yalnızca yetkili sistemlerin ve kişilerin erişmesi gerekir.<br>Dolayısıyla: Gizlilik = Bilginin yetkisiz kişilerden korunması</p>
+
+          <h2 id="b41">41. BÜTÜNLÜK</h2>
+          <p>Örneğin sistemde bir ürünün fiyatı: 1.500 TL olsun.<br>Yetkisiz bir kişi bunu: 15 TL olarak değiştirmemelidir.<br>Verinin değiştirilmeden korunması: Bütünlük kavramıyla ilişkilidir.</p>
+
+          <h2 id="b42">42. KULLANILABİLİRLİK</h2>
+          <p>Müşteri gece saat 22.00'de e-ticaret sitesine girmek istiyor.<br>Ancak sunucu sürekli çökerse site kullanılamaz.<br>Bu nedenle sistemin ihtiyaç duyulduğunda çalışabilir olması önemlidir.<br>Kullanılabilirlik = Sisteme gerektiğinde erişebilme</p>
+
+          <h2 id="b43">43. GÜVENLİK UNSURLARINI SINIFLANDIRALIM</h2>
+          <p>Güvenlik önlemlerini dört ana grupta düşünebiliriz.</p>
+          <div class="table-responsive">
+            <table>
+              <tr>
+                <th>A. İLETİŞİM GÜVENLİĞİ</th>
+                <th>B. HESAP GÜVENLİĞİ</th>
+                <th>C. SİSTEM GÜVENLİĞİ</th>
+                <th>D. VERİ GÜVENLİĞİ</th>
+              </tr>
+              <tr>
+                <td>HTTPS<br>TLS<br>Şifreleme</td>
+                <td>Güçlü parola<br>2FA<br>Yetkilendirme</td>
+                <td>Güvenlik duvarı<br>Güncellemeler<br>Zararlı yazılımlara karşı koruma<br>Güvenlik izleme</td>
+                <td>Yedekleme<br>Erişim kontrolü<br>Veri koruma<br>Gizlilik</td>
+              </tr>
+            </table>
+          </div>
+
+          <h2 id="b44">44. TEKNİK ALTYAPI VE GÜVENLİK ARASINDAKİ FARK</h2>
+          <p>Bu iki kavram birbirine yakın olsa da aynı değildir.</p>
+          <ul>
+            <li><strong>Teknik altyapı:</strong> Sistemin çalışmasını sağlar. Örneğin: Sunucu, Alan adı, Veritabanı, E-ticaret yazılımı, Ödeme sistemi.</li>
+            <li><strong>Güvenlik:</strong> Sistemin ve verilerin korunmasına yardımcı olur. Örneğin: HTTPS/TLS, Şifreleme, Firewall, 2FA, Yedekleme, Erişim kontrolü.</li>
+          </ul>
+
+          <h2 id="b45">45. BUNLARI BİR EV BENZETMESİYLE ANLAYALIM</h2>
+          <p>Bir ev düşünelim.</p>
+          <ul>
+            <li><strong>Teknik altyapı:</strong> Ev, Elektrik, Su, İnternet, Kapılar, Tesisat</li>
+            <li><strong>Güvenlik:</strong> Kilit, Alarm, Kamera, Güvenlik sistemi</li>
+          </ul>
+          <p>E-ticarette de benzer şekilde:<br>Altyapı sistemi çalıştırır.<br>Güvenlik sistemi korur.<br>Ancak güvenlik de altyapının bir parçası olarak planlanmalıdır.</p>
+
+          <h2 id="b46">46. BİR E-TİCARET SİTESİNİN ARKA PLANINI GÖRELİM</h2>
+          <pre>
+Müşteri: Telefon 
+↓
+İnternet 
+↓
+Alan adı 
+↓
+Web sunucusu 
+↓
+E-ticaret yazılımı 
+↓
+Veritabanı 
+↓
+Ürün/stok sistemi 
+↓
+Sepet 
+↓
+Ödeme sistemi 
+↓
+Güvenli iletişim 
+↓
+Sipariş 
+↓
+Kargo 
+↓
+Teslimat 
+          </pre>
+          <p>Bu zincirin herhangi bir bölümündeki ciddi sorun müşterinin alışveriş deneyimini etkileyebilir.</p>
+
+          <h2 id="b47">47. GÜVENLİ BİR E-TİCARET İŞLEMİNİ İNCELEYELİM</h2>
+          <p>Ayşe internet üzerinden bir kitap satın alıyor.</p>
+          <ol>
+            <li><strong>Siteye giriyor:</strong> Alan adı üzerinden web sitesine erişiyor.</li>
+            <li><strong>Ürünü seçiyor:</strong> E-ticaret yazılımı ürün bilgilerini gösteriyor.</li>
+            <li><strong>Sepete ekliyor:</strong> Sepet sistemi ürünü kaydediyor.</li>
+            <li><strong>Sipariş oluşturuyor:</strong> Sipariş sistemi gerekli bilgileri kaydediyor.</li>
+            <li><strong>Ödeme yapıyor:</strong> Ödeme altyapısı devreye giriyor.</li>
+            <li><strong>Güvenli bağlantı kullanılıyor:</strong> İletişim HTTPS/TLS gibi güvenlik mekanizmalarıyla korunuyor.</li>
+            <li><strong>Sipariş onaylanıyor:</strong> Sistem ödeme ve sipariş durumunu güncelliyor.</li>
+            <li><strong>Kargo süreci başlıyor:</strong> Sipariş lojistik sistemine aktarılıyor.</li>
+            <li><strong>Ürün teslim ediliyor:</strong> Müşteri ürünü teslim alıyor.</li>
+          </ol>
+          <p>Burada: Teknik altyapı + güvenlik + lojistik birlikte çalışmaktadır.</p>
+
+          <h2 id="b48">48. PROBLEM ÇÖZME ETKİNLİKLERİ</h2>
+          <p><strong>PROBLEM 1: SİTE AÇILIYOR AMA ÖDEME YAPILAMIYOR</strong><br>Bir e-ticaret sitesinde: Ürünler görüntüleniyor. Sepete ürün ekleniyor. Ancak ödeme yapılamıyor.<br>Hangi sistemde sorun olabilir? Olası sorunlardan biri: Ödeme altyapısı olabilir.<br>Burada öğrencinin yapması gereken: Sorunun hangi teknik bileşenle ilişkili olduğunu belirlemek olmalıdır.</p>
+
+          <p><strong>PROBLEM 2: ÜRÜN STOKTA GÖRÜNÜYOR AMA YOK</strong><br>Sitede: "Son 5 ürün" yazıyor. Ancak depo çalışanı ürünün aslında tükendiğini söylüyor.<br>Sorun hangi sistemle ilişkili olabilir? Stok yönetimi veya stok bilgilerinin sistemlerle doğru senkronize edilmemesi.</p>
+
+          <p><strong>PROBLEM 3: MÜŞTERİ HESABINA GİREMİYOR</strong><br>Müşteri doğru parolayı yazmasına rağmen hesabına erişemiyor.<br>Burada: Kimlik doğrulama sistemi, kullanıcı hesabı, parola sistemi gibi bileşenler kontrol edilmelidir.<br>Bu örnek: Hesap güvenliği ile ilişkilendirilebilir.</p>
+
+          <p><strong>PROBLEM 4: SİTEDEKİ VERİLER KAYBOLDU</strong><br>Bir e-ticaret şirketinin veritabanında bulunan sipariş bilgileri sistem arızası nedeniyle kayboluyor.<br>Hangi önlem bu durumda özellikle önemlidir? Yedekleme. Çünkü düzenli ve güvenilir yedekler varsa verilerin geri yüklenmesi mümkün olabilir.</p>
+
+          <p><strong>PROBLEM 5: SAHTE SİTE</strong><br>Bir kullanıcı internetten alışveriş yaparken gerçek mağazaya benzeyen ancak farklı bir alan adına sahip bir siteye giriyor.<br>Bu durumda kullanıcı: alan adını, sitenin güvenilirliğini, bağlantının güvenliğini, iletişim ve işletme bilgilerini kontrol etmelidir.<br>Burada teknik güvenliğin yanı sıra: kullanıcı farkındalığı da önemlidir.</p>
+
+          <h2 id="b49">49. KULLANICI DA GÜVENLİĞİN BİR PARÇASIDIR</h2>
+          <p>E-ticaret güvenliği yalnızca şirketin görevi değildir.</p>
+          <p>Kullanıcı da:</p>
+          <ul>
+            <li>güçlü parola kullanmalı,</li>
+            <li>aynı parolayı her yerde kullanmamalı,</li>
+            <li>mümkünse 2FA kullanmalı,</li>
+            <li>şüpheli bağlantılara tıklamamalı,</li>
+            <li>alan adını kontrol etmeli,</li>
+            <li>güvenli bağlantıya dikkat etmeli,</li>
+            <li>cihaz ve yazılımlarını güncel tutmalıdır.</li>
+          </ul>
+          <p>Böylece: E-ticaret güvenliği = Sistem güvenliği + Kullanıcı güvenliği şeklinde düşünülebilir.</p>
+
+          <h2 id="b50">50. GÜVENLİKTE "KİLİT SİMGESİ" YETERLİ Mİ?</h2>
+          <p>Hayır.<br>Tarayıcıdaki kilit simgesi veya HTTPS kullanımı, bağlantının belirli güvenlik özellikleri taşıdığını gösterir; ancak: Bir sitenin otomatik olarak güvenilir veya dürüst bir işletme olduğunu kanıtlamaz.<br>Örneğin sahte bir site de HTTPS kullanabilir.<br>Bu nedenle kullanıcı: alan adını, işletme bilgilerini, ödeme sayfasını, sitenin genel güvenilirliğini ayrıca değerlendirmelidir.<br>Bu ayrım öğrenciler açısından oldukça önemlidir.</p>
+
+          <h2 id="b51">51. TEKNİK ALTYAPI VE GÜVENLİK TABLOLARI</h2>
+          <div class="table-responsive">
+            <table>
+              <tr><th colspan="2">TEKNİK ALTYAPI</th></tr>
+              <tr><th>Unsur</th><th>Görevi</th></tr>
+              <tr><td>İnternet</td><td>Sisteme erişimi sağlar</td></tr>
+              <tr><td>Alan adı</td><td>Web sitesinin adresidir</td></tr>
+              <tr><td>Sunucu</td><td>Web hizmetlerini çalıştırır</td></tr>
+              <tr><td>Hosting</td><td>Site kaynaklarının sunucuda barındırılmasını sağlar</td></tr>
+              <tr><td>E-ticaret yazılımı</td><td>Çevrim içi mağazanın işlemlerini yönetir</td></tr>
+              <tr><td>Veritabanı</td><td>Verileri düzenli biçimde saklar</td></tr>
+              <tr><td>Ürün yönetimi</td><td>Ürün bilgilerini yönetir</td></tr>
+              <tr><td>Stok sistemi</td><td>Ürün miktarlarını takip eder</td></tr>
+              <tr><td>Sepet</td><td>Seçilen ürünleri yönetir</td></tr>
+              <tr><td>Sipariş sistemi</td><td>Siparişleri kaydeder ve yönetir</td></tr>
+              <tr><td>Ödeme sistemi</td><td>Elektronik ödeme sürecini yürütür</td></tr>
+              <tr><td>Kargo entegrasyonu</td><td>Teslimat sürecini destekler</td></tr>
+              <tr><td>Mobil uyumluluk</td><td>Mobil cihazlarda kullanım sağlar</td></tr>
+              <tr><td>Yedekleme</td><td>Veri kaybına karşı koruma sağlar</td></tr>
+            </table>
+          </div>
+
+          <div class="table-responsive">
+            <table>
+              <tr><th colspan="2">GÜVENLİK UNSURLARI</th></tr>
+              <tr><th>Güvenlik unsuru</th><th>Temel amacı</th></tr>
+              <tr><td>HTTPS</td><td>Güvenli web iletişimine yardımcı olur</td></tr>
+              <tr><td>TLS</td><td>İletişimin gizlilik ve bütünlüğünü korumaya yardımcı olur</td></tr>
+              <tr><td>Şifreleme</td><td>Verilerin yetkisiz kişilerce okunmasını zorlaştırır</td></tr>
+              <tr><td>Güçlü parola</td><td>Hesap güvenliğini artırır</td></tr>
+              <tr><td>2FA</td><td>Ek kimlik doğrulama katmanı sağlar</td></tr>
+              <tr><td>Firewall</td><td>Ağ trafiğinin kontrolüne yardımcı olur</td></tr>
+              <tr><td>Güncelleme</td><td>Bilinen güvenlik açıklarının giderilmesine yardımcı olur</td></tr>
+              <tr><td>Kötü amaçlı yazılım koruması</td><td>Zararlı yazılımlara karşı koruma sağlar</td></tr>
+              <tr><td>Yedekleme</td><td>Veri kaybı durumunda kurtarmayı kolaylaştırır</td></tr>
+              <tr><td>Erişim kontrolü</td><td>Verilere kimlerin erişebileceğini sınırlar</td></tr>
+              <tr><td>Güvenlik izleme</td><td>Şüpheli faaliyetlerin fark edilmesine yardımcı olur</td></tr>
+            </table>
+          </div>
+
+          <h2 id="b52">52. TEKNİK ALTYAPI + GÜVENLİK = GÜVENİLİR E-TİCARET DENEYİMİ</h2>
+          <p>Başarılı bir e-ticaret sisteminde yalnızca: "Site çalışıyor." demek yeterli değildir.</p>
+          <p>Aynı zamanda: hızlı, erişilebilir, kullanılabilir, güvenli, ödeme yapmaya uygun, verileri koruyan, siparişleri takip edebilen bir sistem olması gerekir.</p>
+          <p>Bu nedenle: Teknik altyapı ve güvenlik birbirini tamamlayan iki alandır.</p>
+
+          <h2 id="b53">53. ÖĞRENCİNİN GÜNLÜK HAYATINDAN ÖRNEK</h2>
+          <p>Bir öğrenci internetten spor ayakkabı satın alıyor.<br>Öğrencinin yaptığı işlemleri teknik altyapıyla eşleştirelim.</p>
+          <ul>
+            <li>Site adresine giriyor. → <strong>Alan adı</strong></li>
+            <li>Ürün sayfası açılıyor. → <strong>Web sitesi / e-ticaret yazılımı</strong></li>
+            <li>Ayakkabının stokta olup olmadığını görüyor. → <strong>Stok yönetimi</strong></li>
+            <li>Ayakkabıyı sepete ekliyor. → <strong>Sepet sistemi</strong></li>
+            <li>Kartıyla ödeme yapıyor. → <strong>Ödeme altyapısı</strong></li>
+            <li>Adresini yazıyor. → <strong>Sipariş ve müşteri veri sistemi</strong></li>
+            <li>Site HTTPS kullanıyor. → <strong>Güvenli iletişim</strong></li>
+            <li>Sipariş kargoya veriliyor. → <strong>Kargo/lojistik entegrasyonu</strong></li>
+            <li>Firma sipariş kayıtlarını yedekliyor. → <strong>Yedekleme</strong></li>
+          </ul>
+          <p>Öğrenci böylece teknik kavramları gerçek bir alışveriş deneyimiyle ilişkilendirebilir.</p>
+
+          <h2 id="b54">54. SINIF İÇİ ETKİNLİK: "BU NEREDE KULLANILIR?"</h2>
+          <p>Öğretmen aşağıdaki kavramları tahtaya yazar:<br>Alan adı, Sunucu, Veritabanı, HTTPS, Firewall, Sepet, Ödeme sistemi, Yedekleme, Stok, 2FA</p>
+          <p>Öğrencilerden her kavramın karşısına: Altyapı mı? Güvenlik mi? Her ikisiyle ilişkili mi? yazmaları istenir.</p>
+          <ul>
+            <li>Alan adı → Teknik altyapı</li>
+            <li>Sunucu → Teknik altyapı</li>
+            <li>Sepet → Teknik altyapı</li>
+            <li>Ödeme sistemi → Teknik altyapı + güvenlik</li>
+            <li>HTTPS → Güvenlik</li>
+            <li>Firewall → Güvenlik</li>
+            <li>2FA → Güvenlik</li>
+            <li>Yedekleme → Güvenlik / iş sürekliliği</li>
+          </ul>
+
+          <h2 id="b55">55. SINIF İÇİ PROBLEM ETKİNLİKLERİ</h2>
+          <p>Bir e-ticaret sitesinde şu sorunlar yaşanıyor:</p>
+          <p><strong>Sorun 1:</strong> Siteye hiç kimse erişemiyor.<br>Muhtemel alanlar: Sunucu / hosting / ağ altyapısı</p>
+          <p><strong>Sorun 2:</strong> Site açılıyor fakat ürünler görünmüyor.<br>Muhtemel alanlar: E-ticaret yazılımı / veritabanı</p>
+          <p><strong>Sorun 3:</strong> Ürünler görünüyor ancak ödeme yapılamıyor.<br>Muhtemel alan: Ödeme altyapısı</p>
+          <p><strong>Sorun 4:</strong> Müşteri hesabına başkası erişiyor.<br>Muhtemel alanlar: Hesap güvenliği / parola / kimlik doğrulama</p>
+          <p><strong>Sorun 5:</strong> Sipariş kayıtları siliniyor.<br>Önemli güvenlik önlemi: Yedekleme</p>
+          <p>Bu etkinlikle öğrenciler kavramları sadece tanımlamakla kalmaz, sorun ile teknik unsur arasında ilişki kurar.</p>
+
+          <h2 id="b56">56. E-TİCARETTE "ÜÇ KATMANLI" DÜŞÜNME</h2>
+          <p>Konuyu daha kolay sınıflandırmak için e-ticareti üç katmanda düşünebiliriz.</p>
+          <ol>
+            <li><strong>KULLANICI KATMANI:</strong> Müşterinin gördüğü bölüm: Web sitesi, Ürün sayfası, Sepet, Ödeme ekranı, Mobil uygulama.</li>
+            <li><strong>UYGULAMA KATMANI:</strong> Arka planda işlemleri yöneten bölüm: E-ticaret yazılımı, Sipariş sistemi, Stok sistemi, Kullanıcı hesapları, Ödeme entegrasyonu.</li>
+            <li><strong>ALTYAPI KATMANI:</strong> Sistemin üzerinde çalıştığı bölüm: Sunucular, Ağ, Veritabanı, Barındırma, Güvenlik sistemleri, Yedekleme.</li>
+          </ol>
+          <p>Bu katmanların tamamı birlikte çalışır.</p>
+
+          <h2 id="b57">57. BİR E-TİCARET SİSTEMİNİ BİNA GİBİ DÜŞÜNELİM</h2>
+          <p>E-ticaret sitesini bir bina olarak düşünürsek:</p>
+          <ul>
+            <li><strong>Temel:</strong> Sunucu + altyapı</li>
+            <li><strong>Odalar:</strong> Yazılımlar ve veritabanları</li>
+            <li><strong>Mağaza:</strong> Web sitesi</li>
+            <li><strong>Kasa:</strong> Ödeme sistemi</li>
+            <li><strong>Depo:</strong> Stok sistemi</li>
+            <li><strong>Kapı kilidi:</strong> Güvenlik sistemleri</li>
+            <li><strong>Arşiv:</strong> Yedekleme</li>
+          </ul>
+          <p>Bu benzetme teknik kavramları akılda tutmayı kolaylaştırır.</p>
+
+          <h2 id="b58">58. SIK YAPILAN HATALAR</h2>
+          <ul>
+            <li><strong>Hata 1: "HTTPS varsa site kesinlikle güvenlidir."</strong> Yanlış. HTTPS güvenli iletişime yardımcı olur; sitenin dürüst veya güvenilir bir işletme olduğunu tek başına kanıtlamaz.</li>
+            <li><strong>Hata 2: "Alan adı ile hosting aynı şeydir."</strong> Yanlış. Alan adı: Web adresidir. Hosting: Web sitesinin kaynaklarının barındırıldığı hizmettir.</li>
+            <li><strong>Hata 3: "E-ticaret için sadece web sitesi yeterlidir."</strong> Yanlış. E-ticaret sisteminin: ödeme, sipariş, veritabanı, stok, güvenlik gibi başka bileşenlere de ihtiyacı vardır.</li>
+            <li><strong>Hata 4: "Güvenlik sadece antivirüs kullanmaktır."</strong> Yanlış. Güvenlik çok daha geniştir: şifreleme, HTTPS, erişim kontrolü, 2FA, firewall, güncelleme, yedekleme gibi birçok unsur bulunur.</li>
+            <li><strong>Hata 5: "Yedekleme güvenlikle ilgili değildir."</strong> Yanlış. Yedekleme, özellikle veri kaybı ve sistem kurtarma açısından güvenlik ve iş sürekliliğinin önemli bir unsurudur.</li>
+          </ul>
+
+          <h2 id="b59">59. ÖĞRENCİNİN HATIRLAMASI GEREKEN ANA FORMÜL</h2>
+          <p>E-ticaret sistemini şu şekilde hatırlayabiliriz:<br>ADRES → SUNUCU → YAZILIM → VERİ → SEPET → ÖDEME → KARGO</p>
+          <p>Güvenliği ise:<br>HTTPS → ŞİFRELEME → HESAP GÜVENLİĞİ → SİSTEM GÜVENLİĞİ → YEDEKLEME şeklinde düşünebiliriz.</p>
+
+          <h2 id="b60">60. KISA SINAV ÖZETİ</h2>
+          <ul>
+            <li><strong>Teknik altyapı nedir?</strong> E-ticaret sisteminin çalışmasını sağlayan donanım, yazılım, ağ ve hizmetlerin bütünüdür.</li>
+            <li><strong>Alan adı nedir?</strong> Web sitesinin internet üzerindeki adresidir.</li>
+            <li><strong>Sunucu nedir?</strong> İnternet üzerinden hizmet sunan bilgisayar veya bilgisayar sistemidir.</li>
+            <li><strong>Veritabanı nedir?</strong> E-ticaret sistemindeki verilerin düzenli biçimde saklanmasını ve yönetilmesini sağlayan yapıdır.</li>
+            <li><strong>E-ticaret yazılımı nedir?</strong> Çevrim içi mağazanın ürün, sepet, sipariş ve benzeri işlemlerini yönetmesini sağlayan yazılımdır.</li>
+            <li><strong>HTTPS ne işe yarar?</strong> Web iletişiminin güvenli biçimde gerçekleştirilmesine yardımcı olur.</li>
+            <li><strong>Firewall nedir?</strong> Ağ trafiğinin belirli kurallara göre kontrol edilmesine yardımcı olan güvenlik mekanizmasıdır.</li>
+            <li><strong>2FA nedir?</strong> Hesaba girişte parolaya ek bir doğrulama katmanı sağlayan güvenlik yöntemidir.</li>
+            <li><strong>Yedekleme neden yapılır?</strong> Veri kaybı durumunda verilerin geri yüklenebilmesine yardımcı olmak için.</li>
+          </ul>
+
+          <h2 id="b61">61. KAZANIMIN ÖZÜ</h2>
+          <p>"E-ticaret için gereken teknik altyapı ve güvenlik unsurlarını açıklar." kazanımında öğrencinin şu temel ilişkiyi kurabilmesi gerekir:<br>Bir e-ticaret sitesi çalışmak için teknik altyapıya, güvenilir biçimde çalışmak için de güvenlik önlemlerine ihtiyaç duyar.</p>
+          <p>Teknik altyapının temel unsurları:<br>İnternet → Alan adı → Sunucu/Hosting → Web sitesi/E-ticaret yazılımı → Veritabanı → Ürün/Stok → Sepet → Sipariş → Ödeme → Kargo</p>
+          <p>Güvenliğin temel unsurları:<br>HTTPS/TLS → Şifreleme → Güçlü parola → 2FA → Erişim kontrolü → Firewall → Güncellemeler → Zararlı yazılımlara karşı koruma → Yedekleme</p>
+          <div class="highlight-box">
+            <strong>Kritik ayrım</strong>
+            <p>Ve öğrencinin özellikle şu ayrımı yapabilmesi gerekir:<br>
+            <strong>Teknik altyapı sistemi çalıştırır; güvenlik sistemi ve verileri korumaya yardımcı olur.</strong></p>
+            <p>Bu kazanımın günlük hayattaki karşılığı ise çok basittir: Bir ürünü internetten satın aldığımızda gördüğümüz ekranın arkasında çalışan bütün teknik sistemleri ve bu sistemleri koruyan güvenlik önlemlerini tanıyabilmek.</p>
+          </div>
+
+          <div class="asterism">* * *</div>
+
+          <nav class="doc-nav">
+            <a href="ders3.html">
+              <span class="doc-nav-label">← Önceki</span>
+              <span class="doc-nav-title">03 · Pazarlama Aşamaları</span>
+            </a>
+            <a href="ders5.html">
+              <span class="doc-nav-label">Sonraki →</span>
+              <span class="doc-nav-title">05 · Hukuki Düzenlemeler</span>
+            </a>
+          </nav>
+
+          <footer class="page-foot">
+            <span>Ders 04 · Teknik Altyapı ve Güvenlik</span>
+            <span>Ünite 1 · 2026</span>
+          </footer>
+
+        </div>
+      </article>
+
+      <aside class="margin">
+        <div class="margin-note">
+          <span class="margin-label">Kazanım</span>
+          <strong>Ne öğreneceksin?</strong>
+          <p>Bir e-ticaret sitesinin arkasında çalışan teknik bileşenleri ve bu bileşenleri koruyan güvenlik önlemlerini ayırt edebileceksin.</p>
+        </div>
+        <div class="margin-note">
+          <span class="margin-label">Kilit ayrım</span>
+          <strong>Altyapı vs. Güvenlik</strong>
+          <p>Teknik altyapı sistemi çalıştırır. Güvenlik ise sistemi ve verileri korur. İkisi birbirini tamamlar.</p>
+        </div>
+        <div class="margin-note">
+          <span class="margin-label">Sonraki</span>
+          <strong>05 · Hukuki Düzenlemeler</strong>
+          <p>6563, 6502, KVKK, ETBİS, İYS, mesafeli sözleşme ve cayma hakkı gibi hukuki çerçeveyi öğren.</p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById('bar').style.width = (h > 0 ? (scrollY / h) * 100 : 0) + '%';
+  }, { passive: true });
+
+  function toggleRail() { document.getElementById('rail').classList.toggle('open'); }
+
+  const subLinks = document.querySelectorAll('.rail-sub a');
+  const targets = [...subLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        subLinks.forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.rail-sub a[href="#${entry.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-10% 0px -75% 0px' });
+  targets.forEach(t => io.observe(t));
+</script>
+
+</body>
+</html>

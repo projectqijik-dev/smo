@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 · Pazarlama Aşamaları</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar" id="bar"></div></div>
+<button class="rail-toggle" onclick="toggleRail()">≡</button>
+
+<button class="print-btn" onclick="window.print()" title="Bu dersi yazdır / PDF olarak kaydet">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+    <rect x="6" y="14" width="12" height="8"></rect>
+  </svg>
+  <span class="print-label">Çıktı Al</span>
+</button>
+
+<div class="shell">
+
+  <aside class="rail" id="rail">
+    <a href="index.html" class="rail-brand">
+      <span class="rail-mark">B</span>
+      <span class="rail-brand-text">
+        <strong>Sosyal Medya ve E-Ticaret</strong>
+        <span>ÖBBK MTAL · 11. Sınıf · 2026</span>
+      </span>
+    </a>
+
+    <p class="rail-label">Müfredat</p>
+    <nav class="rail-nav">
+      <ol>
+        <li><a href="ders1.html"><span class="num">01</span><span>E-Ticarete İlişkin Temel Kavramlar</span></a></li>
+        <li><a href="ders2.html"><span class="num">02</span><span>E-Ticaret Türleri</span></a></li>
+        <li><a href="ders3.html" class="active"><span class="num">03</span><span>Pazarlama Aşamaları</span></a></li>
+        <li><a href="ders4.html"><span class="num">04</span><span>Teknik Altyapı ve Güvenlik</span></a></li>
+        <li><a href="ders5.html"><span class="num">05</span><span>Hukuki Düzenlemeler</span></a></li>
+      </ol>
+    </nav>
+
+    <p class="rail-label">Bu Derste</p>
+    <nav class="rail-nav rail-sub">
+      <ol>
+        <li><a href="#b1"><span class="num">01</span><span>Pazarlama Nedir?</span></a></li>
+        <li><a href="#b2"><span class="num">02</span><span>Neden Aşamalara Ayrılır?</span></a></li>
+        <li><a href="#b3"><span class="num">03</span><span>Ana Mantık</span></a></li>
+        <li><a href="#b4"><span class="num">04</span><span>Pazar Araştırması</span></a></li>
+        <li><a href="#b5"><span class="num">05</span><span>Hedef Kitle</span></a></li>
+        <li><a href="#b6"><span class="num">06</span><span>Hedef Kitle Neden?</span></a></li>
+        <li><a href="#b7"><span class="num">07</span><span>Hedef Kitle Belirleme</span></a></li>
+        <li><a href="#b8"><span class="num">08</span><span>Hedef Kitle Örneği</span></a></li>
+        <li><a href="#b9"><span class="num">09</span><span>Pazarlama Hedefleri</span></a></li>
+        <li><a href="#b10"><span class="num">10</span><span>Hedef Neden Önemli?</span></a></li>
+        <li><a href="#b11"><span class="num">11</span><span>Ürün ve Değer</span></a></li>
+        <li><a href="#b12"><span class="num">12</span><span>Özellik ≠ Fayda</span></a></li>
+        <li><a href="#b13"><span class="num">13</span><span>Fiyatlandırma</span></a></li>
+        <li><a href="#b14"><span class="num">14</span><span>Fiyat Örneği</span></a></li>
+        <li><a href="#b15"><span class="num">15</span><span>Dijital Kanal</span></a></li>
+        <li><a href="#b16"><span class="num">16</span><span>Her Ürün Aynı Kanal?</span></a></li>
+        <li><a href="#b17"><span class="num">17</span><span>Tanıtım ve İletişim</span></a></li>
+        <li><a href="#b18"><span class="num">18</span><span>Reklam ≠ Pazarlama</span></a></li>
+        <li><a href="#b19"><span class="num">19</span><span>Satın Alma Süreci</span></a></li>
+        <li><a href="#b20"><span class="num">20</span><span>Kolaylık Neden Önemli?</span></a></li>
+        <li><a href="#b21"><span class="num">21</span><span>Satış Sonrası İletişim</span></a></li>
+        <li><a href="#b22"><span class="num">22</span><span>Müşteri Memnuniyeti</span></a></li>
+        <li><a href="#b23"><span class="num">23</span><span>Ölçme ve Analiz</span></a></li>
+        <li><a href="#b24"><span class="num">24</span><span>Veriler Neden Önemli?</span></a></li>
+        <li><a href="#b25"><span class="num">25</span><span>Süreç Bir Döngüdür</span></a></li>
+        <li><a href="#b26"><span class="num">26</span><span>Tek Örnek Üzerinden</span></a></li>
+        <li><a href="#b27"><span class="num">27</span><span>Sınıflandırma</span></a></li>
+        <li><a href="#b28"><span class="num">28</span><span>Müşteri Yolculuğu</span></a></li>
+        <li><a href="#b29"><span class="num">29</span><span>Önceki Kazanım Bağı</span></a></li>
+        <li><a href="#b30"><span class="num">30</span><span>Pazarlama ≠ Satış</span></a></li>
+        <li><a href="#b31"><span class="num">31</span><span>Pazarlama ≠ Reklam</span></a></li>
+        <li><a href="#b32"><span class="num">32</span><span>Sık Karıştırılanlar</span></a></li>
+        <li><a href="#b33"><span class="num">33</span><span>Problem 1</span></a></li>
+        <li><a href="#b34"><span class="num">34</span><span>Problem 2</span></a></li>
+        <li><a href="#b35"><span class="num">35</span><span>Problem 3</span></a></li>
+        <li><a href="#b36"><span class="num">36</span><span>Problem 4</span></a></li>
+        <li><a href="#b37"><span class="num">37</span><span>Sen Bir Yöneticisin</span></a></li>
+        <li><a href="#b38"><span class="num">38</span><span>Ezberleme Anahtarı</span></a></li>
+        <li><a href="#b39"><span class="num">39</span><span>Bütün Sürecin Şeması</span></a></li>
+        <li><a href="#b40"><span class="num">40</span><span>Temel Ayrımlar</span></a></li>
+        <li><a href="#b41"><span class="num">41</span><span>Sınav Kavram Tablosu</span></a></li>
+        <li><a href="#b42"><span class="num">42</span><span>Kazanımın Özü</span></a></li>
+      </ol>
+    </nav>
+
+    <div class="rail-foot">
+      <p>Ünite 1 · Ders 03 · 42 bölüm</p>
+      <p>Son güncelleme: Eylül 2026</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="page-inner">
+
+      <article class="doc">
+
+        <header class="doc-head">
+          <div class="doc-eyebrow">Ders 03 · Ünite 1 · 42 bölüm</div>
+          <h1>Pazarlama <em>Aşamaları</em></h1>
+          <p class="doc-lead">
+            Kazanım: "E-ticarette pazarlama aşamalarını sıralar." Bu derste bir e-ticaret ürününün araştırmadan analize kadar geçtiği on aşamalı süreci ve bu sürecin günlük hayattaki karşılığını inceleyeceğiz.
+          </p>
+          <dl class="doc-meta">
+            <div>
+              <dt>Kazanım</dt>
+              <dd>Aşamaları sıralar</dd>
+            </div>
+            <div>
+              <dt>Okuma</dt>
+              <dd>~20 dk</dd>
+            </div>
+            <div>
+              <dt>Güncelleme</dt>
+              <dd>Eylül 2026</dd>
+            </div>
+          </dl>
+        </header>
+
+        <div class="doc-body">
+
+          <h2 id="b1">1. E-TİCARETTE PAZARLAMA NEDİR?</h2>
+          <p>Önce "pazarlama" kavramını anlamamız gerekir.</p>
+          <p>Pazarlama, bir ürün veya hizmetin doğru müşteriye ulaştırılması, müşterinin ihtiyaçlarının anlaşılması, ürünün tanıtılması ve satın alma sürecinin desteklenmesiyle ilgili faaliyetlerin bütünüdür.</p>
+          <p>E-ticarette bu faaliyetlerin önemli bir bölümü:</p>
+          <ul>
+            <li>internet siteleri,</li>
+            <li>mobil uygulamalar,</li>
+            <li>arama motorları,</li>
+            <li>sosyal medya,</li>
+            <li>e-posta,</li>
+            <li>dijital reklamlar,</li>
+            <li>çevrim içi pazaryerleri</li>
+          </ul>
+          <p>gibi dijital kanallar üzerinden yürütülebilir.</p>
+          <div class="highlight-box">
+            <strong>Çok önemli ayrım</strong>
+            <p>Pazarlama = sadece reklam değildir.<br>
+            Reklam, pazarlamanın bir parçasıdır.<br>
+            Pazarlama ise:<br>
+            Müşteriyi tanıma → ihtiyacı belirleme → ürün oluşturma/sunma → müşteriye ulaşma → tanıtma → satın almaya yönlendirme → satış sonrası ilişki<br>
+            gibi daha geniş bir süreci kapsar.</p>
+          </div>
+
+          <h2 id="b2">2. NEDEN PAZARLAMA AŞAMALARA AYRILIR?</h2>
+          <p>Bir işletmenin internet sitesine bir ürün koyması, ürünün mutlaka satılacağı anlamına gelmez.</p>
+          <p>Örneğin bir firma yeni bir spor ayakkabı satışa çıkarıyor.<br>Sadece: "Ayakkabıyı internet sitesine koyduk." demesi yeterli değildir.</p>
+          <p>Şunları da düşünmesi gerekir:</p>
+          <ul>
+            <li>Bu ayakkabıyı kim satın alacak?</li>
+            <li>Müşterinin ihtiyacı nedir?</li>
+            <li>Müşteri bu ürünü nerede arar?</li>
+            <li>Ürün nasıl tanıtılmalıdır?</li>
+            <li>Hangi fiyat uygun olabilir?</li>
+            <li>Müşteriye hangi kanaldan ulaşılmalıdır?</li>
+            <li>Müşteri neden bu ürünü tercih etmelidir?</li>
+            <li>Satın alma işlemi nasıl kolaylaştırılmalıdır?</li>
+            <li>Satış sonrasında müşteri nasıl desteklenmelidir?</li>
+          </ul>
+          <p>Bu nedenle e-ticarette pazarlama bir süreç olarak ele alınır.</p>
+
+          <h2 id="b3">3. E-TİCARET PAZARLAMASININ ANA MANTIĞI</h2>
+          <p>Konuyu öğrencinin kolay hatırlayabilmesi için pazarlama sürecini şu şekilde sıralayabiliriz:</p>
+          <ol>
+            <li>Pazar ve müşteri araştırması</li>
+            <li>Hedef kitlenin belirlenmesi</li>
+            <li>Pazarlama hedeflerinin belirlenmesi</li>
+            <li>Ürün/hizmet ve değer teklifinin belirlenmesi</li>
+            <li>Fiyatlandırma</li>
+            <li>Dijital kanal ve satış ortamının belirlenmesi</li>
+            <li>Tanıtım ve iletişim</li>
+            <li>Satın alma sürecinin gerçekleştirilmesi</li>
+            <li>Satış sonrası iletişim ve müşteri ilişkileri</li>
+            <li>Ölçme, analiz ve iyileştirme</li>
+          </ol>
+          <p>Bu aşamalar birbirinden tamamen kopuk değildir.<br>Örneğin analiz sonucunda hedef kitlenin değişmesi gerekebilir. Böylece işletme yeniden araştırma yapabilir.</p>
+          <div class="highlight-box">
+            <strong>Sürecin mantığı</strong>
+            <p>Dolayısıyla e-ticaret pazarlaması:<br>
+            <strong>Planla → Uygula → Ölç → Geliştir</strong><br>
+            mantığıyla sürekli devam eden bir süreçtir.</p>
+          </div>
+
+          <h2 id="b4">4. 1. AŞAMA: PAZAR VE MÜŞTERİ ARAŞTIRMASI</h2>
+          <p>Pazarlamanın başlangıç noktalarından biri araştırmadır.<br>İşletme önce pazarı ve müşterileri anlamaya çalışır.</p>
+          <p><strong>Sorulabilecek sorular</strong></p>
+          <ul>
+            <li>İnsanlar neye ihtiyaç duyuyor?</li>
+            <li>Hangi ürünlere ilgi gösteriliyor?</li>
+            <li>Rakip işletmeler hangi ürünleri satıyor?</li>
+            <li>Müşteriler hangi özellikleri önemsiyor?</li>
+            <li>Ürün hangi fiyat aralığında satılıyor?</li>
+            <li>Müşteriler interneti nasıl kullanıyor?</li>
+            <li>Hangi sorunların çözülmesine ihtiyaç var?</li>
+          </ul>
+          <p><strong>Günlük hayat örneği</strong><br>Bir öğrenci grubu okulda kullanılabilecek özel tasarımlı defterler satmak istiyor.<br>Hemen defter üretmeye başlamadan önce: "Öğrenciler gerçekten böyle bir defter istiyor mu?" sorusunu araştırmaları gerekir.</p>
+          <p>Örneğin sınıfta anket yapabilirler:<br>"Kapak tasarımı önemli mi?"<br>"Kaç TL ödemeye razısınız?"<br>"Çizgili mi, kareli mi, boş mu?"<br>Bu çalışmalar pazar/müşteri araştırmasının basit örnekleridir.</p>
+
+          <h2 id="b5">5. 2. AŞAMA: HEDEF KİTLENİN BELİRLENMESİ</h2>
+          <p>Her ürün herkese satılmak zorunda değildir.<br>İşletmenin ulaşmak istediği müşteri grubuna: <strong>hedef kitle</strong> denir.</p>
+          <p>Örneğin<br>Bir işletme spor ayakkabı satıyor.<br>Hedef kitlesi: gençler, spor yapan kişiler, koşucular, belirli bir yaş grubu olabilir.</p>
+          <p>Başka bir işletme ise bebek ürünleri satıyorsa hedef kitlesi farklı olacaktır.</p>
+
+          <h2 id="b6">6. HEDEF KİTLE NEDEN ÖNEMLİDİR?</h2>
+          <p>Çünkü farklı insanların: ihtiyaçları, gelir düzeyleri, alışveriş alışkanlıkları, ilgi alanları, kullandıkları dijital platformlar farklı olabilir.</p>
+          <p>Örneğin: 17 yaşındaki bir öğrenciyi hedefleyen ürünün tanıtım yöntemi ile profesyonel bir işletme yöneticisini hedefleyen ürünün tanıtım yöntemi aynı olmak zorunda değildir.</p>
+
+          <h2 id="b7">7. HEDEF KİTLEYİ BELİRLEME</h2>
+          <p>Hedef kitle belirlenirken çeşitli özelliklerden yararlanılabilir.</p>
+          <div class="table-responsive">
+            <table>
+              <tr>
+                <th>Demografik özellikler</th>
+                <th>Coğrafi özellikler</th>
+                <th>İlgi alanları</th>
+                <th>Davranışsal özellikler</th>
+              </tr>
+              <tr>
+                <td>Yaş, Cinsiyet, Gelir, Eğitim, Meslek</td>
+                <td>Ülke, Şehir, Bölge</td>
+                <td>Spor, Teknoloji, Müzik, Oyun, Kitap</td>
+                <td>İnternetten alışveriş sıklığı, Daha önce satın aldığı ürünler, Marka tercihleri, Alışveriş alışkanlıkları</td>
+              </tr>
+            </table>
+          </div>
+
+          <h2 id="b8">8. HEDEF KİTLE ÖRNEĞİ</h2>
+          <p>Bir işletmenin yeni bir oyuncu kulaklığı sattığını düşünelim.</p>
+          <p>Hedef kitle şöyle tanımlanabilir:<br>"Bilgisayar ve konsol oyunlarıyla ilgilenen, çevrim içi oyun oynayan genç kullanıcılar."</p>
+          <p>Bu durumda işletme: ürünün özelliklerini, reklam mesajını, görselleri, kullanılacak dijital kanalları bu hedef kitleye göre belirleyebilir.</p>
+
+          <h2 id="b9">9. 3. AŞAMA: PAZARLAMA HEDEFLERİNİN BELİRLENMESİ</h2>
+          <p>İşletme: "Ne elde etmek istiyorum?" sorusuna cevap vermelidir.</p>
+          <p>Örneğin:</p>
+          <ul>
+            <li>Yeni bir ürünü tanıtmak</li>
+            <li>Satışları artırmak</li>
+            <li>Yeni müşterilere ulaşmak</li>
+            <li>Web sitesine daha fazla ziyaretçi çekmek</li>
+            <li>Marka bilinirliğini artırmak</li>
+            <li>Mevcut müşterileri tekrar alışverişe yönlendirmek</li>
+          </ul>
+          <p>gibi hedefler belirlenebilir.</p>
+
+          <h2 id="b10">10. HEDEFİN BELİRLENMESİ NEDEN ÖNEMLİDİR?</h2>
+          <p>Çünkü hedef olmadan yapılan pazarlama faaliyetinin başarılı olup olmadığını ölçmek zordur.</p>
+          <p>Örneğin: "Reklam yayınladık." tek başına yeterli bir bilgi değildir.<br>
+          Daha anlamlı soru: "Reklam sonucunda internet sitemizi kaç kişi ziyaret etti?" veya "Reklamdan sonra kaç kişi satın alma gerçekleştirdi?" olabilir.</p>
+
+          <h2 id="b11">11. 4. AŞAMA: ÜRÜN VE DEĞER TEKLİFİNİN BELİRLENMESİ</h2>
+          <p>Bu aşamada işletme: "Müşteri neden bu ürünü satın alsın?" sorusuna cevap arar.<br>Ürünün müşteriye sunduğu fayda açık biçimde ortaya konmalıdır.</p>
+          <p>Örnek<br>Bir su matarası satılıyor.<br>Sadece: "1 litrelik matara." demek yerine ürünün özellikleri: sızdırmaz, taşınabilir, dayanıklı, yeniden kullanılabilir şeklinde açıklanabilir.<br>Burada amaç müşteriye: "Bu ürün benim hangi ihtiyacımı karşılıyor?" sorusunun cevabını göstermektir.</p>
+
+          <h2 id="b12">12. ÜRÜNÜN ÖZELLİĞİ VE FAYDASI AYNI ŞEY DEĞİLDİR</h2>
+          <p>Bu ayrım önemlidir.</p>
+          <p>Özellik: "Ürün 1 litre kapasitelidir."<br>Fayda: "Gün boyunca daha fazla su taşımanıza yardımcı olur."</p>
+          <p>Başka örnek:<br>Özellik: "Laptop 16 GB RAM'e sahiptir."<br>Fayda: "Birden fazla uygulamayı aynı anda daha rahat kullanmaya yardımcı olabilir."</p>
+          <p>Pazarlama iletişiminde özelliklerin müşteriye sağladığı faydayla ilişkilendirilmesi önemlidir.</p>
+
+          <h2 id="b13">13. 5. AŞAMA: FİYATLANDIRMA</h2>
+          <p>Ürünün hangi fiyatla sunulacağı belirlenir.</p>
+          <p>Fiyat belirlenirken işletme çeşitli faktörleri değerlendirebilir:</p>
+          <ul>
+            <li>Üretim maliyeti</li>
+            <li>Rakiplerin fiyatları</li>
+            <li>Hedef kitlenin ödeme gücü</li>
+            <li>Ürünün algılanan değeri</li>
+            <li>Kampanyalar</li>
+            <li>Kargo ve diğer maliyetler</li>
+          </ul>
+
+          <h2 id="b14">14. FİYATLANDIRMA ÖRNEĞİ</h2>
+          <p>Bir işletme bir çanta satıyor.<br>Ürünün maliyeti: 400 TL olabilir.</p>
+          <p>İşletme bunun üzerine: işletme giderleri, pazarlama giderleri, kargo, vergiler, hedeflenen kâr gibi unsurları dikkate alarak satış fiyatını belirleyebilir.</p>
+          <p>Burada öğrencinin anlaması gereken: Satış fiyatı yalnızca ürünün üretim maliyetinden ibaret değildir.</p>
+
+          <h2 id="b15">15. 6. AŞAMA: DİJİTAL KANALIN BELİRLENMESİ</h2>
+          <p>E-ticarette müşteriye ulaşmak için farklı dijital kanallar kullanılabilir.</p>
+          <p>Örneğin: E-ticaret sitesi, Mobil uygulama, E-posta, Arama motorları, Sosyal medya, Dijital reklam platformları, E-ticaret pazaryerleri.<br>İşletme hedef kitlesine uygun kanalları seçmeye çalışır.</p>
+
+          <h2 id="b16">16. HER ÜRÜN İÇİN AYNI KANAL GEREKLİ Mİ?</h2>
+          <p>Hayır.</p>
+          <p>Örneğin:<br>Bir bilgisayar firması: Arama motorlarında ürün arayan müşterilere ulaşmaya önem verebilir.<br>Bir moda markası: Görsel ağırlıklı dijital kanalları kullanabilir.<br>Bir işletme yazılımı: Profesyonel müşterilere ulaşmak için farklı dijital kanalları tercih edebilir.</p>
+          <p>Burada temel soru: "Hedef kitlem nerede?"</p>
+
+          <h2 id="b17">17. 7. AŞAMA: TANITIM VE İLETİŞİM</h2>
+          <p>Bu aşama öğrencilerin "reklam" kavramıyla en kolay ilişkilendireceği bölümdür.<br>İşletme ürününü müşterilere tanıtır.</p>
+          <p>Kullanılabilecek yöntemler arasında: Dijital reklam, Sosyal medya paylaşımı, E-posta, İçerik üretimi, Arama motoru çalışmaları, Kampanyalar, Ürün tanıtım videoları gibi faaliyetler bulunabilir.</p>
+
+          <h2 id="b18">18. REKLAM İLE PAZARLAMA ARASINDAKİ FARK</h2>
+          <p>Bu konu özellikle vurgulanmalıdır.</p>
+          <p>Pazarlama: Daha geniş bir süreçtir.<br>Reklam: Pazarlama faaliyetlerinin bir bölümüdür.</p>
+          <p>Şöyle düşünebiliriz:<br>Pazarlama = Büyük şemsiye<br>Şemsiyenin altında: araştırma, hedef kitle, fiyatlandırma, dağıtım, tanıtım, müşteri ilişkileri, ölçümleme gibi faaliyetler bulunabilir.</p>
+          <p>Reklam, bunlardan özellikle tanıtım/iletişim kısmında kullanılan araçlardan biridir.</p>
+
+          <h2 id="b19">19. 8. AŞAMA: SATIN ALMA SÜRECİ</h2>
+          <p>Müşteri ürünü gördükten sonra satın alma işlemini gerçekleştirmelidir.<br>Bu noktada e-ticaret sitesinin kullanımı kolay olmalıdır.</p>
+          <p>Genel süreç:<br>Ürün sayfası → Sepete ekleme → Sipariş → Ödeme → Onay şeklinde ilerleyebilir.</p>
+
+          <h2 id="b20">20. SATIN ALMA SÜRECİNİN KOLAY OLMASI NEDEN ÖNEMLİDİR?</h2>
+          <p>Bir müşteri ürünü beğenmiş olabilir.<br>Ancak: ürün bilgileri yetersizse, fiyat açık değilse, ödeme aşaması çok karmaşıksa, teslimat bilgileri belirsizse, site kullanımı zor ise satın alma işlemini tamamlamayabilir.</p>
+          <p>Bu nedenle pazarlama yalnızca müşteriyi siteye getirmekle bitmez.<br>Müşterinin satın alma sürecini tamamlayabilmesi de önemlidir.</p>
+
+          <h2 id="b21">21. 9. AŞAMA: SATIŞ SONRASI İLETİŞİM</h2>
+          <p>E-ticaret pazarlaması ürün satıldıktan sonra bitmez.</p>
+          <p>Müşteri: ürün hakkında soru sorabilir, teslimatla ilgili bilgi isteyebilir, ürünü değiştirmek isteyebilir, iade talep edebilir, teknik destek isteyebilir.<br>Bu nedenle işletmenin satış sonrasında da müşteriyle iletişim kurması gerekir.</p>
+
+          <h2 id="b22">22. MÜŞTERİ MEMNUNİYETİ</h2>
+          <p>Satış sonrası süreçte: Müşteri memnuniyeti önemli bir unsurdur.</p>
+          <p>Memnun kalan müşteri: işletmeyi tekrar tercih edebilir, olumlu değerlendirme bırakabilir, çevresine önerebilir.<br>Memnun olmayan müşteri ise: tekrar alışveriş yapmayabilir, olumsuz değerlendirme yapabilir, işletmeyle ilgili şikâyette bulunabilir.</p>
+          <p>Bu nedenle satış sonrası deneyim de pazarlama sürecinin önemli bir parçasıdır.</p>
+
+          <h2 id="b23">23. 10. AŞAMA: ÖLÇME VE ANALİZ</h2>
+          <p>E-ticarette önemli avantajlardan biri, birçok faaliyetin ölçülebilir olmasıdır.</p>
+          <p>İşletme örneğin şu soruları sorabilir:</p>
+          <ul>
+            <li>Reklamı kaç kişi gördü?</li>
+            <li>Kaç kişi internet sitesine geldi?</li>
+            <li>Kaç kişi ürünü inceledi?</li>
+            <li>Kaç kişi sepete ekledi?</li>
+            <li>Kaç kişi satın aldı?</li>
+            <li>Hangi ürün daha fazla ilgi gördü?</li>
+            <li>Hangi kanal daha fazla ziyaretçi getirdi?</li>
+          </ul>
+          <p>Bu bilgiler pazarlama faaliyetlerinin değerlendirilmesinde kullanılabilir.</p>
+
+          <h2 id="b24">24. VERİLER NEDEN ÖNEMLİDİR?</h2>
+          <p>Örneğin bir işletmenin internet sitesine: 10.000 kişi girmiş olsun.<br>Ancak yalnızca: 100 kişi satın alma gerçekleştirmiş olsun.</p>
+          <p>İşletme bu veriyi inceleyerek: "Ziyaretçi sayımız yüksek fakat satın alma oranımız neden düşük?" sorusunu araştırabilir.<br>Böylece pazarlama sürecinde değişiklikler yapılabilir.</p>
+
+          <h2 id="b25">25. PAZARLAMA SÜRECİ BİR DÖNGÜDÜR</h2>
+          <p>Burada önemli bir noktaya geldik.<br>Pazarlama: Araştır → Reklam ver → Sat → Bitti şeklinde düşünülmemelidir.</p>
+          <pre>
+Daha doğru yaklaşım: 
+ARAŞTIR
+   ↓
+HEDEF KİTLEYİ BELİRLE
+   ↓
+HEDEF BELİRLE
+   ↓
+ÜRÜNÜ/FAYDAYI BELİRLE
+   ↓
+FİYATLANDIR
+   ↓
+KANALI SEÇ
+   ↓
+TANIT
+   ↓
+SATIŞ
+   ↓
+SATIŞ SONRASI İLETİŞİM
+   ↓
+ÖLÇ VE ANALİZ ET
+   ↓
+GELİŞTİR
+   │
+   └──────────────→ YENİDEN ARAŞTIR
+          </pre>
+          <p>Dolayısıyla: E-ticaret pazarlaması sürekli geliştirilen bir süreçtir.</p>
+
+          <h2 id="b26">26. TEK BİR ÖRNEK ÜZERİNDEN BÜTÜN AŞAMALAR</h2>
+          <p>Şimdi bütün aşamaları bir ürün üzerinden inceleyelim.<br>Örnek: Öğrenci çantası<br>Bir işletme yeni bir öğrenci çantası satmak istiyor.</p>
+          <ol>
+            <li><strong>Araştırma:</strong> Öğrencilerin hangi özellikleri istediğini araştırıyor. Örneğin: Çok bölmeli, Hafif, Dayanıklı bir çanta istendiğini görüyor.</li>
+            <li><strong>Hedef kitle:</strong> Hedef: Lise ve üniversite öğrencileri.</li>
+            <li><strong>Pazarlama hedefi:</strong> Yeni çantanın internet üzerinden tanıtılması ve satışının artırılması hedefleniyor.</li>
+            <li><strong>Ürün/fayda:</strong> Çantanın: hafif, dayanıklı, çok bölmeli olduğu vurgulanıyor.</li>
+            <li><strong>Fiyat:</strong> Hedef kitlenin özellikleri ve maliyetler dikkate alınarak fiyat belirleniyor.</li>
+            <li><strong>Dijital kanal:</strong> İşletme internet sitesi ve uygun dijital kanalları kullanıyor.</li>
+            <li><strong>Tanıtım:</strong> Ürünün fotoğrafları ve videoları hazırlanıyor.</li>
+            <li><strong>Satın alma:</strong> Öğrenci ürünü görüyor: Ürün sayfası → Sepet → Sipariş → Ödeme</li>
+            <li><strong>Satış sonrası:</strong> Ürün müşteriye ulaştırılıyor ve müşteri destek hizmetleri sağlanıyor.</li>
+            <li><strong>Analiz:</strong> İşletme: "Kaç kişi ürünü gördü?" "Kaç kişi satın aldı?" sorularına bakıyor. Sonuçlara göre pazarlama faaliyetlerini geliştiriyor.</li>
+          </ol>
+
+          <h2 id="b27">27. PAZARLAMA AŞAMALARINI SINIFLANDIRALIM</h2>
+          <p>Öğrencinin daha kolay öğrenebilmesi için aşamaları dört ana gruba ayırabiliriz.</p>
+          <div class="table-responsive">
+            <table>
+              <tr>
+                <th>A. PLANLAMA</th>
+                <th>B. PAZARA HAZIRLIK</th>
+                <th>C. UYGULAMA</th>
+                <th>D. SATIŞ SONRASI VE GELİŞTİRME</th>
+              </tr>
+              <tr>
+                <td>
+                  <ul>
+                    <li>Pazar araştırması</li>
+                    <li>Hedef kitle</li>
+                    <li>Pazarlama hedefleri</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Ürün/hizmet</li>
+                    <li>Değer önerisi</li>
+                    <li>Fiyat</li>
+                    <li>Satış kanalı</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Tanıtım</li>
+                    <li>Reklam</li>
+                    <li>Satın alma</li>
+                    <li>Teslimat</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Müşteri ilişkileri</li>
+                    <li>Müşteri memnuniyeti</li>
+                    <li>Veri toplama</li>
+                    <li>Analiz</li>
+                    <li>İyileştirme</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <p>Bu sınıflandırma, öğrencinin çok sayıda aşamayı tek tek ezberlemek yerine dört büyük başlık altında düşünmesini sağlar.</p>
+
+          <h2 id="b28">28. "MÜŞTERİNİN YOLCULUĞU" OLARAK E-TİCARET PAZARLAMASI</h2>
+          <p>Pazarlama aşamalarını müşterinin gözünden de inceleyebiliriz.</p>
+          <ol>
+            <li>İhtiyacı fark eder: "Yeni bir ayakkabıya ihtiyacım var."</li>
+            <li>Araştırır: "Hangi ayakkabıyı almalıyım?"</li>
+            <li>Ürünleri karşılaştırır: "Hangisi daha uygun?"</li>
+            <li>Ürünü değerlendirir: "Fiyatı ve özellikleri nasıl?"</li>
+            <li>Satın alır: "Sipariş veriyorum."</li>
+            <li>Ürünü teslim alır</li>
+            <li>Deneyimini değerlendirir: "Memnun kaldım mı?"</li>
+            <li>Tekrar satın alabilir</li>
+          </ol>
+          <p>Bu nedenle e-ticaret pazarlaması yalnızca satın alma anını değil, müşterinin satın alma öncesi ve sonrasındaki deneyimini de dikkate alır.</p>
+
+          <h2 id="b29">29. PAZARLAMA AŞAMALARI İLE ÖNCEKİ KAZANIM ARASINDAKİ BAĞLANTI</h2>
+          <p>Bir önceki kazanımda e-ticaretin temel kavramlarını öğrenmiştik.<br>Şimdi bunları pazarlama sürecine yerleştirebiliriz.</p>
+          <div class="table-responsive">
+            <table>
+              <tr><th>Önceki kazanımdaki kavram</th><th>Pazarlama sürecindeki yeri</th></tr>
+              <tr><td>Satıcı</td><td>Pazarlama faaliyetlerini gerçekleştiren taraf</td></tr>
+              <tr><td>Müşteri</td><td>Hedef kitlenin parçası</td></tr>
+              <tr><td>Ürün</td><td>Pazarlanan mal/hizmet</td></tr>
+              <tr><td>Ürün sayfası</td><td>Ürün tanıtımı</td></tr>
+              <tr><td>Sepet</td><td>Satın alma süreci</td></tr>
+              <tr><td>Sipariş</td><td>Satış süreci</td></tr>
+              <tr><td>Ödeme</td><td>Satış işlemi</td></tr>
+              <tr><td>Teslimat</td><td>Satış sonrası deneyimin parçası</td></tr>
+              <tr><td>Müşteri memnuniyeti</td><td>Satış sonrası süreç</td></tr>
+            </table>
+          </div>
+          <p>Böylece iki kazanım arasında bağlantı kurulmuş olur.</p>
+
+          <h2 id="b30">30. PAZARLAMA VE SATIŞ AYNI ŞEY Mİ?</h2>
+          <p>Hayır.<br>Bu ayrım özellikle önemlidir.</p>
+          <p>Pazarlama: Müşteriyi tanımaya, ürünle buluşturmaya ve satın alma kararını desteklemeye yönelik daha geniş faaliyetler bütünüdür.</p>
+          <p>Satış: Müşterinin ürün veya hizmeti satın almasıyla ilgili işlemdir.</p>
+          <p>Örneğin:<br>Bir işletmenin sosyal medyada ayakkabısını tanıtması: Pazarlama<br>Müşterinin ayakkabıyı satın alması: Satış</p>
+          <p>Ancak satış, pazarlama sürecinden bağımsız değildir.</p>
+
+          <h2 id="b31">31. PAZARLAMA VE REKLAM AYNI ŞEY Mİ?</h2>
+          <p>Yine: Hayır.</p>
+          <p>Reklam: Müşteriye ürün veya hizmet hakkında mesaj ulaştırmak için kullanılan yöntemlerden biridir.<br>Pazarlama: Araştırmadan satış sonrasına kadar daha geniş bir süreçtir.</p>
+          <div class="highlight-box">
+            <strong>Basit formül</strong>
+            <p>Reklam ⊂ Pazarlama<br>
+            Yani: Reklam, pazarlamanın bir parçasıdır.</p>
+          </div>
+
+          <h2 id="b32">32. ÖĞRENCİLERİN SIK KARIŞTIRABİLECEĞİ NOKTA</h2>
+          <p>Bir işletmenin: "Instagram'da reklam yayınlaması" pazarlama sürecinin tamamı değildir.<br>Bu yalnızca: Tanıtım/iletişim aşamasının bir faaliyeti olarak düşünülebilir.</p>
+          <p>Bunun öncesinde: hedef kitle belirlenmiş, ürün hazırlanmış, fiyat belirlenmiş, kanal seçilmiş olabilir.</p>
+          <p>Reklamdan sonra da: müşterinin siteye gelmesi, ürünü incelemesi, satın alması, teslim alması, memnuniyetinin ölçülmesi gibi aşamalar devam eder.</p>
+
+          <h2 id="b33">33. PROBLEM ÇÖZME ETKİNLİĞİ 1</h2>
+          <p><strong>Durum:</strong> Bir işletme yeni bir spor ayakkabı satışa çıkarıyor. Ancak ürünün reklamını vermeden önce öğrenciler arasında anket yapıyor.</p>
+          <p>Soru: Bu faaliyet hangi aşamaya örnektir?<br>Cevap: Pazar/müşteri araştırması. Çünkü işletme önce müşterilerin ihtiyaçlarını anlamaya çalışmaktadır.</p>
+
+          <h2 id="b34">34. PROBLEM ÇÖZME ETKİNLİĞİ 2</h2>
+          <p><strong>Durum:</strong> Bir işletme: "Ürünümüz özellikle lise öğrencilerine yöneliktir." diyor.</p>
+          <p>Soru: Hangi pazarlama aşaması?<br>Cevap: Hedef kitlenin belirlenmesi</p>
+
+          <h2 id="b35">35. PROBLEM ÇÖZME ETKİNLİĞİ 3</h2>
+          <p><strong>Durum:</strong> Bir işletme ürününü tanıtmak için sosyal medya reklamı hazırlıyor.</p>
+          <p>Soru: Hangi aşama?<br>Cevap: Tanıtım ve iletişim</p>
+
+          <h2 id="b36">36. PROBLEM ÇÖZME ETKİNLİĞİ 4</h2>
+          <p><strong>Durum:</strong> Bir işletme reklam kampanyasından sonra:<br>50.000 kişi reklamı gördü.<br>5.000 kişi siteye girdi.<br>250 kişi ürün satın aldı.<br>bilgilerine ulaşmıştır.</p>
+          <p>Soru: Bu bilgiler hangi aşamada kullanılır?<br>Cevap: Ölçme ve analiz. İşletme bu sonuçları gelecekteki pazarlama faaliyetlerini geliştirmek için kullanabilir.</p>
+
+          <h2 id="b37">37. SINIF İÇİ UYGULAMA: "SEN BİR E-TİCARET YÖNETİCİSİSİN"</h2>
+          <p>Öğrencilere şu görev verilebilir:<br>"Yeni bir okul çantası satacak bir e-ticaret işletmesinin pazarlama planını hazırlayın."</p>
+          <p>Öğrenci şu soruları cevaplar:</p>
+          <ol>
+            <li>Kimin için? Hedef kitle: Lise öğrencileri.</li>
+            <li>Ne satıyorsun? Ürün: Okul çantası.</li>
+            <li>Hangi ihtiyacı karşılıyor? Fayda: Kitap ve bilgisayar gibi eşyaların taşınmasını kolaylaştırmak.</li>
+            <li>Fiyatı ne olacak? Öğrenci uygun bir fiyat belirleme gerekçesi sunar.</li>
+            <li>Nerede satacaksın? E-ticaret sitesi / pazaryeri vb.</li>
+            <li>Nasıl tanıtacaksın? Dijital reklam / sosyal medya / içerik vb.</li>
+            <li>Satıştan sonra ne yapacaksın? Müşteri desteği / geri bildirim / memnuniyet takibi vb.</li>
+            <li>Başarılı olup olmadığını nasıl anlayacaksın? Ziyaret, sipariş, satış ve diğer uygun ölçümler.</li>
+          </ol>
+          <p>Bu uygulama, kazanımı doğrudan günlük hayata taşır.</p>
+
+          <h2 id="b38">38. PAZARLAMA AŞAMALARINI EZBERLEMEK İÇİN ANAHTAR</h2>
+          <p>Uzun listeyi şu şekilde kısaltabiliriz:<br>ARAŞTIR → HEDEFLE → PLANLA → HAZIRLA → FİYATLANDIR → KANAL SEÇ → TANIT → SAT → DESTEKLE → ÖLÇ</p>
+          <p>Daha kısa hâliyle:<br>ARAŞTIR → PLANLA → TANIT → SAT → ÖLÇ<br>Bu beş kelime, sürecin genel mantığını hatırlamak için kullanılabilir.</p>
+
+          <h2 id="b39">39. BÜTÜN SÜRECİN TEK ŞEMASI</h2>
+          <pre>
+                  E-TİCARET PAZARLAMASI 
+                            │
+                            ▼
+                  1. ARAŞTIRMA 
+                            │
+                            ▼
+                2. HEDEF KİTLE BELİRLEME 
+                            │
+                            ▼
+                  3. HEDEF BELİRLEME 
+                            │
+                            ▼
+               4. ÜRÜN / FAYDA BELİRLEME 
+                            │
+                            ▼
+                  5. FİYATLANDIRMA 
+                            │
+                            ▼
+               6. DİJİTAL KANAL SEÇİMİ 
+                            │
+                            ▼
+                  7. TANITIM / REKLAM 
+                            │
+                            ▼
+                   8. SATIN ALMA 
+                            │
+                            ▼
+                9. SATIŞ SONRASI HİZMET 
+                            │
+                            ▼
+                  10. ÖLÇME / ANALİZ 
+                            │
+                            ▼
+                     İYİLEŞTİRME 
+                            │
+                            └──────────► YENİDEN ARAŞTIR 
+          </pre>
+
+          <h2 id="b40">40. ÖĞRENCİNİN BİLMESİ GEREKEN TEMEL AYRIMLAR</h2>
+          <ul>
+            <li><strong>Pazarlama ≠ Reklam:</strong> Reklam, pazarlamanın bir parçasıdır.</li>
+            <li><strong>Pazarlama ≠ Satış:</strong> Satış, pazarlama sürecinin önemli bir sonucudur ancak pazarlama bundan daha geniştir.</li>
+            <li><strong>Ürün ≠ Pazarlama:</strong> Ürünü üretmek tek başına pazarlama değildir.</li>
+            <li><strong>Sosyal medya ≠ Pazarlamanın tamamı:</strong> Sosyal medya pazarlama kanallarından biri olabilir.</li>
+            <li><strong>Satış ≠ Sürecin sonu:</strong> E-ticarette satıştan sonra teslimat, müşteri hizmetleri, geri bildirim ve analiz gibi faaliyetler devam edebilir.</li>
+          </ul>
+
+          <h2 id="b41">41. SINAV İÇİN KISA KAVRAM TABLOSU</h2>
+          <div class="table-responsive">
+            <table>
+              <tr><th>Aşama</th><th>Temel soru</th></tr>
+              <tr><td>Pazar araştırması</td><td>Müşteri ne istiyor?</td></tr>
+              <tr><td>Hedef kitle</td><td>Kime ulaşacağız?</td></tr>
+              <tr><td>Pazarlama hedefi</td><td>Ne elde etmek istiyoruz?</td></tr>
+              <tr><td>Ürün/değer</td><td>Müşteriye ne sunuyoruz?</td></tr>
+              <tr><td>Fiyatlandırma</td><td>Kaç TL olacak?</td></tr>
+              <tr><td>Kanal seçimi</td><td>Müşteriye nereden ulaşacağız?</td></tr>
+              <tr><td>Tanıtım</td><td>Ürünü nasıl duyuracağız?</td></tr>
+              <tr><td>Satın alma</td><td>Müşteri nasıl satın alacak?</td></tr>
+              <tr><td>Satış sonrası</td><td>Müşteriye satıştan sonra nasıl hizmet vereceğiz?</td></tr>
+              <tr><td>Analiz</td><td>Sonuç ne oldu?</td></tr>
+            </table>
+          </div>
+
+          <h2 id="b42">42. KAZANIMIN ÖZÜ</h2>
+          <p>"E-ticarette pazarlama aşamalarını sıralar." kazanımında öğrencinin yalnızca "pazarlama" kelimesinin anlamını bilmesi yeterli değildir.<br>Öğrenci bir e-ticaret işletmesinin ürününü müşteriye ulaştırırken izleyebileceği süreci sıralayabilmeli ve her aşamanın amacını açıklayabilmelidir.</p>
+          <p>En temel sıra:</p>
+          <ol>
+            <li>Araştırma</li>
+            <li>Hedef kitleyi belirleme</li>
+            <li>Pazarlama hedeflerini belirleme</li>
+            <li>Ürün/değer teklifini belirleme</li>
+            <li>Fiyatlandırma</li>
+            <li>Dijital kanal seçimi</li>
+            <li>Tanıtım ve iletişim</li>
+            <li>Satın alma/satış</li>
+            <li>Satış sonrası müşteri ilişkileri</li>
+            <li>Ölçme ve analiz</li>
+            <li>İyileştirme</li>
+          </ol>
+          <div class="highlight-box">
+            <strong>En kısa hatırlatma</strong>
+            <p>ARAŞTIR → KİME SATACAĞINI BELİRLE → PLANLA → ÜRÜNÜ VE FİYATI BELİRLE → KANALI SEÇ → TANIT → SAT → MÜŞTERİYLE İLGİLEN → ÖLÇ → GELİŞTİR</p>
+          </div>
+
+          <div class="asterism">* * *</div>
+
+          <nav class="doc-nav">
+            <a href="ders2.html">
+              <span class="doc-nav-label">← Önceki</span>
+              <span class="doc-nav-title">02 · E-Ticaret Türleri</span>
+            </a>
+            <a href="ders4.html">
+              <span class="doc-nav-label">Sonraki →</span>
+              <span class="doc-nav-title">04 · Teknik Altyapı ve Güvenlik</span>
+            </a>
+          </nav>
+
+          <footer class="page-foot">
+            <span>Ders 03 · Pazarlama Aşamaları</span>
+            <span>Ünite 1 · 2026</span>
+          </footer>
+
+        </div>
+      </article>
+
+      <aside class="margin">
+        <div class="margin-note">
+          <span class="margin-label">Kazanım</span>
+          <strong>Ne öğreneceksin?</strong>
+          <p>Bir e-ticaret ürününün araştırmadan analize kadar geçtiği on aşamalı pazarlama sürecini sıralayabileceksin.</p>
+        </div>
+        <div class="margin-note">
+          <span class="margin-label">Kilit ayrım</span>
+          <strong>Pazarlama ≠ Reklam</strong>
+          <p>Reklam, pazarlama şemsiyesinin altındaki tanıtım/iletişim aşamasının bir aracıdır. Pazarlama daha geniştir.</p>
+        </div>
+        <div class="margin-note">
+          <span class="margin-label">Sonraki</span>
+          <strong>04 · Teknik Altyapı</strong>
+          <p>Bir e-ticaret sitesini ayakta tutan sunucu, veritabanı, HTTPS ve güvenlik bileşenlerini öğren.</p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    document.getElementById('bar').style.width = (h > 0 ? (scrollY / h) * 100 : 0) + '%';
+  }, { passive: true });
+
+  function toggleRail() { document.getElementById('rail').classList.toggle('open'); }
+
+  // Rail sub-nav aktif bölüm takibi
+  const subLinks = document.querySelectorAll('.rail-sub a');
+  const targets = [...subLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        subLinks.forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.rail-sub a[href="#${entry.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-10% 0px -75% 0px' });
+  targets.forEach(t => io.observe(t));
+</script>
+
+</body>
+</html>
