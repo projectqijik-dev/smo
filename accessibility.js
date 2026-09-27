@@ -1,4 +1,4 @@
-// accessibility.js
+﻿// accessibility.js
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Ayarları LocalStorage'dan al veya varsayılanları kullan
     const state = JSON.parse(localStorage.getItem('a11y_state')) || {
@@ -127,4 +127,14 @@ document.addEventListener('DOMContentLoaded', () => {
             header.insertAdjacentHTML('afterend', printBtnHtml);
         }
     }
+
+    // Boş alana tıklandığında menüyü kapat
+    document.addEventListener('click', (e) => {
+        const toggleBtn = document.getElementById('a11y-toggle-btn');
+        if (panel && panel.classList.contains('show')) {
+            if (!panel.contains(e.target) && !toggleBtn.contains(e.target)) {
+                panel.classList.remove('show');
+            }
+        }
+    });
 });

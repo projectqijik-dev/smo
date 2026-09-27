@@ -238,15 +238,15 @@
         const iconNote = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>`;
         const iconTrash = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fca5a5" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>`;
 
-        // Seçim Yapıldığında
-        document.addEventListener('selectionchange', () => {
+        const checkSelection = () => {
             const sel = window.getSelection();
             if (!sel.isCollapsed && sel.rangeCount > 0) {
                 const range = sel.getRangeAt(0);
                 if (docBody.contains(range.commonAncestorContainer) && range.toString().trim().length > 0) {
                     const rect = range.getBoundingClientRect();
+                    // Mobilde daha iyi görünmesi için hesaplama
                     popover.style.left = (rect.left + rect.width / 2 + window.scrollX) + 'px';
-                    popover.style.top = (rect.top + window.scrollY) + 'px';
+                    popover.style.top = Math.max(0, rect.top + window.scrollY) + 'px';
                     popover.style.display = 'flex';
                     currentSelectionRange = range;
                     
@@ -256,8 +256,12 @@
                         <button class="hl-btn" id="btn-highlight-note">${iconNote} Not Ekle</button>
                     `;
 
-                    document.getElementById('btn-highlight-only').onclick = () => createHighlight(false);
-                    document.getElementById('btn-highlight-note').onclick = () => createHighlight(true);
+                    // Mobilde seçimin kaybolmasını önlemek için pointerdown kullanıyoruz
+                    const btnOnly = document.getElementById('btn-highlight-only');
+                    const btnNote = document.getElementById('btn-highlight-note');
+                    
+                    btnOnly.addEventListener('pointerdown', (e) => { e.preventDefault(); createHighlight(false); });
+                    btnNote.addEventListener('pointerdown', (e) => { e.preventDefault(); createHighlight(true); });
                 } else {
                     popover.style.display = 'none';
                 }
@@ -268,7 +272,11 @@
                     }
                 }, 50);
             }
-        });
+        };
+
+        document.addEventListener('selectionchange', checkSelection);
+        document.addEventListener('touchend', () => setTimeout(checkSelection, 100));
+        document.addEventListener('mouseup', () => setTimeout(checkSelection, 50));
 
         const createHighlight = (openNote) => {
             if (currentSelectionRange) {
@@ -366,16 +374,20 @@
                         <button class="hl-btn danger" id="btn-delete-hl">${iconTrash} Sil</button>
                     `;
                     
-                    document.getElementById('btn-edit-note').onclick = (ev) => {
+                    const btnEdit = document.getElementById('btn-edit-note');
+                    const btnDelete = document.getElementById('btn-delete-hl');
+                    
+                    btnEdit.addEventListener('pointerdown', (ev) => {
+                        ev.preventDefault();
                         ev.stopPropagation();
                         popover.style.display = 'none';
                         popover.dataset.editMode = '';
                         openNoteModal(id, mark);
-                    };
+                    });
 
-                    document.getElementById('btn-delete-hl').onclick = (ev) => {
+                    btnDelete.addEventListener('pointerdown', (ev) => {
+                        ev.preventDefault();
                         ev.stopPropagation();
-                        // <mark> tagını temizle
                         const parent = mark.parentNode;
                         while(mark.firstChild) {
                             parent.insertBefore(mark.firstChild, mark);
@@ -388,7 +400,7 @@
                         
                         popover.style.display = 'none';
                         popover.dataset.editMode = '';
-                    };
+                    });
                     
                     e.stopPropagation();
                 }

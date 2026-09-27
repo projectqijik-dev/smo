@@ -1,4 +1,4 @@
-/* accessibility.css */
+﻿/* accessibility.css */
 /* Erişilebilirlik Butonu */
 #a11y-toggle-btn {
   position: fixed;
@@ -29,7 +29,8 @@
   bottom: 90px;
   right: 20px;
   width: 340px;
-  max-height: 80vh;
+  max-height: calc(100vh - 120px);
+  max-width: calc(100vw - 40px);
   background: white;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
@@ -208,51 +209,35 @@ body.a11y-hide-images img, body.a11y-hide-images video, body.a11y-hide-images sv
 body.a11y-stop-animations *, body.a11y-stop-animations *::before, body.a11y-stop-animations *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 
 
-/* --- DÜZELTME: KÜÇÜLTÜLMÜŞ, MODERN ÇIKTI AL BUTONU --- */
-.a11y-print-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: calc(100% - 32px);
-  margin: 16px auto 0;
-  padding: 8px 12px; /* Küçültüldü */
-  background-color: #f8fafc; /* Yumuşak beyaz/gri arka plan */
-  color: #3b82f6; /* Modern mavi yazı */
-  border: 1px solid #bfdbfe; /* İnce mavi çerçeve */
-  border-radius: 6px;
-  font-size: 13px; /* Font boyutu küçültüldü */
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.a11y-print-btn:hover {
-  background-color: #eff6ff; /* Hover efekti */
-  border-color: #93c5fd;
-}
-.a11y-print-btn:active {
-  transform: scale(0.98);
-}
-.a11y-print-btn svg {
-  width: 16px !important; /* İkon küçültüldü */
-  height: 16px !important;
-  margin-right: 6px !important;
-}
-
-
-/* --- DÜZELTME: PDF KAYDETME HATASINI ENGELLEYEN YAZDIRMA AYARLARI --- */
+/* --- DUZELTME: PDF KAYDETME HATASINI ENGELLEYEN YAZDIRMA AYARLARI --- */
 @media print {
-  /* Chrome/Edge'de PDF oluştururken çökmeye/hataya neden olan tüm sabit pozisyonlu ve efektli eklentileri tamamen gizle */
   #a11y-panel, 
   #a11y-toggle-btn, 
   #search-modal, 
   #site-search-btn, 
   #progress-toast,
-  #a11y-print-footer {
+  #a11y-print-footer,
+  #notebook-panel,
+  #nb-overlay,
+  #hl-popover,
+  #hl-note-modal,
+  .tts-container,
+  #global-glossary-tooltip,
+  .rail,
+  .rail-toggle {
     display: none !important;
   }
 
-  /* SVG filtrelerini devre dışı bırak (Renk körlüğü vs. yazdırırken hatalara yol açabilir) */
+  .doc { margin: 0 !important; padding: 0 !important; max-width: 100% !important; }
+  .shell { display: block !important; margin: 0 !important; padding: 0 !important; }
+
   html, body {
     filter: none !important;
+    backdrop-filter: none !important;
+    background: white !important;
+    height: auto !important;
+    overflow: visible !important;
   }
 }
+
+

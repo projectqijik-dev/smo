@@ -108,6 +108,8 @@
   </style>
 </head>
 <body>
+
+<button class="rail-toggle" onclick="toggleRail()">&#9776;</button>
   <div class="shell">
     <aside class="rail" id="rail">
     <a href="index.html" class="rail-brand">
@@ -267,8 +269,12 @@
 <script src="auto-tooltip.js"></script>
 <script src="notebook.js"></script>
 <script src="footer.js"></script>
+<script>
+function toggleRail() { document.getElementById('rail').classList.toggle('open'); }
+</script>
 </body>
 </html>
+
 
 
 
