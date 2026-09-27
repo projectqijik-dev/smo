@@ -1,0 +1,258 @@
+/* accessibility.css */
+/* Erişilebilirlik Butonu */
+#a11y-toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #dc2626; /* Kırmızı */
+  color: white;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  cursor: pointer;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#a11y-toggle-btn svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+/* Menü Paneli */
+#a11y-panel {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 340px;
+  max-height: 80vh;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  z-index: 99999;
+  display: none;
+  flex-direction: column;
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+}
+#a11y-panel.show {
+  display: flex;
+}
+
+.a11y-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+  border-radius: 16px 16px 0 0;
+}
+.a11y-header h3 {
+  margin: 0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #dc2626;
+}
+.a11y-reset-btn {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+}
+.a11y-reset-btn:hover {
+  color: #000;
+}
+
+.a11y-section {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+.a11y-section-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #888;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.a11y-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.a11y-row:last-child {
+  margin-bottom: 0;
+}
+.a11y-row span {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+/* Toggle Switch */
+.a11y-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+.a11y-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.a11y-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #e5e7eb;
+  transition: .3s;
+  border-radius: 24px;
+  border: 1px solid #d1d5db;
+}
+.a11y-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.a11y-switch input:checked + .a11y-slider {
+  background-color: #dc2626;
+  border-color: #dc2626;
+}
+.a11y-switch input:checked + .a11y-slider:before {
+  transform: translateX(20px);
+}
+
+/* Yazı Boyutu Kontrolleri */
+.a11y-font-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: 1px solid #e5e7eb;
+}
+.a11y-font-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #4b5563;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.a11y-font-btn:hover {
+  color: #000;
+}
+#a11y-font-size-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Select */
+.a11y-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+}
+
+/* === ERİŞİLEBİLİRLİK ETKİLERİ (SİTE GENELİ) === */
+html.a11y-dark-mode { filter: invert(1) hue-rotate(180deg); background: #111; }
+html.a11y-dark-mode img, html.a11y-dark-mode video, html.a11y-dark-mode #a11y-panel, html.a11y-dark-mode #a11y-toggle-btn { filter: invert(1) hue-rotate(180deg); }
+html.a11y-grayscale { filter: grayscale(100%); }
+html.a11y-high-contrast { filter: contrast(150%) saturate(150%); }
+body.a11y-readable-font, body.a11y-readable-font * { font-family: 'Arial', 'Helvetica', sans-serif !important; letter-spacing: 1px !important; line-height: 1.6 !important; }
+html.a11y-eye-rest { filter: sepia(50%) hue-rotate(-15deg); }
+html.a11y-protanopia { filter: url('#protanopia-filter'); }
+html.a11y-deuteranopia { filter: url('#deuteranopia-filter'); }
+html.a11y-tritanopia { filter: url('#tritanopia-filter'); }
+
+/* İçerik */
+body.a11y-highlight-links a { text-decoration: underline !important; text-decoration-color: #dc2626 !important; text-decoration-thickness: 3px !important; background-color: #ffff00 !important; color: #000 !important; }
+body.a11y-hide-images img, body.a11y-hide-images video, body.a11y-hide-images svg:not(#a11y-toggle-btn svg, .a11y-header svg), body.a11y-hide-images .cover { visibility: hidden !important; }
+body.a11y-stop-animations *, body.a11y-stop-animations *::before, body.a11y-stop-animations *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+
+
+/* --- DÜZELTME: KÜÇÜLTÜLMÜŞ, MODERN ÇIKTI AL BUTONU --- */
+.a11y-print-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 32px);
+  margin: 16px auto 0;
+  padding: 8px 12px; /* Küçültüldü */
+  background-color: #f8fafc; /* Yumuşak beyaz/gri arka plan */
+  color: #3b82f6; /* Modern mavi yazı */
+  border: 1px solid #bfdbfe; /* İnce mavi çerçeve */
+  border-radius: 6px;
+  font-size: 13px; /* Font boyutu küçültüldü */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.a11y-print-btn:hover {
+  background-color: #eff6ff; /* Hover efekti */
+  border-color: #93c5fd;
+}
+.a11y-print-btn:active {
+  transform: scale(0.98);
+}
+.a11y-print-btn svg {
+  width: 16px !important; /* İkon küçültüldü */
+  height: 16px !important;
+  margin-right: 6px !important;
+}
+
+
+/* --- DÜZELTME: PDF KAYDETME HATASINI ENGELLEYEN YAZDIRMA AYARLARI --- */
+@media print {
+  /* Chrome/Edge'de PDF oluştururken çökmeye/hataya neden olan tüm sabit pozisyonlu ve efektli eklentileri tamamen gizle */
+  #a11y-panel, 
+  #a11y-toggle-btn, 
+  #search-modal, 
+  #site-search-btn, 
+  #progress-toast,
+  #a11y-print-footer {
+    display: none !important;
+  }
+
+  /* SVG filtrelerini devre dışı bırak (Renk körlüğü vs. yazdırırken hatalara yol açabilir) */
+  html, body {
+    filter: none !important;
+  }
+}

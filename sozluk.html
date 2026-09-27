@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kavram Sözlüğü - Sosyal Medya Okuryazarlığı</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .glossary-search-box {
+        width: 100%;
+        padding: 16px 20px;
+        font-size: 16px;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        margin-bottom: 24px;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+    .glossary-search-box:focus {
+        border-color: #3b82f6;
+    }
+    .glossary-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 32px;
+    }
+    .glossary-chip {
+        padding: 8px 16px;
+        border-radius: 20px;
+        background: #f3f4f6;
+        color: #4b5563;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: all 0.2s;
+    }
+    .glossary-chip:hover {
+        background: #e5e7eb;
+    }
+    .glossary-chip.active {
+        background: #3b82f6;
+        color: white;
+        border-color: #3b82f6;
+    }
+    .glossary-category-title {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        color: #1f2937;
+        border-bottom: 2px solid #e5e7eb;
+        padding-bottom: 8px;
+    }
+    .glossary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 16px;
+    }
+    .glossary-card {
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        transition: box-shadow 0.2s;
+    }
+    .glossary-card:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .glossary-card-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 8px;
+    }
+    .glossary-card-def {
+        font-size: 14px;
+        color: #4b5563;
+        line-height: 1.5;
+        flex: 1;
+        margin-bottom: 16px;
+    }
+    .glossary-card-link {
+        display: inline-flex;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 600;
+        color: #3b82f6;
+        text-decoration: none;
+        align-self: flex-start;
+        padding: 4px 10px;
+        background: #eff6ff;
+        border-radius: 6px;
+        transition: background 0.2s;
+    }
+    .glossary-card-link:hover {
+        background: #dbeafe;
+    }
+    .no-results {
+        padding: 40px;
+        text-align: center;
+        color: #6b7280;
+        font-size: 16px;
+        display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail" id="rail">
+    <a href="index.html" class="rail-brand">
+      <span class="rail-brand-text">
+        <strong>Sosyal Medya Okuryazarlığı</strong>
+        <span>Boğaziçi Koleji</span>
+      </span>
+    </a>
+
+    <p class="rail-label">E-Ticaret Ders İçeriği</p>
+    <nav class="rail-nav">
+      <ol>
+        <li><a href="ders1.html"><span class="num">01</span><span>E-Ticarete İlişkin Temel Kavramlar</span></a></li>
+        <li><a href="ders2.html"><span class="num">02</span><span>E-Ticaret Türleri</span></a></li>
+        <li><a href="ders3.html"><span class="num">03</span><span>Pazarlama Aşamaları</span></a></li>
+        <li><a href="ders4.html"><span class="num">04</span><span>Teknik Altyapı ve Güvenlik</span></a></li>
+        <li><a href="ders5.html"><span class="num">05</span><span>Hukuki Düzenlemeler</span></a></li>
+        <li><a href="sozluk.html"><span class="num" style="background:transparent; font-size:16px; border:none; padding:0; width:24px;">&rarr;</span><span>Sözlük</span></a></li>
+      </ol>
+    </nav>
+</aside>
+    <main class="main">
+      <div class="page-inner">
+        <article class="doc">
+          <header class="doc-head">
+            <h1>Kavram Sözlüğü</h1>
+            <p class="doc-lead">E-ticaret ve sosyal medya dünyasındaki temel kavramların alfabetik ve kategorik dizini.</p>
+          </header>
+          <div class="doc-body">
+            <input type="text" id="g-search" class="glossary-search-box" placeholder="Kavramlarda ara... (Örn: alıcı, B2B)">
+            <div class="glossary-chips" id="g-chips">
+                <button class="glossary-chip active" data-cat="all">Tümü</button>
+            </div>
+            <div id="g-content"></div>
+            <div id="g-no-results" class="no-results">Arama kriterlerine uygun kavram bulunamadı.</div>
+          </div>
+        </article>
+      </div>
+    </main>
+  </div>
+
+  <script src="accessibility.js"></script>
+  <script src="search-data.js"></script>
+  <script src="search.js"></script>
+  <script src="progress.js"></script>
+
+  <script>
+    const gData = [{"category": "01 · Temel Kavramlar", "term": "E-ticaret", "def": "Ticari faaliyetlerin elektronik ortamda gerçekleştirilmesi", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Ticaret", "def": "Mal veya hizmetlerin alım-satım faaliyeti", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Satıcı", "def": "Mal veya hizmeti sunan taraf", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Alıcı", "def": "Mal veya hizmeti satın alan taraf", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Müşteri", "def": "Bir işletmeden düzenli veya tek seferlik alışveriş yapan kişi", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Tüketici", "def": "Ticari/mesleki olmayan amaçla satın alan kişi", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "İşletme", "def": "Mal/hizmet üreten veya ticaretini yapan ticari yapı", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Mal", "def": "Fiziksel olarak satın alınabilen ürün", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Hizmet", "def": "İhtiyaç karşılamak için sunulan faaliyet", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Dijital ürün", "def": "Elektronik ortamda sunulabilen ürün (e-kitap, yazılım)", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Fiziksel ürün", "def": "Elle tutulur, kargolanabilir ürün", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Ürün sayfası", "def": "Ürünün tanıtıldığı dijital bölüm", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Sepet", "def": "Seçilen ürünlerin geçici olarak toplandığı alan", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Sipariş", "def": "Satın alma talebinin işletmeye iletilmesi", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Sipariş onayı", "def": "Sistemin siparişi kabul ettiğini bildiren mesaj", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Ödeme", "def": "Bedelin satıcıya aktarılması", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Dijital ödeme", "def": "Ödemenin elektronik sistemle yapılması", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Kargo", "def": "Fiziksel ürünün taşınması süreci", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Teslimat", "def": "Ürünün müşteriye ulaştırılması", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Fiyat", "def": "Mal/hizmet için belirlenen parasal değer", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Stok", "def": "İşletmenin satışa hazır ürün miktarı", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "İndirim", "def": "Belirlenen fiyattan düşüş", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Kampanya", "def": "Satışı artırmak için düzenlenen geçici uygulama", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "M-ticaret", "def": "Mobil cihazlarla yapılan e-ticaret", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "E-ticaret pazaryeri", "def": "Birden fazla satıcıyı müşterilerle buluşturan platform", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "Müşteri hesabı", "def": "Kullanıcının platformdaki dijital profili", "link": "ders1.html"}, {"category": "01 · Temel Kavramlar", "term": "E-işletme", "def": "İşletmenin tüm süreçlerinin dijitalleştirilmesi", "link": "ders1.html"}, {"category": "02 · E-Ticaret Türleri", "term": "B2C", "def": "İşletmeden tüketiciye", "link": "ders2.html"}, {"category": "02 · E-Ticaret Türleri", "term": "B2B", "def": "İşletmeden işletmeye", "link": "ders2.html"}, {"category": "02 · E-Ticaret Türleri", "term": "C2C", "def": "Tüketiciden tüketiciye", "link": "ders2.html"}, {"category": "02 · E-Ticaret Türleri", "term": "C2B", "def": "Tüketiciden işletmeye", "link": "ders2.html"}, {"category": "02 · E-Ticaret Türleri", "term": "B2G", "def": "İşletmeden kamuya", "link": "ders2.html"}, {"category": "02 · E-Ticaret Türleri", "term": "G2B", "def": "Kamudan işletmeye", "link": "ders2.html"}, {"category": "02 · E-Ticaret Türleri", "term": "G2C", "def": "Kamudan vatandaşa", "link": "ders2.html"}, {"category": "02 · E-Ticaret Türleri", "term": "G2G", "def": "Kamudan kamuya", "link": "ders2.html"}, {"category": "02 · E-Ticaret Türleri", "term": "Business (B)", "def": "İşletme", "link": "ders2.html"}, {"category": "02 · E-Ticaret Türleri", "term": "Consumer (C)", "def": "Tüketici", "link": "ders2.html"}, {"category": "02 · E-Ticaret Türleri", "term": "Government (G)", "def": "Devlet / Kamu", "link": "ders2.html"}, {"category": "03 · Pazarlama", "term": "Pazarlama", "def": "Ürünün doğru müşteriye ulaştırılması süreci", "link": "ders3.html"}, {"category": "03 · Pazarlama", "term": "Reklam", "def": "Pazarlamanın bir parçası; tanıtım aracı", "link": "ders3.html"}, {"category": "03 · Pazarlama", "term": "Satış", "def": "Ürünün müşteri tarafından satın alınması", "link": "ders3.html"}, {"category": "03 · Pazarlama", "term": "Pazar araştırması", "def": "Müşteri ihtiyaçlarının önceden incelenmesi", "link": "ders3.html"}, {"category": "03 · Pazarlama", "term": "Hedef kitle", "def": "Ulaşılmak istenen müşteri grubu", "link": "ders3.html"}, {"category": "03 · Pazarlama", "term": "Pazarlama hedefi", "def": "Ne elde etmek istediğimizin ölçülebilir ifades", "link": "ders3.html"}, {"category": "03 · Pazarlama", "term": "Değer teklifi", "def": "Ürünün müşteriye sunduğu fayda", "link": "ders3.html"}, {"category": "03 · Pazarlama", "term": "Ürün özelliği", "def": "Ürünün teknik niteliği (örn. 16 GB RAM)", "link": "ders3.html"}, {"category": "03 · Pazarlama", "term": "Ürün faydası", "def": "Özelliğin müşteriye sağladığı yarar", "link": "ders3.html"}, {"category": "03 · Pazarlama", "term": "Fiyatlandırma", "def": "Satış fiyatının belirlenmesi", "link": "ders3.html"}, {"category": "03 · Pazarlama", "term": "Dijital kanal", "def": "Müşteriye ulaşılan elektronik ortam", "link": "ders3.html"}, {"category": "03 · Pazarlama", "term": "Müşteri memnuniyeti", "def": "Satış sonrası olumlu deneyim", "link": "ders3.html"}, {"category": "03 · Pazarlama", "term": "Müşteri yolculuğu", "def": "Müşterinin ihtiyaçtan satış sonrasına kadarki süreci", "link": "ders3.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Teknik altyapı", "def": "Sistemi çalıştıran donanım, yazılım ve hizmetler", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Alan adı (Domain)", "def": "Web sitesinin internet adresi", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Sunucu (Server)", "def": "İnternet üzerinden hizmet sunan bilgisayar", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Hosting", "def": "Web sitesi dosyalarının sunucuda barındırılması", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "E-ticaret yazılımı", "def": "Mağaza işlemlerini yöneten yazılım", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Veritabanı", "def": "Verilerin düzenli saklandığı yapı", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Ürün yönetimi", "def": "Ürün bilgilerinin dijital yönetimi", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Stok yönetimi", "def": "Ürün miktarlarının takibi", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Ödeme altyapısı", "def": "Elektronik ödeme sistemleri", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "HTTPS", "def": "Güvenli web iletişim protokolü", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "HTTP", "def": "Standart web iletişim protokolü", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "TLS", "def": "İletişimin şifrelenmesini sağlayan teknoloji", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Şifreleme", "def": "Verinin okunamaz hâle dönüştürülmesi", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Güçlü parola", "def": "Uzun ve tahmin edilmesi zor parola", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "2FA", "def": "İki aşamalı doğrulama", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Firewall", "def": "Ağ trafiğini kontrol eden güvenlik duvarı", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Kötü amaçlı yazılım", "def": "Sisteme zarar veren yazılım (virüs, truva atı vb.)", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Yedekleme", "def": "Veri kaybına karşı önceden kopyalama", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Kargo entegrasyonu", "def": "Sipariş-kargo sistemlerinin bağlanması", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Mobil uyumluluk", "def": "Sitenin mobil cihazlarda düzgün çalışması", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Gizlilik", "def": "Bilginin yalnızca yetkililerce erişilebilirliği", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Bütünlük", "def": "Verinin yetkisiz değiştirilmemesi", "link": "ders4.html"}, {"category": "04 · Teknik Altyapı ve Güvenlik", "term": "Kullanılabilirlik", "def": "Sistemin ihtiyaç anında erişilebilir olması", "link": "ders4.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "6563 sayılı Kanun", "def": "Elektronik Ticaretin Düzenlenmesi Hakkında Kanun", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "6502 sayılı Kanun", "def": "Tüketicinin Korunması Hakkında Kanun", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Mesafeli Sözleşmeler Yönetmeliği", "def": "Uzaktan satışlarda tüketici hakları", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "6698 sayılı KVKK", "def": "Kişisel Verilerin Korunması Kanunu", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "ETBİS", "def": "Elektronik Ticaret Bilgi Sistemi", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "İYS", "def": "İleti Yönetim Sistemi", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Hizmet sağlayıcı", "def": "Kendi ürününü elektronik ortamda satan işletme", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Aracı hizmet sağlayıcı", "def": "Pazaryeri gibi aracılık yapan platform", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Mesafeli sözleşme", "def": "Uzaktan iletişim araçlarıyla kurulan sözleşme", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Elektronik sözleşme", "def": "Elektronik ortamda kurulan sözleşme", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Cayma hakkı", "def": "Tüketicinin 14 gün içinde vazgeçme hakk", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Garanti", "def": "Ürünün belirli süre ayıplara karşı sorumluluğu", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Ticari elektronik ileti", "def": "Reklam amaçlı SMS, e-posta vb.", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Ret hakkı", "def": "Ticari ileti almayı reddetme hakkı", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Kişisel veri", "def": "Belirli/belirlenebilir kişiye ait bilgi", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Aydınlatma yükümlülüğü", "def": "Veri işleme hakkında bilgilendirme zorunluluğu", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Açık rıza", "def": "Belirli veri işlemeye özgür iradeyle izin", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Çerez (Cookie)", "def": "Tarayıcıda saklanan küçük veri dosyası", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Fikrî ve sınai mülkiyet", "def": "Marka, logo, tasarım gibi hakların korunması", "link": "ders5.html"}, {"category": "05 · Hukuki Düzenlemeler", "term": "Tüketici Hakem Heyeti", "def": "Tüketici uyuşmazlıklarını çözen kurul", "link": "ders5.html"}];
+    
+    // Sort items alphabetically globally
+    gData.sort((a, b) => a.term.localeCompare(b.term, 'tr'));
+
+    // Extract unique categories
+    const categories = [...new Set(gData.map(i => i.category))].sort();
+
+    // Render Chips
+    const chipsContainer = document.getElementById('g-chips');
+    categories.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = 'glossary-chip';
+        btn.setAttribute('data-cat', cat);
+        // "01 · Temel Kavramlar" -> "Temel Kavramlar"
+        btn.textContent = cat.split('·')[1].trim(); 
+        chipsContainer.appendChild(btn);
+    });
+
+    // Helper: Turkish lowercase normalization
+    const normalizeTr = (text) => text.replace(/İ/g, 'i').replace(/I/g, 'ı').toLowerCase();
+
+    const gContent = document.getElementById('g-content');
+    const gSearch = document.getElementById('g-search');
+    const gNoResults = document.getElementById('g-no-results');
+    
+    let activeCat = 'all';
+    let searchQuery = '';
+
+    const render = () => {
+        gContent.innerHTML = '';
+        
+        let filtered = gData;
+        
+        if (activeCat !== 'all') {
+            filtered = filtered.filter(i => i.category === activeCat);
+        }
+        
+        if (searchQuery) {
+            const sq = normalizeTr(searchQuery);
+            filtered = filtered.filter(i => 
+                normalizeTr(i.term).includes(sq) || 
+                normalizeTr(i.def).includes(sq)
+            );
+        }
+
+        if (filtered.length === 0) {
+            gNoResults.style.display = 'block';
+            return;
+        } else {
+            gNoResults.style.display = 'none';
+        }
+
+        // Group by category for display
+        const grouped = {};
+        filtered.forEach(item => {
+            if (!grouped[item.category]) grouped[item.category] = [];
+            grouped[item.category].push(item);
+        });
+
+        Object.keys(grouped).sort().forEach(cat => {
+            const catTitle = document.createElement('h2');
+            catTitle.className = 'glossary-category-title';
+            catTitle.textContent = cat;
+            gContent.appendChild(catTitle);
+
+            const grid = document.createElement('div');
+            grid.className = 'glossary-grid';
+
+            // Alphabetize within category
+            grouped[cat].sort((a, b) => a.term.localeCompare(b.term, 'tr')).forEach(item => {
+                // Determine short lesson name
+                const lessonNum = item.category.split('·')[0].trim();
+                const lessonName = "Ders " + lessonNum;
+
+                const card = document.createElement('div');
+                card.className = 'glossary-card';
+                card.innerHTML = `
+                    <div class="glossary-card-title">${item.term}</div>
+                    <div class="glossary-card-def">${item.def}</div>
+                    
+                `;
+                grid.appendChild(card);
+            });
+
+            gContent.appendChild(grid);
+        });
+    };
+
+    // Event Listeners
+    gSearch.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        render();
+    });
+
+    chipsContainer.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+            document.querySelectorAll('.glossary-chip').forEach(c => c.classList.remove('active'));
+            e.target.classList.add('active');
+            activeCat = e.target.getAttribute('data-cat');
+            render();
+        }
+    });
+
+    render();
+  </script>
+<script src="highlighter.js"></script>
+<script src="tts.js"></script>
+<script src="glossary-data.js"></script>
+<script src="auto-tooltip.js"></script>
+<script src="notebook.js"></script>
+<script src="footer.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

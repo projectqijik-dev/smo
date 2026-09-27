@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
@@ -11,27 +11,19 @@
 <div class="progress"><div class="progress-bar" id="bar"></div></div>
 <button class="rail-toggle" onclick="toggleRail()">≡</button>
 
-<button class="print-btn" onclick="window.print()" title="Bu dersi yazdır / PDF olarak kaydet">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="6 9 6 2 18 2 18 9"></polyline>
-    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-    <rect x="6" y="14" width="12" height="8"></rect>
-  </svg>
-  <span class="print-label">Çıktı Al</span>
-</button>
+
 
 <div class="shell">
 
   <aside class="rail" id="rail">
     <a href="index.html" class="rail-brand">
-      <span class="rail-mark">B</span>
       <span class="rail-brand-text">
-        <strong>Sosyal Medya ve E-Ticaret</strong>
-        <span>ÖBBK MTAL · 11. Sınıf · 2026</span>
+        <strong>Sosyal Medya Okuryazarlığı</strong>
+        <span>Boğaziçi Koleji</span>
       </span>
     </a>
 
-    <p class="rail-label">Müfredat</p>
+    <p class="rail-label">E-Ticaret Ders İçeriği</p>
     <nav class="rail-nav">
       <ol>
         <li><a href="ders1.html"><span class="num">01</span><span>E-Ticarete İlişkin Temel Kavramlar</span></a></li>
@@ -39,6 +31,7 @@
         <li><a href="ders3.html"><span class="num">03</span><span>Pazarlama Aşamaları</span></a></li>
         <li><a href="ders4.html" class="active"><span class="num">04</span><span>Teknik Altyapı ve Güvenlik</span></a></li>
         <li><a href="ders5.html"><span class="num">05</span><span>Hukuki Düzenlemeler</span></a></li>
+        <li><a href="sozluk.html"><span class="num" style="background:transparent; font-size:16px; border:none; padding:0; width:24px;">&rarr;</span><span>Sözlük</span></a></li>
       </ol>
     </nav>
 
@@ -121,7 +114,7 @@
       <article class="doc">
 
         <header class="doc-head">
-          <div class="doc-eyebrow">Ders 04 · Ünite 1 · 61 bölüm</div>
+          <div class="doc-eyebrow">Ders 04</div>
           <h1>Teknik Altyapı ve <em>Güvenlik</em></h1>
           <p class="doc-lead">
             Kazanım: "E-ticaret için gereken teknik altyapı ve güvenlik unsurlarını açıklar." Bu derste bir e-ticaret sitesinin arkasında çalışan sistemleri ve bu sistemleri koruyan güvenlik katmanlarını inceleyeceğiz.
@@ -680,6 +673,17 @@ Teslimat
   }, { passive: true });
 
   function toggleRail() { document.getElementById('rail').classList.toggle('open'); }
+  // Menü açıkken dışarı tıklanınca otomatik kapat
+document.addEventListener('click', (e) => {
+    const rail   = document.getElementById('rail');
+    const toggle = document.querySelector('.rail-toggle');
+
+    if (!rail.classList.contains('open')) return;     // menü zaten kapalıysa çık
+    if (rail.contains(e.target)) return;              // menünün içine tıklandıysa çık
+    if (toggle && toggle.contains(e.target)) return;  // hamburger tuşuna tıklandıysa çık
+
+    rail.classList.remove('open');                    // aksi hâlde menüyü kapat
+});
 
   const subLinks = document.querySelectorAll('.rail-sub a');
   const targets = [...subLinks].map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
@@ -695,5 +699,72 @@ Teslimat
   targets.forEach(t => io.observe(t));
 </script>
 
+<!-- ERİŞİLEBİLİRLİK MENÜSÜ BAŞLANGIÇ -->
+<link rel="stylesheet" href="accessibility.css">
+<button id="a11y-toggle-btn" title="Erişilebilirlik">
+  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-2 5h4v7h-4V11z"/></svg>
+</button>
+<div id="a11y-panel">
+  <div class="a11y-header">
+    <h3 style="margin: 0; font-size: 18px; display: flex; align-items: center; gap: 8px; color: #dc2626;"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-2 5h4v7h-4V11z"/></svg> Erişilebilirlik</h3>
+    <button id="a11y-reset-btn" class="a11y-reset-btn">↻ Sıfırla</button>
+  </div>
+  
+  <div class="a11y-section">
+    <div class="a11y-section-title">YAZI BOYUTU</div>
+    <div class="a11y-font-controls">
+      <button id="btn-font-decrease" class="a11y-font-btn">−</button>
+      <strong id="a11y-font-size-text">100%</strong>
+      <button id="btn-font-increase" class="a11y-font-btn">+</button>
+    </div>
+  </div>
+
+  <div class="a11y-section">
+    <div class="a11y-section-title">GÖRÜNÜM</div>
+    <div class="a11y-row"><span>Karanlık Mod</span><label class="a11y-switch"><input type="checkbox" id="cb-dark-mode"><span class="a11y-slider"></span></label></div>
+    <div class="a11y-row"><span>Gri Tonlama</span><label class="a11y-switch"><input type="checkbox" id="cb-grayscale"><span class="a11y-slider"></span></label></div>
+    <div class="a11y-row"><span>Yüksek Kontrast</span><label class="a11y-switch"><input type="checkbox" id="cb-high-contrast"><span class="a11y-slider"></span></label></div>
+    <div class="a11y-row"><span>Okunabilir Yazı</span><label class="a11y-switch"><input type="checkbox" id="cb-readable-font"><span class="a11y-slider"></span></label></div>
+    <div class="a11y-row"><span>Göz Dinlendirme</span><label class="a11y-switch"><input type="checkbox" id="cb-eye-rest"><span class="a11y-slider"></span></label></div>
+  </div>
+
+  <div class="a11y-section">
+    <div class="a11y-section-title">RENK KÖRLÜĞÜ</div>
+    <select id="select-color-blindness" class="a11y-select">
+      <option value="normal">Normal Görünüm</option>
+      <option value="protanopia">Protanopi (Kırmızı Eksikliği)</option>
+      <option value="deuteranopia">Döteranopi (Yeşil Eksikliği)</option>
+      <option value="tritanopia">Tritanopi (Mavi Eksikliği)</option>
+    </select>
+  </div>
+
+  <div class="a11y-section">
+    <div class="a11y-section-title">İÇERİK</div>
+    <div class="a11y-row"><span>Bağlantıları Vurgula</span><label class="a11y-switch"><input type="checkbox" id="cb-highlight-links"><span class="a11y-slider"></span></label></div>
+    <div class="a11y-row"><span>Resimleri Gizle</span><label class="a11y-switch"><input type="checkbox" id="cb-hide-images"><span class="a11y-slider"></span></label></div>
+    <div class="a11y-row"><span>Animasyonları Durdur</span><label class="a11y-switch"><input type="checkbox" id="cb-stop-animations"><span class="a11y-slider"></span></label></div>
+  </div>
+</div>
+<script src="accessibility.js"></script>
+<!-- ERİŞİLEBİLİRLİK MENÜSÜ BİTİŞ -->
+<script src="progress.js"></script>
+<script src="search-data.js"></script>
+<script src="search.js"></script>
+<script src="highlighter.js"></script>
+<script src="tts.js"></script>
+<script src="glossary-data.js"></script>
+<script src="auto-tooltip.js"></script>
+<script src="notebook.js"></script>
+<script src="footer.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
